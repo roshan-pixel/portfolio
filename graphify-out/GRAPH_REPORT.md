@@ -1,16 +1,16 @@
 # Graph Report - stephanie-perez-portfolio  (2026-09-20)
 
 ## Corpus Check
-- 5 files · ~493,634 words
+- 6 files · ~519,267 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 112 nodes · 126 edges · 14 communities (9 shown, 5 thin omitted)
+- 117 nodes · 130 edges · 15 communities (9 shown, 6 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `31304d99`
+- Built from commit: `a3665a1a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -28,11 +28,12 @@
 - [[_COMMUNITY_Community 11|Community 11]]
 - [[_COMMUNITY_Community 12|Community 12]]
 - [[_COMMUNITY_Community 13|Community 13]]
+- [[_COMMUNITY_Community 14|Community 14]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `🌟 Key Features & Interactive Systems` - 9 edges
 2. `Portfolio System Architecture & Graphify Knowledge Graph` - 7 edges
-3. `Himanshi Parihar — UI/UX & Graphic Designer Portfolio` - 6 edges
+3. `Himanshi Parihar — UI/UX & Graphic Designer Portfolio` - 7 edges
 4. `playCuteChime()` - 4 edges
 5. `4. Key Subsystem Workflows` - 4 edges
 6. `Method 2: Direct File Open` - 4 edges
@@ -44,15 +45,15 @@
 ## Surprising Connections (you probably didn't know these)
 - None detected - all connections are within the same source files.
 
-## Communities (14 total, 5 thin omitted)
+## Communities (15 total, 6 thin omitted)
 
 ### Community 0 - "UI Core & Global State"
 Cohesion: 0.05
 Nodes (28): allSlides, brandingHeader, brandingSection, canvas, ctx, drawer, fontCycleList, footerHeading (+20 more)
 
 ### Community 1 - "Project Documentation & Setup"
-Cohesion: 0.16
-Nodes (15): Clustered Functional Communities (77 Nodes · 88 Edges), code:powershell (# Navigate to the portfolio folder), code:powershell (Start-Process "C:\Users\sgarm\stephanie-perez-portfolio\inde), code:powershell (# Open the interactive 3D/2D physics graph), 🔍 Exploring the Graphify Knowledge Graph, 🌟 Features, Himanshi Parihar — UI/UX & Graphic Designer Portfolio, Himanshi Parihar — UI/UX & Graphic Designer Portfolio (Interactive Clone) (+7 more)
+Cohesion: 0.20
+Nodes (11): code:powershell (# Navigate to the portfolio folder), code:powershell (Start-Process "C:\Users\sgarm\stephanie-perez-portfolio\inde), code:powershell (# Open the interactive 3D/2D physics graph), 🔍 Exploring the Graphify Knowledge Graph, 🌟 Features, Himanshi Parihar — UI/UX & Graphic Designer Portfolio (Interactive Clone), 🚀 How to Run, 🚀 How to Run Locally (+3 more)
 
 ### Community 2 - "Interactive Lightbox & Slide Nav"
 Cohesion: 0.33
@@ -71,28 +72,28 @@ Cohesion: 0.15
 Nodes (12): 1. Graphify Knowledge Graph Summary, 2. Clustered Functional Communities, 3. Deep System Architecture, 5. Web Audio API Procedural Synthesizer, 6. How to Query the Graphify Graph, code:block1 (Graphify Topology Metrics:), code:mermaid (flowchart TD), code:mermaid (flowchart TD) (+4 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.22
-Nodes (9): 1. 🎨 HSI Healthcare Continuous 5-Color Pinning Engine, 2. ⚡ Dual-Layer Caching & Offline PWA Engine (`sw.js`), 3. 🖼️ Native-App Lightbox & Touch Gestures, 4. 📱 Interactive Phone Prototype Simulator, 5. 🌿 Bloomcare AI Botanical Scanner Simulator, 6. 🔊 Procedural Web Audio API Synthesizer, 7. 🎁 Cultural Easter Eggs, 8. 📄 Interactive Resume & Bio Drawer (+1 more)
+Cohesion: 0.13
+Nodes (15): 1. 🎨 HSI Healthcare Continuous 5-Color Pinning Engine, 2. ⚡ Dual-Layer Caching & Offline PWA Engine (`sw.js`), 3. 🖼️ Native-App Lightbox & Touch Gestures, 4. 📱 Interactive Phone Prototype Simulator, 5. 🌿 Bloomcare AI Botanical Scanner Simulator, 6. 🔊 Procedural Web Audio API Synthesizer, 7. 🎁 Cultural Easter Eggs, 8. 📄 Interactive Resume & Bio Drawer (+7 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.33
 Nodes (6): 4. Key Subsystem Workflows, code:mermaid (sequenceDiagram), code:mermaid (sequenceDiagram), Subsystem A: Service Worker & Offline Image Cache, Subsystem B: HSI Healthcare 5-Color Pinning Engine, Subsystem C: Predictive Lightbox & Touch Gestures
 
 ## Knowledge Gaps
-- **51 isolated node(s):** `allSlides`, `lightboxModal`, `lightboxImg`, `rishwat`, `drawer` (+46 more)
+- **52 isolated node(s):** `allSlides`, `lightboxModal`, `lightboxImg`, `rishwat`, `drawer` (+47 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Himanshi Parihar — UI/UX & Graphic Designer Portfolio` connect `Project Documentation & Setup` to `Community 12`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
-- **Why does `🌟 Key Features & Interactive Systems` connect `Community 12` to `Project Documentation & Setup`?**
-  _High betweenness centrality (0.026) - this node is a cross-community bridge._
+- **Why does `Himanshi Parihar — UI/UX & Graphic Designer Portfolio` connect `Community 12` to `Project Documentation & Setup`?**
+  _High betweenness centrality (0.035) - this node is a cross-community bridge._
 - **Why does `Portfolio System Architecture & Graphify Knowledge Graph` connect `Community 11` to `Community 13`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
+  _High betweenness centrality (0.019) - this node is a cross-community bridge._
 - **What connects `allSlides`, `lightboxModal`, `lightboxImg` to the rest of the system?**
-  _51 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _53 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `UI Core & Global State` be split into smaller, more focused modules?**
   _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._
+- **Should `Community 12` be split into smaller, more focused modules?**
+  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._

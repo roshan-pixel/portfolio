@@ -60,15 +60,15 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 <div class="container">
 
 <h1>stephanie-perez-portfolio — Complete Call Flow &amp; Architecture Documentation</h1>
-<p class="subtitle">Generated from graphify knowledge graph: 112 nodes, 126 edges, 14 communities. Commit: 31304d9</p>
+<p class="subtitle">Generated from graphify knowledge graph: 117 nodes, 130 edges, 15 communities. Commit: a3665a1</p>
 
 <div class="nav">
     <a href="#overview">Architecture Overview</a>
     <a href="#build-graph">Graph Build</a>
+    <a href="#analysis-clustering">Analysis &amp; Clustering</a>
     <a href="#outputs-docs">Outputs &amp; Docs</a>
     <a href="#ingest-cache-update">Ingestion &amp; Updates</a>
     <a href="#ui-core-global-state">UI Core &amp; Global State</a>
-    <a href="#community-12">Community 12</a>
     <a href="#interactive-lightbox-slide-nav">Interactive Lightbox &amp; Slide Nav</a>
     <a href="#easter-eggs-audio-feedback">Easter Eggs &amp; Audio Feedback</a>
     <a href="#prototype-simulator-storage">Prototype Simulator &amp; Storage</a>
@@ -85,16 +85,16 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    BUILD_GRAPH_321CBB04("Graph Build<br/><small>29 nodes</small>")
+    BUILD_GRAPH_321CBB04("Graph Build<br/><small>25 nodes</small>")
     class BUILD_GRAPH_321CBB04 module;
+    ANALYSIS_CLUSTERING_C79796DA("Analysis &amp; Clustering<br/><small>15 nodes</small>")
+    class ANALYSIS_CLUSTERING_C79796DA module;
     OUTPUTS_DOCS_ED82387C("Outputs &amp; Docs<br/><small>6 nodes</small>")
     class OUTPUTS_DOCS_ED82387C module;
-    INGEST_CACHE_UPDATE_FF457338("Ingestion &amp; Updates<br/><small>5 nodes</small>")
+    INGEST_CACHE_UPDATE_FF457338("Ingestion &amp; Updates<br/><small>8 nodes</small>")
     class INGEST_CACHE_UPDATE_FF457338 module;
     UI_CORE_GLOBAL_STATE_D46A32AF("UI Core &amp; Global State<br/><small>41 nodes</small>")
     class UI_CORE_GLOBAL_STATE_D46A32AF module;
-    COMMUNITY_12_82F13F05("Community 12<br/><small>9 nodes</small>")
-    class COMMUNITY_12_82F13F05 module;
     INTERACTIVE_LIGHTBOX_SLIDE_NAV_9827D9E8("Interactive Lightbox &amp; Slide Nav<br/><small>6 nodes</small>")
     class INTERACTIVE_LIGHTBOX_SLIDE_NAV_9827D9E8 module;
     EASTER_EGGS_AUDIO_FEEDBACK_C5A4FEEC("Easter Eggs &amp; Audio Feedback<br/><small>6 nodes</small>")
@@ -116,8 +116,9 @@ flowchart LR
     UI_CORE_GLOBAL_STATE_D46A32AF -->|contains x2| RISHWAT_MODAL_DIALOGS_85A425EA
     UI_CORE_GLOBAL_STATE_D46A32AF -->|contains x2| TEPI_POPUP_TRIGGERS_8A4EE2CD
     UI_CORE_GLOBAL_STATE_D46A32AF -->|contains x2| HSI_COLOR_PINNING_ANIMATION_BD67A961
+    ANALYSIS_CLUSTERING_C79796DA -->|contains x2| BUILD_GRAPH_321CBB04
     BUILD_GRAPH_321CBB04 -->|contains| OUTPUTS_DOCS_ED82387C
-    BUILD_GRAPH_321CBB04 -->|contains| COMMUNITY_12_82F13F05
+    BUILD_GRAPH_321CBB04 -->|contains| ANALYSIS_CLUSTERING_C79796DA
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -134,67 +135,66 @@ flowchart LR
     <h4>Architecture Layers</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>Layer</th><th>Nodes</th><th>Communities</th></tr>
-      <tr><td>Graph Build</td><td>29</td><td><code>1, 11</code></td></tr><tr><td>Outputs &amp; Docs</td><td>6</td><td><code>13</code></td></tr><tr><td>Ingestion &amp; Updates</td><td>5</td><td><code>4, 10</code></td></tr><tr><td>UI Core &amp; Global State</td><td>41</td><td><code>0</code></td></tr><tr><td>Community 12</td><td>9</td><td><code>12</code></td></tr><tr><td>Interactive Lightbox &amp; Slide Nav</td><td>6</td><td><code>2</code></td></tr><tr><td>Easter Eggs &amp; Audio Feedback</td><td>6</td><td><code>3</code></td></tr><tr><td>Prototype Simulator &amp; Storage</td><td>2</td><td><code>5</code></td></tr><tr><td>Rishwat Modal Dialogs</td><td>2</td><td><code>6</code></td></tr><tr><td>Tepi Popup Triggers</td><td>2</td><td><code>7</code></td></tr><tr><td>Navigation &amp; Filter Engine</td><td>2</td><td><code>8</code></td></tr><tr><td>HSI Color Pinning Animation</td><td>2</td><td><code>9</code></td></tr>
+      <tr><td>Graph Build</td><td>25</td><td><code>11, 1</code></td></tr><tr><td>Analysis &amp; Clustering</td><td>15</td><td><code>12</code></td></tr><tr><td>Outputs &amp; Docs</td><td>6</td><td><code>13</code></td></tr><tr><td>Ingestion &amp; Updates</td><td>8</td><td><code>4, 14, 10</code></td></tr><tr><td>UI Core &amp; Global State</td><td>41</td><td><code>0</code></td></tr><tr><td>Interactive Lightbox &amp; Slide Nav</td><td>6</td><td><code>2</code></td></tr><tr><td>Easter Eggs &amp; Audio Feedback</td><td>6</td><td><code>3</code></td></tr><tr><td>Prototype Simulator &amp; Storage</td><td>2</td><td><code>5</code></td></tr><tr><td>Rishwat Modal Dialogs</td><td>2</td><td><code>6</code></td></tr><tr><td>Tepi Popup Triggers</td><td>2</td><td><code>7</code></td></tr><tr><td>Navigation &amp; Filter Engine</td><td>2</td><td><code>8</code></td></tr><tr><td>HSI Color Pinning Animation</td><td>2</td><td><code>9</code></td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Core Flow</h4>
-    <div class="arrow-chain">Graph Build -&gt; Outputs &amp; Docs -&gt; Ingestion &amp; Updates -&gt; UI Core &amp; Global State -&gt; Interactive Lightbox &amp; Slide Nav -&gt; Community 12 -&gt; Easter Eggs &amp; Audio Feedback</div>
+    <div class="arrow-chain">Ingestion &amp; Updates -&gt; Graph Build -&gt; Outputs &amp; Docs -&gt; Analysis &amp; Clustering -&gt; UI Core &amp; Global State -&gt; Interactive Lightbox &amp; Slide Nav -&gt; Easter Eggs &amp; Audio Feedback</div>
   </div>
 </div>
 <div class="grid">
   <div class="card">
     <h4>Graph Report Highlights</h4>
     <ul>
-      <li>112 nodes · 126 edges · 14 communities (9 shown, 5 thin omitted)</li>
+      <li>117 nodes · 130 edges · 15 communities (9 shown, 6 thin omitted)</li>
       <li>Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS</li>
       <li>Token cost: 0 input · 0 output</li>
       <li>1. `🌟 Key Features &amp; Interactive Systems` - 9 edges</li>
       <li>2. `Portfolio System Architecture &amp; Graphify Knowledge Graph` - 7 edges</li>
-      <li>3. `Himanshi Parihar — UI/UX &amp; Graphic Designer Portfolio` - 6 edges</li>
+      <li>3. `Himanshi Parihar — UI/UX &amp; Graphic Designer Portfolio` - 7 edges</li>
     </ul>
   </div>
 </div>
 <hr>
 <!-- ====== 2. Graph Build ====== -->
 <h2 id="build-graph">2. Graph Build</h2>
-<p>Graph Build groups implementation around portfolio, readmemd, system, architecturemd, mostly in README.md, PORTFOLIO_SYSTEM_ARCHITECTURE.md. This section covers 29 nodes and 31 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<p>Graph Build groups implementation around portfolio, system, architecturemd, readmemd, mostly in PORTFOLIO_SYSTEM_ARCHITECTURE.md, README.md. This section covers 25 nodes and 25 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Graph Build (29 nodes, 31 edges)
-    subgraph build_graph_README_md_df5bf028["README.md"]
-        stephanie_perez_portfolio_readme_himanshi_pariha_a6585c86("Himanshi Parihar — UI/UX &amp; Graphic Desi...<br/><small>README.md</small>")
-        stephanie_perez_portfolio_readme_method_2_direct_4b6d4b73("Method 2: Direct File Open<br/><small>README.md</small>")
-        readme_md_eeb98ce0("README.md")
-        stephanie_perez_portfolio_readme_himanshi_pariha_639caddd("Himanshi Parihar — UI/UX &amp; Graphic Desi...<br/><small>README.md</small>")
-        stephanie_perez_portfolio_readme_method_1_local_68c6368c("Method 1: Local HTTP Server (Active on...<br/><small>README.md</small>")
-        stephanie_perez_portfolio_readme_how_to_run_cf43409e("🚀 How to Run<br/><small>README.md</small>")
-        stephanie_perez_portfolio_readme_how_to_run_loca_fe073a98("🚀 How to Run Locally<br/><small>README.md</small>")
-        stephanie_perez_portfolio_readme_method_1_local_3001daba("Method 1: Local HTTP Server (Recommended)<br/><small>README.md</small>")
-        stephanie_perez_portfolio_readme_codeblock_1_8e8eecac("code:powershell ( Navigate to the port...<br/><small>README.md</small>")
-        stephanie_perez_portfolio_readme_codeblock_3_adf10fef("code:powershell ( Open the interactive...<br/><small>README.md</small>")
-        stephanie_perez_portfolio_readme_codeblock_2_33d9d80d("code:powershell (Start-Process 'C:\User...<br/><small>README.md</small>")
-        stephanie_perez_portfolio_readme_system_architec_cf4f3f4b("🏗️ System Architecture &amp; Knowledge Graph<br/><small>README.md</small>")
-    end
+    %% Section: Graph Build (25 nodes, 25 edges)
     subgraph build_graph_PORTFOLIO_SYSTEM_ARCHITECTURE_md_4aa9887f["PORTFOLIO_SYSTEM_ARCHITECTURE.md"]
         stephanie_perez_portfolio_portfolio_system_archi_e64aeeef("Portfolio System Architecture &amp; Graphif...<br/><small>PORTFOLIO_SYSTEM_ARCHITECTURE.md</small>")
         stephanie_perez_portfolio_portfolio_system_archi_1f916265("2. Clustered Functional Communities<br/><small>PORTFOLIO_SYSTEM_ARCHITECTURE.md</small>")
+        portfolio_system_architecture_md_205491bb("PORTFOLIO SYSTEM ARCHITECTURE.md<br/><small>PORTFOLIO_SYSTEM_ARCHITECTURE.md</small>")
         stephanie_perez_portfolio_portfolio_system_archi_974180ce("1. Graphify Knowledge Graph Summary<br/><small>PORTFOLIO_SYSTEM_ARCHITECTURE.md</small>")
         stephanie_perez_portfolio_portfolio_system_archi_6caab847("3. Deep System Architecture<br/><small>PORTFOLIO_SYSTEM_ARCHITECTURE.md</small>")
         stephanie_perez_portfolio_portfolio_system_archi_dff4b21a("6. How to Query the Graphify Graph<br/><small>PORTFOLIO_SYSTEM_ARCHITECTURE.md</small>")
         stephanie_perez_portfolio_portfolio_system_archi_c26b7736("Graphify Artifacts Generated in graphi...<br/><small>PORTFOLIO_SYSTEM_ARCHITECTURE.md</small>")
+        stephanie_perez_portfolio_portfolio_system_archi_cb46de5e("5. Web Audio API Procedural Synthesizer<br/><small>PORTFOLIO_SYSTEM_ARCHITECTURE.md</small>")
+        stephanie_perez_portfolio_portfolio_system_archi_e56baace("Community Breakdown<br/><small>PORTFOLIO_SYSTEM_ARCHITECTURE.md</small>")
     end
+    subgraph build_graph_README_md_df5bf028["README.md"]
+        stephanie_perez_portfolio_readme_method_2_direct_4b6d4b73("Method 2: Direct File Open<br/><small>README.md</small>")
+        stephanie_perez_portfolio_readme_how_to_run_loca_fe073a98("🚀 How to Run Locally<br/><small>README.md</small>")
+        stephanie_perez_portfolio_readme_himanshi_pariha_639caddd("Himanshi Parihar — UI/UX &amp; Graphic Desi...<br/><small>README.md</small>")
+        stephanie_perez_portfolio_readme_method_1_local_68c6368c("Method 1: Local HTTP Server (Active on...<br/><small>README.md</small>")
+        stephanie_perez_portfolio_readme_how_to_run_cf43409e("🚀 How to Run<br/><small>README.md</small>")
+        stephanie_perez_portfolio_readme_method_1_local_3001daba("Method 1: Local HTTP Server (Recommended)<br/><small>README.md</small>")
+        stephanie_perez_portfolio_readme_codeblock_1_8e8eecac("code:powershell ( Navigate to the port...<br/><small>README.md</small>")
+        stephanie_perez_portfolio_readme_codeblock_3_adf10fef("code:powershell ( Open the interactive...<br/><small>README.md</small>")
+        stephanie_perez_portfolio_readme_codeblock_2_33d9d80d("code:powershell (Start-Process 'C:\User...<br/><small>README.md</small>")
+    end
+    portfolio_system_architecture_md_205491bb -->|contains| stephanie_perez_portfolio_portfolio_system_archi_e64aeeef
     stephanie_perez_portfolio_portfolio_system_archi_e64aeeef -->|contains| stephanie_perez_portfolio_portfolio_system_archi_974180ce
     stephanie_perez_portfolio_portfolio_system_archi_e64aeeef -->|contains| stephanie_perez_portfolio_portfolio_system_archi_1f916265
     stephanie_perez_portfolio_portfolio_system_archi_e64aeeef -->|contains| stephanie_perez_portfolio_portfolio_system_archi_6caab847
+    stephanie_perez_portfolio_portfolio_system_archi_e64aeeef -->|contains| stephanie_perez_portfolio_portfolio_system_archi_cb46de5e
     stephanie_perez_portfolio_portfolio_system_archi_e64aeeef -->|contains| stephanie_perez_portfolio_portfolio_system_archi_dff4b21a
     stephanie_perez_portfolio_portfolio_system_archi_974180ce -->|contains| stephanie_perez_portfolio_portfolio_system_archi_c26b7736
-    readme_md_eeb98ce0 -->|contains| stephanie_perez_portfolio_readme_himanshi_pariha_a6585c86
-    readme_md_eeb98ce0 -->|contains| stephanie_perez_portfolio_readme_himanshi_pariha_639caddd
-    stephanie_perez_portfolio_readme_himanshi_pariha_a6585c86 -->|contains| stephanie_perez_portfolio_readme_system_architec_cf4f3f4b
-    stephanie_perez_portfolio_readme_himanshi_pariha_a6585c86 -->|contains| stephanie_perez_portfolio_readme_how_to_run_loca_fe073a98
+    stephanie_perez_portfolio_portfolio_system_archi_1f916265 -->|contains| stephanie_perez_portfolio_portfolio_system_archi_e56baace
     stephanie_perez_portfolio_readme_how_to_run_loca_fe073a98 -->|contains| stephanie_perez_portfolio_readme_method_1_local_3001daba
     stephanie_perez_portfolio_readme_how_to_run_loca_fe073a98 -->|contains| stephanie_perez_portfolio_readme_method_2_direct_4b6d4b73
     stephanie_perez_portfolio_readme_method_1_local_3001daba -->|contains| stephanie_perez_portfolio_readme_codeblock_1_8e8eecac
@@ -205,25 +205,25 @@ flowchart LR
     stephanie_perez_portfolio_readme_codeblock_2_33d9d80d -->|contains| stephanie_perez_portfolio_readme_method_1_local_68c6368c
     stephanie_perez_portfolio_readme_himanshi_pariha_639caddd -->|contains| stephanie_perez_portfolio_readme_how_to_run_cf43409e
     stephanie_perez_portfolio_readme_how_to_run_cf43409e -->|contains| stephanie_perez_portfolio_readme_method_1_local_68c6368c
-    %% Omitted for readability: 11 nodes, 0 edges
-    class stephanie_perez_portfolio_readme_himanshi_pariha_a6585c86 concept;
-    class stephanie_perez_portfolio_readme_method_2_direct_4b6d4b73 concept;
-    class readme_md_eeb98ce0 concept;
-    class stephanie_perez_portfolio_readme_himanshi_pariha_639caddd concept;
-    class stephanie_perez_portfolio_readme_method_1_local_68c6368c concept;
-    class stephanie_perez_portfolio_readme_how_to_run_cf43409e concept;
-    class stephanie_perez_portfolio_readme_how_to_run_loca_fe073a98 concept;
-    class stephanie_perez_portfolio_readme_method_1_local_3001daba concept;
-    class stephanie_perez_portfolio_readme_codeblock_1_8e8eecac concept;
-    class stephanie_perez_portfolio_readme_codeblock_3_adf10fef concept;
-    class stephanie_perez_portfolio_readme_codeblock_2_33d9d80d concept;
-    class stephanie_perez_portfolio_readme_system_architec_cf4f3f4b concept;
+    %% Omitted for readability: 7 nodes, 0 edges
     class stephanie_perez_portfolio_portfolio_system_archi_e64aeeef concept;
     class stephanie_perez_portfolio_portfolio_system_archi_1f916265 concept;
+    class portfolio_system_architecture_md_205491bb concept;
     class stephanie_perez_portfolio_portfolio_system_archi_974180ce concept;
     class stephanie_perez_portfolio_portfolio_system_archi_6caab847 concept;
     class stephanie_perez_portfolio_portfolio_system_archi_dff4b21a concept;
     class stephanie_perez_portfolio_portfolio_system_archi_c26b7736 concept;
+    class stephanie_perez_portfolio_portfolio_system_archi_cb46de5e concept;
+    class stephanie_perez_portfolio_portfolio_system_archi_e56baace concept;
+    class stephanie_perez_portfolio_readme_method_2_direct_4b6d4b73 concept;
+    class stephanie_perez_portfolio_readme_how_to_run_loca_fe073a98 concept;
+    class stephanie_perez_portfolio_readme_himanshi_pariha_639caddd concept;
+    class stephanie_perez_portfolio_readme_method_1_local_68c6368c concept;
+    class stephanie_perez_portfolio_readme_how_to_run_cf43409e concept;
+    class stephanie_perez_portfolio_readme_method_1_local_3001daba concept;
+    class stephanie_perez_portfolio_readme_codeblock_1_8e8eecac concept;
+    class stephanie_perez_portfolio_readme_codeblock_3_adf10fef concept;
+    class stephanie_perez_portfolio_readme_codeblock_2_33d9d80d concept;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -247,134 +247,6 @@ flowchart LR
 </tr>
 <tr>
   <td>1</td>
-  <td><code>README.md</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing README.md.</td>
-</tr>
-<tr>
-  <td>2</td>
-  <td><code>Himanshi Parihar — UI/UX &amp; Graphic Designer Portfolio</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Himanshi Parihar — UI/UX &amp; Graphic Designer Portfolio.</td>
-</tr>
-<tr>
-  <td>3</td>
-  <td><code>🏗️ System Architecture &amp; Knowledge Graph</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 🏗️ System Architecture &amp; Knowledge Graph.</td>
-</tr>
-<tr>
-  <td>4</td>
-  <td><code>Clustered Functional Communities (77 Nodes · 88 Edges)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Clustered Functional Communities (77 Nodes · 88 Edges).</td>
-</tr>
-<tr>
-  <td>5</td>
-  <td><code>🚀 How to Run Locally</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 🚀 How to Run Locally.</td>
-</tr>
-<tr>
-  <td>6</td>
-  <td><code>Method 1: Local HTTP Server (Recommended)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Method 1: Local HTTP Server (Recommended).</td>
-</tr>
-<tr>
-  <td>7</td>
-  <td><code>code:powershell (# Navigate to the portfolio folder)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:powershell (# Navigate to the portfolio folder).</td>
-</tr>
-<tr>
-  <td>8</td>
-  <td><code>Method 2: Direct File Open</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Method 2: Direct File Open.</td>
-</tr>
-<tr>
-  <td>9</td>
-  <td><code>code:powershell (Start-Process &quot;C:\Users\sgarm\stephanie-perez-portfolio\inde)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:powershell (Start-Process &quot;C:\Users\sgarm\stephanie-perez-portfolio\inde).</td>
-</tr>
-<tr>
-  <td>10</td>
-  <td><code>🔍 Exploring the Graphify Knowledge Graph</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 🔍 Exploring the Graphify Knowledge Graph.</td>
-</tr>
-<tr>
-  <td>11</td>
-  <td><code>code:powershell (# Open the interactive 3D/2D physics graph)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:powershell (# Open the interactive 3D/2D physics graph).</td>
-</tr>
-<tr>
-  <td>12</td>
-  <td><code>🛠️ Tech Stack</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 🛠️ Tech Stack.</td>
-</tr>
-<tr>
-  <td>13</td>
-  <td><code>Himanshi Parihar — UI/UX &amp; Graphic Designer Portfolio (Interactive Clone)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Himanshi Parihar — UI/UX &amp; Graphic Designer Portfolio (Interactive Clone).</td>
-</tr>
-<tr>
-  <td>14</td>
-  <td><code>🌟 Features</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 🌟 Features.</td>
-</tr>
-<tr>
-  <td>15</td>
-  <td><code>🚀 How to Run</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 🚀 How to Run.</td>
-</tr>
-<tr>
-  <td>16</td>
-  <td><code>Method 1: Local HTTP Server (Active on Port 8080)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Method 1: Local HTTP Server (Active on Port 8080).</td>
-</tr>
-<tr>
-  <td>17</td>
   <td><code>PORTFOLIO_SYSTEM_ARCHITECTURE.md</code><br><small style="color:var(--muted)">PORTFOLIO_SYSTEM_ARCHITECTURE.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -382,7 +254,7 @@ flowchart LR
   <td>Documentation node describing PORTFOLIO_SYSTEM_ARCHITECTURE.md.</td>
 </tr>
 <tr>
-  <td>18</td>
+  <td>2</td>
   <td><code>Portfolio System Architecture &amp; Graphify Knowledge Graph</code><br><small style="color:var(--muted)">PORTFOLIO_SYSTEM_ARCHITECTURE.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -390,7 +262,7 @@ flowchart LR
   <td>Documentation node describing Portfolio System Architecture &amp; Graphify Knowledge Graph.</td>
 </tr>
 <tr>
-  <td>19</td>
+  <td>3</td>
   <td><code>1. Graphify Knowledge Graph Summary</code><br><small style="color:var(--muted)">PORTFOLIO_SYSTEM_ARCHITECTURE.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -398,7 +270,7 @@ flowchart LR
   <td>Documentation node describing 1. Graphify Knowledge Graph Summary.</td>
 </tr>
 <tr>
-  <td>20</td>
+  <td>4</td>
   <td><code>Graphify Artifacts Generated in `graphify-out/`</code><br><small style="color:var(--muted)">PORTFOLIO_SYSTEM_ARCHITECTURE.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -406,7 +278,7 @@ flowchart LR
   <td>Documentation node describing Graphify Artifacts Generated in `graphify-out/`.</td>
 </tr>
 <tr>
-  <td>21</td>
+  <td>5</td>
   <td><code>code:block1 (Graphify Topology Metrics:)</code><br><small style="color:var(--muted)">PORTFOLIO_SYSTEM_ARCHITECTURE.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -414,7 +286,7 @@ flowchart LR
   <td>Documentation node describing code:block1 (Graphify Topology Metrics:).</td>
 </tr>
 <tr>
-  <td>22</td>
+  <td>6</td>
   <td><code>2. Clustered Functional Communities</code><br><small style="color:var(--muted)">PORTFOLIO_SYSTEM_ARCHITECTURE.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -422,7 +294,7 @@ flowchart LR
   <td>Documentation node describing 2. Clustered Functional Communities.</td>
 </tr>
 <tr>
-  <td>23</td>
+  <td>7</td>
   <td><code>code:mermaid (flowchart TD)</code><br><small style="color:var(--muted)">PORTFOLIO_SYSTEM_ARCHITECTURE.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -430,7 +302,7 @@ flowchart LR
   <td>Documentation node describing code:mermaid (flowchart TD).</td>
 </tr>
 <tr>
-  <td>24</td>
+  <td>8</td>
   <td><code>Community Breakdown</code><br><small style="color:var(--muted)">PORTFOLIO_SYSTEM_ARCHITECTURE.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -438,7 +310,7 @@ flowchart LR
   <td>Documentation node describing Community Breakdown.</td>
 </tr>
 <tr>
-  <td>25</td>
+  <td>9</td>
   <td><code>3. Deep System Architecture</code><br><small style="color:var(--muted)">PORTFOLIO_SYSTEM_ARCHITECTURE.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -446,7 +318,7 @@ flowchart LR
   <td>Documentation node describing 3. Deep System Architecture.</td>
 </tr>
 <tr>
-  <td>26</td>
+  <td>10</td>
   <td><code>code:mermaid (flowchart TD)</code><br><small style="color:var(--muted)">PORTFOLIO_SYSTEM_ARCHITECTURE.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -454,7 +326,7 @@ flowchart LR
   <td>Documentation node describing code:mermaid (flowchart TD).</td>
 </tr>
 <tr>
-  <td>27</td>
+  <td>11</td>
   <td><code>5. Web Audio API Procedural Synthesizer</code><br><small style="color:var(--muted)">PORTFOLIO_SYSTEM_ARCHITECTURE.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -462,7 +334,7 @@ flowchart LR
   <td>Documentation node describing 5. Web Audio API Procedural Synthesizer.</td>
 </tr>
 <tr>
-  <td>28</td>
+  <td>12</td>
   <td><code>6. How to Query the Graphify Graph</code><br><small style="color:var(--muted)">PORTFOLIO_SYSTEM_ARCHITECTURE.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -470,12 +342,108 @@ flowchart LR
   <td>Documentation node describing 6. How to Query the Graphify Graph.</td>
 </tr>
 <tr>
-  <td>29</td>
+  <td>13</td>
   <td><code>code:bash (# 1. Open the interactive 3D/2D force-directed knowledge gra)</code><br><small style="color:var(--muted)">PORTFOLIO_SYSTEM_ARCHITECTURE.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
   <td>Documentation node describing code:bash (# 1. Open the interactive 3D/2D force-directed knowledge gra).</td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>README.md</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing README.md.</td>
+</tr>
+<tr>
+  <td>15</td>
+  <td><code>🚀 How to Run Locally</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 🚀 How to Run Locally.</td>
+</tr>
+<tr>
+  <td>16</td>
+  <td><code>Method 1: Local HTTP Server (Recommended)</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Method 1: Local HTTP Server (Recommended).</td>
+</tr>
+<tr>
+  <td>17</td>
+  <td><code>code:powershell (# Navigate to the portfolio folder)</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing code:powershell (# Navigate to the portfolio folder).</td>
+</tr>
+<tr>
+  <td>18</td>
+  <td><code>Method 2: Direct File Open</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Method 2: Direct File Open.</td>
+</tr>
+<tr>
+  <td>19</td>
+  <td><code>code:powershell (Start-Process &quot;C:\Users\sgarm\stephanie-perez-portfolio\inde)</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing code:powershell (Start-Process &quot;C:\Users\sgarm\stephanie-perez-portfolio\inde).</td>
+</tr>
+<tr>
+  <td>20</td>
+  <td><code>🔍 Exploring the Graphify Knowledge Graph</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 🔍 Exploring the Graphify Knowledge Graph.</td>
+</tr>
+<tr>
+  <td>21</td>
+  <td><code>code:powershell (# Open the interactive 3D/2D physics graph)</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing code:powershell (# Open the interactive 3D/2D physics graph).</td>
+</tr>
+<tr>
+  <td>22</td>
+  <td><code>Himanshi Parihar — UI/UX &amp; Graphic Designer Portfolio (Interactive Clone)</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Himanshi Parihar — UI/UX &amp; Graphic Designer Portfolio (Interactive Clone).</td>
+</tr>
+<tr>
+  <td>23</td>
+  <td><code>🌟 Features</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 🌟 Features.</td>
+</tr>
+<tr>
+  <td>24</td>
+  <td><code>🚀 How to Run</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 🚀 How to Run.</td>
+</tr>
+<tr>
+  <td>25</td>
+  <td><code>Method 1: Local HTTP Server (Active on Port 8080)</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Method 1: Local HTTP Server (Active on Port 8080).</td>
 </tr>
 </table>
 
@@ -484,19 +452,229 @@ flowchart LR
     <h4>Key Files</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>README.md</code></td><td>16 nodes</td></tr>
-<tr><td><code>PORTFOLIO_SYSTEM_ARCHITECTURE.md</code></td><td>13 nodes</td></tr>
+      <tr><td><code>PORTFOLIO_SYSTEM_ARCHITECTURE.md</code></td><td>13 nodes</td></tr>
+<tr><td><code>README.md</code></td><td>12 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x31. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x25. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
 
-<!-- ====== 3. Outputs & Docs ====== -->
-<h2 id="outputs-docs">3. Outputs &amp; Docs</h2>
+<!-- ====== 3. Analysis & Clustering ====== -->
+<h2 id="analysis-clustering">3. Analysis &amp; Clustering</h2>
+<p>Analysis &amp; Clustering groups implementation around readmemd, interactive, architecture, graphify, mostly in README.md. This section covers 15 nodes and 14 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Analysis &amp; Clustering (15 nodes, 14 edges)
+    stephanie_perez_portfolio_readme_key_features_in_816d0477("🌟 Key Features &amp; Interactive Systems<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_himanshi_pariha_a6585c86("Himanshi Parihar — UI/UX &amp; Graphic Desi...<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_live_interactiv_c0edcad7("🌐 Live Interactive Architecture &amp; Graph...<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_system_architec_cf4f3f4b("🏗️ System Architecture &amp; Knowledge Graph<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_tech_stack_8ef9332c("🛠️ Tech Stack<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_graphify_cluste_a5bb3504("🔍 Graphify Cluster View (Rendered on Gi...<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_1_hsi_healthcar_80d7ed9e("1. 🎨 HSI Healthcare Continuous 5-Color...<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_2_dual_layer_ca_f2770f9e("2. ⚡ Dual-Layer Caching &amp; Offline PWA E...<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_3_native_app_li_eaa0d4cb("3. 🖼️ Native-App Lightbox &amp; Touch Gestures<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_4_interactive_p_7ccfff93("4. 📱 Interactive Phone Prototype Simulator<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_5_bloomcare_ai_1396449c("5. 🌿 Bloomcare AI Botanical Scanner Sim...<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_6_procedural_we_ab83f979("6. 🔊 Procedural Web Audio API Synthesizer<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_7_cultural_east_0c814f1a("7. 🎁 Cultural Easter Eggs<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_8_interactive_r_80a61d52("8. 📄 Interactive Resume &amp; Bio Drawer<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_clustered_funct_600f3e4c("Clustered Functional Communities (77 No...<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_himanshi_pariha_a6585c86 -->|contains| stephanie_perez_portfolio_readme_live_interactiv_c0edcad7
+    stephanie_perez_portfolio_readme_himanshi_pariha_a6585c86 -->|contains| stephanie_perez_portfolio_readme_key_features_in_816d0477
+    stephanie_perez_portfolio_readme_himanshi_pariha_a6585c86 -->|contains| stephanie_perez_portfolio_readme_system_architec_cf4f3f4b
+    stephanie_perez_portfolio_readme_himanshi_pariha_a6585c86 -->|contains| stephanie_perez_portfolio_readme_tech_stack_8ef9332c
+    stephanie_perez_portfolio_readme_live_interactiv_c0edcad7 -->|contains| stephanie_perez_portfolio_readme_graphify_cluste_a5bb3504
+    stephanie_perez_portfolio_readme_key_features_in_816d0477 -->|contains| stephanie_perez_portfolio_readme_1_hsi_healthcar_80d7ed9e
+    stephanie_perez_portfolio_readme_key_features_in_816d0477 -->|contains| stephanie_perez_portfolio_readme_2_dual_layer_ca_f2770f9e
+    stephanie_perez_portfolio_readme_key_features_in_816d0477 -->|contains| stephanie_perez_portfolio_readme_3_native_app_li_eaa0d4cb
+    stephanie_perez_portfolio_readme_key_features_in_816d0477 -->|contains| stephanie_perez_portfolio_readme_4_interactive_p_7ccfff93
+    stephanie_perez_portfolio_readme_key_features_in_816d0477 -->|contains| stephanie_perez_portfolio_readme_5_bloomcare_ai_1396449c
+    stephanie_perez_portfolio_readme_key_features_in_816d0477 -->|contains| stephanie_perez_portfolio_readme_6_procedural_we_ab83f979
+    stephanie_perez_portfolio_readme_key_features_in_816d0477 -->|contains| stephanie_perez_portfolio_readme_7_cultural_east_0c814f1a
+    stephanie_perez_portfolio_readme_key_features_in_816d0477 -->|contains| stephanie_perez_portfolio_readme_8_interactive_r_80a61d52
+    stephanie_perez_portfolio_readme_system_architec_cf4f3f4b -->|contains| stephanie_perez_portfolio_readme_clustered_funct_600f3e4c
+    class stephanie_perez_portfolio_readme_key_features_in_816d0477 concept;
+    class stephanie_perez_portfolio_readme_himanshi_pariha_a6585c86 concept;
+    class stephanie_perez_portfolio_readme_live_interactiv_c0edcad7 concept;
+    class stephanie_perez_portfolio_readme_system_architec_cf4f3f4b concept;
+    class stephanie_perez_portfolio_readme_tech_stack_8ef9332c concept;
+    class stephanie_perez_portfolio_readme_graphify_cluste_a5bb3504 concept;
+    class stephanie_perez_portfolio_readme_1_hsi_healthcar_80d7ed9e concept;
+    class stephanie_perez_portfolio_readme_2_dual_layer_ca_f2770f9e concept;
+    class stephanie_perez_portfolio_readme_3_native_app_li_eaa0d4cb concept;
+    class stephanie_perez_portfolio_readme_4_interactive_p_7ccfff93 concept;
+    class stephanie_perez_portfolio_readme_5_bloomcare_ai_1396449c concept;
+    class stephanie_perez_portfolio_readme_6_procedural_we_ab83f979 concept;
+    class stephanie_perez_portfolio_readme_7_cultural_east_0c814f1a concept;
+    class stephanie_perez_portfolio_readme_8_interactive_r_80a61d52 concept;
+    class stephanie_perez_portfolio_readme_clustered_funct_600f3e4c concept;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>Himanshi Parihar — UI/UX &amp; Graphic Designer Portfolio</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Himanshi Parihar — UI/UX &amp; Graphic Designer Portfolio.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>🌐 Live Interactive Architecture &amp; Graphify Cluster</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 🌐 Live Interactive Architecture &amp; Graphify Cluster.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>🔍 Graphify Cluster View (Rendered on GitHub)</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 🔍 Graphify Cluster View (Rendered on GitHub).</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>🌟 Key Features &amp; Interactive Systems</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 🌟 Key Features &amp; Interactive Systems.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>1. 🎨 HSI Healthcare Continuous 5-Color Pinning Engine</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 1. 🎨 HSI Healthcare Continuous 5-Color Pinning Engine.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>2. ⚡ Dual-Layer Caching &amp; Offline PWA Engine (`sw.js`)</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 2. ⚡ Dual-Layer Caching &amp; Offline PWA Engine (`sw.js`).</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>3. 🖼️ Native-App Lightbox &amp; Touch Gestures</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 3. 🖼️ Native-App Lightbox &amp; Touch Gestures.</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>4. 📱 Interactive Phone Prototype Simulator</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 4. 📱 Interactive Phone Prototype Simulator.</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>5. 🌿 Bloomcare AI Botanical Scanner Simulator</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 5. 🌿 Bloomcare AI Botanical Scanner Simulator.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>6. 🔊 Procedural Web Audio API Synthesizer</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 6. 🔊 Procedural Web Audio API Synthesizer.</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>7. 🎁 Cultural Easter Eggs</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 7. 🎁 Cultural Easter Eggs.</td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><code>8. 📄 Interactive Resume &amp; Bio Drawer</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 8. 📄 Interactive Resume &amp; Bio Drawer.</td>
+</tr>
+<tr>
+  <td>13</td>
+  <td><code>🏗️ System Architecture &amp; Knowledge Graph</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 🏗️ System Architecture &amp; Knowledge Graph.</td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>Clustered Functional Communities (77 Nodes · 88 Edges)</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Clustered Functional Communities (77 Nodes · 88 Edges).</td>
+</tr>
+<tr>
+  <td>15</td>
+  <td><code>🛠️ Tech Stack</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 🛠️ Tech Stack.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>README.md</code></td><td>15 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x14. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 4. Outputs & Docs ====== -->
+<h2 id="outputs-docs">4. Outputs &amp; Docs</h2>
 <p>Outputs &amp; Docs groups implementation around portfolio, system, architecturemd, subsystem, mostly in PORTFOLIO_SYSTEM_ARCHITECTURE.md. This section covers 6 nodes and 5 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
@@ -606,28 +784,38 @@ flowchart LR
 </div>
 <hr>
 
-<!-- ====== 4. Ingestion & Updates ====== -->
-<h2 id="ingest-cache-update">4. Ingestion &amp; Updates</h2>
-<p>Ingestion &amp; Updates groups implementation around swjs, download, assetspy, precache, mostly in sw.js, download_assets.py. This section covers 5 nodes and 3 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 5. Ingestion & Updates ====== -->
+<h2 id="ingest-cache-update">5. Ingestion &amp; Updates</h2>
+<p>Ingestion &amp; Updates groups implementation around swjs, update, graphifypy, scripts, mostly in sw.js, scripts/update_graphify.py, download_assets.py. This section covers 8 nodes and 5 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Ingestion &amp; Updates (5 nodes, 3 edges)
+    %% Section: Ingestion &amp; Updates (8 nodes, 5 edges)
     subgraph ingest_cache_update_sw_js_7f9db13a["sw.js"]
         sw_js_7b62307e("sw.js")
         stephanie_perez_portfolio_sw_precache_assets_7831feb8("PRECACHE_ASSETS<br/><small>sw.js</small>")
         stephanie_perez_portfolio_sw_url_77c8d999("url<br/><small>sw.js</small>")
         stephanie_perez_portfolio_sw_clone_22b987a5("clone<br/><small>sw.js</small>")
     end
+    subgraph ingest_cache_update_scripts_update_graphify_py_21c82d85["scripts/update_graphify.py"]
+        scripts_update_graphify_py_8c83392b("update_graphify.py")
+        scripts_update_graphify_main_9bd74b6d("main()<br/><small>scripts/update_graphify.py</small>")
+        scripts_update_graphify_rationale_1_be7a4fe6("Automated Graphify Knowledge Graph Sync...<br/><small>scripts/update_graphify.py</small>")
+    end
     download_assets_py_d4f276d4("download_assets.py")
     sw_js_7b62307e -->|contains| stephanie_perez_portfolio_sw_precache_assets_7831feb8
     sw_js_7b62307e -->|contains| stephanie_perez_portfolio_sw_url_77c8d999
     sw_js_7b62307e -->|contains| stephanie_perez_portfolio_sw_clone_22b987a5
+    scripts_update_graphify_py_8c83392b -->|contains| scripts_update_graphify_main_9bd74b6d
+    scripts_update_graphify_py_8c83392b -->|explains| scripts_update_graphify_rationale_1_be7a4fe6
     class sw_js_7b62307e module;
     class stephanie_perez_portfolio_sw_precache_assets_7831feb8 async;
     class stephanie_perez_portfolio_sw_url_77c8d999 function;
     class stephanie_perez_portfolio_sw_clone_22b987a5 function;
+    class scripts_update_graphify_py_8c83392b module;
+    class scripts_update_graphify_main_9bd74b6d function;
+    class scripts_update_graphify_rationale_1_be7a4fe6 concept;
     class download_assets_py_d4f276d4 async;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
@@ -684,6 +872,30 @@ flowchart LR
 </tr>
 <tr>
   <td>5</td>
+  <td><code>update_graphify.py</code><br><small style="color:var(--muted)">scripts/update_graphify.py</small></td>
+  <td><span class="tag tag-class">Module</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Module file in scripts/update_graphify.py.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>main()</code><br><small style="color:var(--muted)">scripts/update_graphify.py</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>main() node in scripts/update_graphify.py.</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>Automated Graphify Knowledge Graph Synchronizer. Runs on every git commit (via p</code><br><small style="color:var(--muted)">scripts/update_graphify.py</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Design note for Automated Graphify Knowledge Graph Synchronizer. Runs on every git commit (via p.</td>
+</tr>
+<tr>
+  <td>8</td>
   <td><code>download_assets.py</code><br><small style="color:var(--muted)">download_assets.py</small></td>
   <td><span class="tag tag-async">Async</span></td>
   <td>External entry / no inbound edge</td>
@@ -698,18 +910,19 @@ flowchart LR
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
       <tr><td><code>sw.js</code></td><td>4 nodes</td></tr>
+<tr><td><code>scripts/update_graphify.py</code></td><td>3 nodes</td></tr>
 <tr><td><code>download_assets.py</code></td><td>1 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x3. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x4, explains x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
 
-<!-- ====== 5. UI Core & Global State ====== -->
-<h2 id="ui-core-global-state">5. UI Core &amp; Global State</h2>
+<!-- ====== 6. UI Core & Global State ====== -->
+<h2 id="ui-core-global-state">6. UI Core &amp; Global State</h2>
 <p>UI Core &amp; Global State groups implementation around appjs, allslides, lightboxmodal, lightboximg, mostly in app.js. This section covers 41 nodes and 40 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
@@ -1044,150 +1257,6 @@ flowchart LR
   <div class="card">
     <h4>Design Notes</h4>
     <p>This section comes from graphify community clustering. Relationship summary: contains x40. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
-  </div>
-</div>
-<hr>
-
-<!-- ====== 6. Community 12 ====== -->
-<h2 id="community-12">6. Community 12</h2>
-<p>Community 12 groups implementation around readmemd, interactive, engine, simulator, mostly in README.md. This section covers 9 nodes and 8 internal edges; the diagram shows only representative relationships to stay readable.</p>
-
-<div class="mermaid">
-%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
-flowchart LR
-    %% Section: Community 12 (9 nodes, 8 edges)
-    stephanie_perez_portfolio_readme_key_features_in_816d0477("🌟 Key Features &amp; Interactive Systems<br/><small>README.md</small>")
-    stephanie_perez_portfolio_readme_1_hsi_healthcar_80d7ed9e("1. 🎨 HSI Healthcare Continuous 5-Color...<br/><small>README.md</small>")
-    stephanie_perez_portfolio_readme_2_dual_layer_ca_f2770f9e("2. ⚡ Dual-Layer Caching &amp; Offline PWA E...<br/><small>README.md</small>")
-    stephanie_perez_portfolio_readme_3_native_app_li_eaa0d4cb("3. 🖼️ Native-App Lightbox &amp; Touch Gestures<br/><small>README.md</small>")
-    stephanie_perez_portfolio_readme_4_interactive_p_7ccfff93("4. 📱 Interactive Phone Prototype Simulator<br/><small>README.md</small>")
-    stephanie_perez_portfolio_readme_5_bloomcare_ai_1396449c("5. 🌿 Bloomcare AI Botanical Scanner Sim...<br/><small>README.md</small>")
-    stephanie_perez_portfolio_readme_6_procedural_we_ab83f979("6. 🔊 Procedural Web Audio API Synthesizer<br/><small>README.md</small>")
-    stephanie_perez_portfolio_readme_7_cultural_east_0c814f1a("7. 🎁 Cultural Easter Eggs<br/><small>README.md</small>")
-    stephanie_perez_portfolio_readme_8_interactive_r_80a61d52("8. 📄 Interactive Resume &amp; Bio Drawer<br/><small>README.md</small>")
-    stephanie_perez_portfolio_readme_key_features_in_816d0477 -->|contains| stephanie_perez_portfolio_readme_1_hsi_healthcar_80d7ed9e
-    stephanie_perez_portfolio_readme_key_features_in_816d0477 -->|contains| stephanie_perez_portfolio_readme_2_dual_layer_ca_f2770f9e
-    stephanie_perez_portfolio_readme_key_features_in_816d0477 -->|contains| stephanie_perez_portfolio_readme_3_native_app_li_eaa0d4cb
-    stephanie_perez_portfolio_readme_key_features_in_816d0477 -->|contains| stephanie_perez_portfolio_readme_4_interactive_p_7ccfff93
-    stephanie_perez_portfolio_readme_key_features_in_816d0477 -->|contains| stephanie_perez_portfolio_readme_5_bloomcare_ai_1396449c
-    stephanie_perez_portfolio_readme_key_features_in_816d0477 -->|contains| stephanie_perez_portfolio_readme_6_procedural_we_ab83f979
-    stephanie_perez_portfolio_readme_key_features_in_816d0477 -->|contains| stephanie_perez_portfolio_readme_7_cultural_east_0c814f1a
-    stephanie_perez_portfolio_readme_key_features_in_816d0477 -->|contains| stephanie_perez_portfolio_readme_8_interactive_r_80a61d52
-    class stephanie_perez_portfolio_readme_key_features_in_816d0477 concept;
-    class stephanie_perez_portfolio_readme_1_hsi_healthcar_80d7ed9e concept;
-    class stephanie_perez_portfolio_readme_2_dual_layer_ca_f2770f9e concept;
-    class stephanie_perez_portfolio_readme_3_native_app_li_eaa0d4cb concept;
-    class stephanie_perez_portfolio_readme_4_interactive_p_7ccfff93 concept;
-    class stephanie_perez_portfolio_readme_5_bloomcare_ai_1396449c concept;
-    class stephanie_perez_portfolio_readme_6_procedural_we_ab83f979 concept;
-    class stephanie_perez_portfolio_readme_7_cultural_east_0c814f1a concept;
-    class stephanie_perez_portfolio_readme_8_interactive_r_80a61d52 concept;
-    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
-    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
-    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
-    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
-    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
-    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
-    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
-    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
-    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
-</div>
-
-<h3>Call Details</h3>
-<table class="call-table">
-<tr>
-  <th style="width:5%">#</th>
-  <th style="width:28%">Node</th>
-  <th style="width:10%">Type</th>
-  <th style="width:17%">Caller</th>
-  <th style="width:20%">Callees</th>
-  <th style="width:20%">Description</th>
-</tr>
-<tr>
-  <td>1</td>
-  <td><code>🌟 Key Features &amp; Interactive Systems</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 🌟 Key Features &amp; Interactive Systems.</td>
-</tr>
-<tr>
-  <td>2</td>
-  <td><code>1. 🎨 HSI Healthcare Continuous 5-Color Pinning Engine</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 1. 🎨 HSI Healthcare Continuous 5-Color Pinning Engine.</td>
-</tr>
-<tr>
-  <td>3</td>
-  <td><code>2. ⚡ Dual-Layer Caching &amp; Offline PWA Engine (`sw.js`)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 2. ⚡ Dual-Layer Caching &amp; Offline PWA Engine (`sw.js`).</td>
-</tr>
-<tr>
-  <td>4</td>
-  <td><code>3. 🖼️ Native-App Lightbox &amp; Touch Gestures</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 3. 🖼️ Native-App Lightbox &amp; Touch Gestures.</td>
-</tr>
-<tr>
-  <td>5</td>
-  <td><code>4. 📱 Interactive Phone Prototype Simulator</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 4. 📱 Interactive Phone Prototype Simulator.</td>
-</tr>
-<tr>
-  <td>6</td>
-  <td><code>5. 🌿 Bloomcare AI Botanical Scanner Simulator</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 5. 🌿 Bloomcare AI Botanical Scanner Simulator.</td>
-</tr>
-<tr>
-  <td>7</td>
-  <td><code>6. 🔊 Procedural Web Audio API Synthesizer</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 6. 🔊 Procedural Web Audio API Synthesizer.</td>
-</tr>
-<tr>
-  <td>8</td>
-  <td><code>7. 🎁 Cultural Easter Eggs</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 7. 🎁 Cultural Easter Eggs.</td>
-</tr>
-<tr>
-  <td>9</td>
-  <td><code>8. 📄 Interactive Resume &amp; Bio Drawer</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 8. 📄 Interactive Resume &amp; Bio Drawer.</td>
-</tr>
-</table>
-
-<div class="grid">
-  <div class="card">
-    <h4>Key Files</h4>
-    <table style="width:100%;font-size:0.85rem;">
-      <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>README.md</code></td><td>9 nodes</td></tr>
-    </table>
-  </div>
-  <div class="card">
-    <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x8. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
@@ -1755,17 +1824,17 @@ flowchart LR
   <div class="card">
     <h4>Graph</h4>
     <table style="width:100%;font-size:0.85rem;">
-      <tr><td>Nodes</td><td>112</td></tr>
-      <tr><td>Edges</td><td>126</td></tr>
+      <tr><td>Nodes</td><td>117</td></tr>
+      <tr><td>Edges</td><td>130</td></tr>
       <tr><td>Hyperedges</td><td>0</td></tr>
-      <tr><td>Communities</td><td>14</td></tr>
+      <tr><td>Communities</td><td>15</td></tr>
       <tr><td>Documented Sections</td><td>12</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Edge Confidence</h4>
     <table style="width:100%;font-size:0.85rem;">
-      <tr><td>EXTRACTED</td><td>126</td></tr>
+      <tr><td>EXTRACTED</td><td>130</td></tr>
       <tr><td>INFERRED</td><td>0</td></tr>
       <tr><td>AMBIGUOUS</td><td>0</td></tr>
     </table>
@@ -1774,7 +1843,7 @@ flowchart LR
 
 <div style="text-align:center; padding:40px 0; color: var(--muted); font-size:0.9rem;">
   <p>stephanie-perez-portfolio — Architecture Documentation</p>
-  <p>Generated: 2026-09-20 16:20 UTC · graphify callflow-html</p>
+  <p>Generated: 2026-09-20 16:53 UTC · graphify callflow-html</p>
 </div>
 
 </div><!-- .container -->

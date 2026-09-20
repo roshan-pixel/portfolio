@@ -616,6 +616,33 @@
       "norm_label": "clone"
     },
     {
+      "label": "update_graphify.py",
+      "file_type": "code",
+      "source_file": "scripts/update_graphify.py",
+      "source_location": "L1",
+      "id": "scripts_update_graphify_py",
+      "community": 14,
+      "norm_label": "update_graphify.py"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/update_graphify.py",
+      "source_location": "L14",
+      "id": "scripts_update_graphify_main",
+      "community": 14,
+      "norm_label": "main()"
+    },
+    {
+      "label": "Automated Graphify Knowledge Graph Synchronizer. Runs on every git commit (via p",
+      "file_type": "rationale",
+      "source_file": "scripts/update_graphify.py",
+      "source_location": "L1",
+      "id": "scripts_update_graphify_rationale_1",
+      "community": 14,
+      "norm_label": "automated graphify knowledge graph synchronizer. runs on every git commit (via p"
+    },
+    {
       "label": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "file_type": "document",
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
@@ -801,14 +828,32 @@
       "source_file": "README.md",
       "source_location": "L1",
       "id": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio",
-      "community": 1,
+      "community": 12,
       "norm_label": "himanshi parihar \u2014 ui/ux & graphic designer portfolio"
+    },
+    {
+      "label": "\ud83c\udf10 Live Interactive Architecture & Graphify Cluster",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L9",
+      "id": "stephanie_perez_portfolio_readme_live_interactive_architecture_graphify_cluster",
+      "community": 12,
+      "norm_label": "\ud83c\udf10 live interactive architecture & graphify cluster"
+    },
+    {
+      "label": "\ud83d\udd0d Graphify Cluster View (Rendered on GitHub)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L18",
+      "id": "stephanie_perez_portfolio_readme_graphify_cluster_view_rendered_on_github",
+      "community": 12,
+      "norm_label": "\ud83d\udd0d graphify cluster view (rendered on github)"
     },
     {
       "label": "\ud83c\udf1f Key Features & Interactive Systems",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L9",
+      "source_location": "L26",
       "id": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
       "community": 12,
       "norm_label": "\ud83c\udf1f key features & interactive systems"
@@ -817,7 +862,7 @@
       "label": "1. \ud83c\udfa8 HSI Healthcare Continuous 5-Color Pinning Engine",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L11",
+      "source_location": "L28",
       "id": "stephanie_perez_portfolio_readme_1_hsi_healthcare_continuous_5_color_pinning_engine",
       "community": 12,
       "norm_label": "1. \ud83c\udfa8 hsi healthcare continuous 5-color pinning engine"
@@ -826,7 +871,7 @@
       "label": "2. \u26a1 Dual-Layer Caching & Offline PWA Engine (`sw.js`)",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L22",
+      "source_location": "L39",
       "id": "stephanie_perez_portfolio_readme_2_dual_layer_caching_offline_pwa_engine_sw_js",
       "community": 12,
       "norm_label": "2. \u26a1 dual-layer caching & offline pwa engine (`sw.js`)"
@@ -835,7 +880,7 @@
       "label": "3. \ud83d\uddbc\ufe0f Native-App Lightbox & Touch Gestures",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L27",
+      "source_location": "L44",
       "id": "stephanie_perez_portfolio_readme_3_native_app_lightbox_touch_gestures",
       "community": 12,
       "norm_label": "3. \ud83d\uddbc\ufe0f native-app lightbox & touch gestures"
@@ -844,7 +889,7 @@
       "label": "4. \ud83d\udcf1 Interactive Phone Prototype Simulator",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L32",
+      "source_location": "L49",
       "id": "stephanie_perez_portfolio_readme_4_interactive_phone_prototype_simulator",
       "community": 12,
       "norm_label": "4. \ud83d\udcf1 interactive phone prototype simulator"
@@ -853,7 +898,7 @@
       "label": "5. \ud83c\udf3f Bloomcare AI Botanical Scanner Simulator",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L36",
+      "source_location": "L53",
       "id": "stephanie_perez_portfolio_readme_5_bloomcare_ai_botanical_scanner_simulator",
       "community": 12,
       "norm_label": "5. \ud83c\udf3f bloomcare ai botanical scanner simulator"
@@ -862,7 +907,7 @@
       "label": "6. \ud83d\udd0a Procedural Web Audio API Synthesizer",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L39",
+      "source_location": "L56",
       "id": "stephanie_perez_portfolio_readme_6_procedural_web_audio_api_synthesizer",
       "community": 12,
       "norm_label": "6. \ud83d\udd0a procedural web audio api synthesizer"
@@ -871,7 +916,7 @@
       "label": "7. \ud83c\udf81 Cultural Easter Eggs",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L43",
+      "source_location": "L60",
       "id": "stephanie_perez_portfolio_readme_7_cultural_easter_eggs",
       "community": 12,
       "norm_label": "7. \ud83c\udf81 cultural easter eggs"
@@ -880,7 +925,7 @@
       "label": "8. \ud83d\udcc4 Interactive Resume & Bio Drawer",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L47",
+      "source_location": "L64",
       "id": "stephanie_perez_portfolio_readme_8_interactive_resume_bio_drawer",
       "community": 12,
       "norm_label": "8. \ud83d\udcc4 interactive resume & bio drawer"
@@ -889,25 +934,25 @@
       "label": "\ud83c\udfd7\ufe0f System Architecture & Knowledge Graph",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L54",
+      "source_location": "L71",
       "id": "stephanie_perez_portfolio_readme_system_architecture_knowledge_graph",
-      "community": 1,
+      "community": 12,
       "norm_label": "\ud83c\udfd7\ufe0f system architecture & knowledge graph"
     },
     {
       "label": "Clustered Functional Communities (77 Nodes \u00b7 88 Edges)",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L64",
+      "source_location": "L81",
       "id": "stephanie_perez_portfolio_readme_clustered_functional_communities_77_nodes_88_edges",
-      "community": 1,
+      "community": 12,
       "norm_label": "clustered functional communities (77 nodes \u00b7 88 edges)"
     },
     {
       "label": "\ud83d\ude80 How to Run Locally",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L79",
+      "source_location": "L96",
       "id": "stephanie_perez_portfolio_readme_how_to_run_locally",
       "community": 1,
       "norm_label": "\ud83d\ude80 how to run locally"
@@ -916,7 +961,7 @@
       "label": "Method 1: Local HTTP Server (Recommended)",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L81",
+      "source_location": "L98",
       "id": "stephanie_perez_portfolio_readme_method_1_local_http_server_recommended",
       "community": 1,
       "norm_label": "method 1: local http server (recommended)"
@@ -925,7 +970,7 @@
       "label": "code:powershell (# Navigate to the portfolio folder)",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L84",
+      "source_location": "L101",
       "id": "stephanie_perez_portfolio_readme_codeblock_1",
       "community": 1,
       "norm_label": "code:powershell (# navigate to the portfolio folder)"
@@ -934,7 +979,7 @@
       "label": "Method 2: Direct File Open",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L93",
+      "source_location": "L110",
       "id": "stephanie_perez_portfolio_readme_method_2_direct_file_open",
       "community": 1,
       "norm_label": "method 2: direct file open"
@@ -943,7 +988,7 @@
       "label": "code:powershell (Start-Process \"C:\\Users\\sgarm\\stephanie-perez-portfolio\\inde)",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L95",
+      "source_location": "L112",
       "id": "stephanie_perez_portfolio_readme_codeblock_2",
       "community": 1,
       "norm_label": "code:powershell (start-process \"c:\\users\\sgarm\\stephanie-perez-portfolio\\inde)"
@@ -952,7 +997,7 @@
       "label": "\ud83d\udd0d Exploring the Graphify Knowledge Graph",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L101",
+      "source_location": "L118",
       "id": "stephanie_perez_portfolio_readme_exploring_the_graphify_knowledge_graph",
       "community": 1,
       "norm_label": "\ud83d\udd0d exploring the graphify knowledge graph"
@@ -961,7 +1006,7 @@
       "label": "code:powershell (# Open the interactive 3D/2D physics graph)",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L105",
+      "source_location": "L122",
       "id": "stephanie_perez_portfolio_readme_codeblock_3",
       "community": 1,
       "norm_label": "code:powershell (# open the interactive 3d/2d physics graph)"
@@ -970,9 +1015,9 @@
       "label": "\ud83d\udee0\ufe0f Tech Stack",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L127",
+      "source_location": "L144",
       "id": "stephanie_perez_portfolio_readme_tech_stack",
-      "community": 1,
+      "community": 12,
       "norm_label": "\ud83d\udee0\ufe0f tech stack"
     },
     {
@@ -1831,12 +1876,32 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "scripts/update_graphify.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "scripts_update_graphify_py",
+      "target": "scripts_update_graphify_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/update_graphify.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "scripts_update_graphify_rationale_1",
+      "target": "scripts_update_graphify_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "portfolio_system_architecture_md",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_portfolio_system_architecture_graphify_knowledge_graph",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_portfolio_system_architecture_graphify_knowledge_graph"
     },
     {
       "relation": "contains",
@@ -1844,9 +1909,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_portfolio_system_architecture_graphify_knowledge_graph",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_1_graphify_knowledge_graph_summary",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_1_graphify_knowledge_graph_summary"
     },
     {
       "relation": "contains",
@@ -1854,9 +1919,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_portfolio_system_architecture_graphify_knowledge_graph",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_2_clustered_functional_communities",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_2_clustered_functional_communities"
     },
     {
       "relation": "contains",
@@ -1864,9 +1929,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_portfolio_system_architecture_graphify_knowledge_graph",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_3_deep_system_architecture",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_3_deep_system_architecture"
     },
     {
       "relation": "contains",
@@ -1874,9 +1939,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_portfolio_system_architecture_graphify_knowledge_graph",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_4_key_subsystem_workflows",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_4_key_subsystem_workflows"
     },
     {
       "relation": "contains",
@@ -1884,9 +1949,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L194",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_portfolio_system_architecture_graphify_knowledge_graph",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_5_web_audio_api_procedural_synthesizer",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_5_web_audio_api_procedural_synthesizer"
     },
     {
       "relation": "contains",
@@ -1894,9 +1959,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L202",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_portfolio_system_architecture_graphify_knowledge_graph",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_6_how_to_query_the_graphify_graph",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_6_how_to_query_the_graphify_graph"
     },
     {
       "relation": "contains",
@@ -1904,9 +1969,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_1_graphify_knowledge_graph_summary",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_graphify_artifacts_generated_in_graphify_out",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_graphify_artifacts_generated_in_graphify_out"
     },
     {
       "relation": "contains",
@@ -1914,9 +1979,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_graphify_artifacts_generated_in_graphify_out",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_1",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_1"
     },
     {
       "relation": "contains",
@@ -1924,9 +1989,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_2_clustered_functional_communities",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_2",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_2"
     },
     {
       "relation": "contains",
@@ -1934,9 +1999,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_2_clustered_functional_communities",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_community_breakdown",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_community_breakdown"
     },
     {
       "relation": "contains",
@@ -1944,9 +2009,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_3_deep_system_architecture",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_3",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_3"
     },
     {
       "relation": "contains",
@@ -1954,9 +2019,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L122",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_4_key_subsystem_workflows",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_subsystem_a_service_worker_offline_image_cache",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_subsystem_a_service_worker_offline_image_cache"
     },
     {
       "relation": "contains",
@@ -1964,9 +2029,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L151",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_4_key_subsystem_workflows",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_subsystem_b_hsi_healthcare_5_color_pinning_engine",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_subsystem_b_hsi_healthcare_5_color_pinning_engine"
     },
     {
       "relation": "contains",
@@ -1974,9 +2039,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L186",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_4_key_subsystem_workflows",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_subsystem_c_predictive_lightbox_touch_gestures",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_subsystem_c_predictive_lightbox_touch_gestures"
     },
     {
       "relation": "contains",
@@ -1984,9 +2049,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L125",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_subsystem_a_service_worker_offline_image_cache",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_4",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_4"
     },
     {
       "relation": "contains",
@@ -1994,9 +2059,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_subsystem_b_hsi_healthcare_5_color_pinning_engine",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_5",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_5"
     },
     {
       "relation": "contains",
@@ -2004,9 +2069,9 @@
       "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
       "source_location": "L206",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_portfolio_system_architecture_6_how_to_query_the_graphify_graph",
-      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_6",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_6"
     },
     {
       "relation": "contains",
@@ -2014,9 +2079,9 @@
       "source_file": "README.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_md",
-      "target": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio"
     },
     {
       "relation": "contains",
@@ -2035,8 +2100,18 @@
       "source_location": "L9",
       "weight": 1.0,
       "source": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio",
-      "target": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
+      "target": "stephanie_perez_portfolio_readme_live_interactive_architecture_graphify_cluster",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio",
+      "target": "stephanie_perez_portfolio_readme_key_features_interactive_systems"
     },
     {
       "relation": "contains",
@@ -2044,9 +2119,9 @@
       "source_file": "README.md",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio",
-      "target": "stephanie_perez_portfolio_readme_system_architecture_knowledge_graph",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_system_architecture_knowledge_graph"
     },
     {
       "relation": "contains",
@@ -2054,9 +2129,9 @@
       "source_file": "README.md",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio",
-      "target": "stephanie_perez_portfolio_readme_how_to_run_locally",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_how_to_run_locally"
     },
     {
       "relation": "contains",
@@ -2064,9 +2139,9 @@
       "source_file": "README.md",
       "source_location": "L101",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio",
-      "target": "stephanie_perez_portfolio_readme_exploring_the_graphify_knowledge_graph",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_exploring_the_graphify_knowledge_graph"
     },
     {
       "relation": "contains",
@@ -2074,8 +2149,18 @@
       "source_file": "README.md",
       "source_location": "L127",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio",
-      "target": "stephanie_perez_portfolio_readme_tech_stack",
+      "target": "stephanie_perez_portfolio_readme_tech_stack"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_live_interactive_architecture_graphify_cluster",
+      "target": "stephanie_perez_portfolio_readme_graphify_cluster_view_rendered_on_github",
       "confidence_score": 1.0
     },
     {
@@ -2084,9 +2169,9 @@
       "source_file": "README.md",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
-      "target": "stephanie_perez_portfolio_readme_1_hsi_healthcare_continuous_5_color_pinning_engine",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_1_hsi_healthcare_continuous_5_color_pinning_engine"
     },
     {
       "relation": "contains",
@@ -2094,9 +2179,9 @@
       "source_file": "README.md",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
-      "target": "stephanie_perez_portfolio_readme_2_dual_layer_caching_offline_pwa_engine_sw_js",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_2_dual_layer_caching_offline_pwa_engine_sw_js"
     },
     {
       "relation": "contains",
@@ -2104,9 +2189,9 @@
       "source_file": "README.md",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
-      "target": "stephanie_perez_portfolio_readme_3_native_app_lightbox_touch_gestures",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_3_native_app_lightbox_touch_gestures"
     },
     {
       "relation": "contains",
@@ -2114,9 +2199,9 @@
       "source_file": "README.md",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
-      "target": "stephanie_perez_portfolio_readme_4_interactive_phone_prototype_simulator",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_4_interactive_phone_prototype_simulator"
     },
     {
       "relation": "contains",
@@ -2124,9 +2209,9 @@
       "source_file": "README.md",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
-      "target": "stephanie_perez_portfolio_readme_5_bloomcare_ai_botanical_scanner_simulator",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_5_bloomcare_ai_botanical_scanner_simulator"
     },
     {
       "relation": "contains",
@@ -2134,9 +2219,9 @@
       "source_file": "README.md",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
-      "target": "stephanie_perez_portfolio_readme_6_procedural_web_audio_api_synthesizer",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_6_procedural_web_audio_api_synthesizer"
     },
     {
       "relation": "contains",
@@ -2144,9 +2229,9 @@
       "source_file": "README.md",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
-      "target": "stephanie_perez_portfolio_readme_7_cultural_easter_eggs",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_7_cultural_easter_eggs"
     },
     {
       "relation": "contains",
@@ -2154,9 +2239,9 @@
       "source_file": "README.md",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
-      "target": "stephanie_perez_portfolio_readme_8_interactive_resume_bio_drawer",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_8_interactive_resume_bio_drawer"
     },
     {
       "relation": "contains",
@@ -2164,9 +2249,9 @@
       "source_file": "README.md",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_system_architecture_knowledge_graph",
-      "target": "stephanie_perez_portfolio_readme_clustered_functional_communities_77_nodes_88_edges",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_clustered_functional_communities_77_nodes_88_edges"
     },
     {
       "relation": "contains",
@@ -2174,9 +2259,9 @@
       "source_file": "README.md",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_how_to_run_locally",
-      "target": "stephanie_perez_portfolio_readme_method_1_local_http_server_recommended",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_method_1_local_http_server_recommended"
     },
     {
       "relation": "contains",
@@ -2184,9 +2269,9 @@
       "source_file": "README.md",
       "source_location": "L93",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_how_to_run_locally",
-      "target": "stephanie_perez_portfolio_readme_method_2_direct_file_open",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_method_2_direct_file_open"
     },
     {
       "relation": "contains",
@@ -2194,9 +2279,9 @@
       "source_file": "README.md",
       "source_location": "L84",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_method_1_local_http_server_recommended",
-      "target": "stephanie_perez_portfolio_readme_codeblock_1",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_codeblock_1"
     },
     {
       "relation": "contains",
@@ -2214,9 +2299,9 @@
       "source_file": "README.md",
       "source_location": "L95",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_method_2_direct_file_open",
-      "target": "stephanie_perez_portfolio_readme_codeblock_2",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_codeblock_2"
     },
     {
       "relation": "contains",
@@ -2254,9 +2339,9 @@
       "source_file": "README.md",
       "source_location": "L105",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_exploring_the_graphify_knowledge_graph",
-      "target": "stephanie_perez_portfolio_readme_codeblock_3",
-      "confidence_score": 1.0
+      "target": "stephanie_perez_portfolio_readme_codeblock_3"
     },
     {
       "relation": "contains",
@@ -2290,5 +2375,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "31304d99f673a2bc042f960f6b3479450dc84b90"
+  "built_at_commit": "a3665a1aa91d56e0d20bf9e339865d86d4c72bc6"
 }
