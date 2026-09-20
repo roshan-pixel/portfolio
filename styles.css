@@ -765,14 +765,18 @@ a {
   cursor: zoom-in;
   position: relative;
   background: #0d0e14;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slide-img-box img {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain;
   transition: transform 0.4s ease, opacity 0.3s ease;
-  content-visibility: auto;
 }
 
 .slide-img-box:hover img {

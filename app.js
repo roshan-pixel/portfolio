@@ -596,13 +596,13 @@ if (brandingSection) {
 })();
 
 // ==========================================================================
-// 🌊 SCROLL-REVEAL — Fade-in sections on scroll (Works Down AND Up!)
+// 🌊 SCROLL-REVEAL — Smooth fade-in for cards (Never hides once revealed)
 // ==========================================================================
 (function initScrollReveal() {
-  const revealEls = document.querySelectorAll('.case-study-card, .metric-box, .slide-img-box');
+  const revealEls = document.querySelectorAll('.case-study-card, .metric-box');
   revealEls.forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
+    el.style.transform = 'translateY(16px)';
     el.style.transition = 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
   });
 
@@ -612,19 +612,10 @@ if (brandingSection) {
       if (entry.isIntersecting) {
         el.style.opacity = '1';
         el.style.transform = 'translateY(0)';
-      } else {
-        // Element left viewport — reset position based on scroll direction so it animates when re-entering
-        const rect = entry.boundingClientRect;
-        if (rect.top > window.innerHeight) {
-          el.style.transform = 'translateY(24px)';
-          el.style.opacity = '0';
-        } else if (rect.bottom < 0) {
-          el.style.transform = 'translateY(-24px)';
-          el.style.opacity = '0';
-        }
+        revealObserver.unobserve(el); // Permanent visibility: never disappear or flicker on mobile scroll!
       }
     });
-  }, { threshold: 0.08, rootMargin: '40px 0px 40px 0px' });
+  }, { threshold: 0.04, rootMargin: '80px 0px 80px 0px' });
 
   revealEls.forEach(el => revealObserver.observe(el));
 })();
