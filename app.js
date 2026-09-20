@@ -26,6 +26,46 @@ function scrollToSection(id) {
   }
 }
 
+// Cache Storage & Memory Preloader Engine
+const CACHE_NAME = 'himanshi-portfolio-v1';
+
+function cacheImage(src) {
+  if (!src) return Promise.resolve();
+  // 1. Warm up browser in-memory and HTTP cache
+  const preloader = new Image();
+  preloader.decoding = 'async';
+  preloader.src = src;
+
+  // 2. Persist in Cache Storage for offline/instant reload
+  if ('caches' in window) {
+    try {
+      const fullUrl = new URL(src, window.location.href).href;
+      return caches.open(CACHE_NAME).then((cache) => {
+        return cache.match(fullUrl).then((cached) => {
+          if (cached) return cached;
+          return fetch(fullUrl).then((res) => {
+            if (res && res.status === 200) {
+              cache.put(fullUrl, res.clone());
+            }
+            return res;
+          }).catch(() => {});
+        });
+      }).catch(() => {});
+    } catch (e) {
+      return Promise.resolve();
+    }
+  }
+  return Promise.resolve();
+}
+
+function preloadNeighborSlides(index) {
+  if (!allSlides.length) return;
+  const nextIdx = (index + 1) % allSlides.length;
+  const next2Idx = (index + 2) % allSlides.length;
+  const prevIdx = (index - 1 + allSlides.length) % allSlides.length;
+  [allSlides[nextIdx], allSlides[next2Idx], allSlides[prevIdx]].forEach(cacheImage);
+}
+
 // Lightbox Controls
 const lightboxModal = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
@@ -39,6 +79,7 @@ function openLightbox(src, alt = '') {
   lightboxImg.alt = alt;
   lightboxModal.classList.add('open');
   document.body.style.overflow = 'hidden';
+  preloadNeighborSlides(currentSlideIndex);
 }
 
 function closeLightboxDirect() {
@@ -61,6 +102,7 @@ function navigateLightbox(direction, e) {
     currentSlideIndex = 0;
   }
   lightboxImg.src = allSlides[currentSlideIndex];
+  preloadNeighborSlides(currentSlideIndex);
 }
 
 // Keyboard navigation
@@ -159,6 +201,8 @@ function switchSimSlide(src, btnElement, captionText) {
   const simImg = document.getElementById('tap-sim-img');
   const caption = document.getElementById('sim-caption-text');
   if (!simImg) return;
+
+  cacheImage(src);
 
   // Update tabs active state
   document.querySelectorAll('.sim-tab-btn').forEach(btn => {
@@ -749,4 +793,119 @@ function stopHsiContinuousMotion() {
 
   observer.observe(footerHeading);
 })();
+
+// ==========================================================================
+// 🚀 INTELLIGENT IMAGE CACHE & RECOVERY ENGINE (BROWSER & MOBILE OPTIMIZED)
+// ==========================================================================
+(function initImageCacheEngine() {
+  // Update cookie & localStorage metadata for cached status tracking
+  function updateCacheMeta(cachedCount, total) {
+    const expiryDays = 30;
+    const d = new Date();
+    d.setTime(d.getTime() + (expiryDays * 24 * 60 * 60 * 1000));
+    document.cookie = `hp_img_cache=v1_${cachedCount}; expires=${d.toUTCString()}; path=/; SameSite=Lax`;
+    try {
+      localStorage.setItem('hp_img_cached_count', cachedCount);
+      localStorage.setItem('hp_img_cached_total', total);
+      localStorage.setItem('hp_img_cached_ts', Date.now());
+    } catch (e) {}
+  }
+
+  // Auto-retry & resilience handler for all images on mobile/flaky connections
+  function setupImageResilience() {
+    const images = document.querySelectorAll('img');
+    images.forEach((img) => {
+      img.decoding = 'async';
+
+      // Auto-retry up to 3 times on failed/partial loads
+      img.addEventListener('error', function onImgError() {
+        if (!img.src || img.id === 'lightbox-img') return;
+        const retries = parseInt(img.dataset.retries || '0', 10);
+        if (retries < 3) {
+          img.dataset.retries = retries + 1;
+          const delay = (retries + 1) * 800;
+          setTimeout(() => {
+            const rawSrc = img.src.split('?')[0];
+            img.src = `${rawSrc}?retry=${retries + 1}&t=${Date.now()}`;
+          }, delay);
+        }
+      });
+
+      // Self-heal corrupted/empty loads after initial paint
+      if (img.id !== 'lightbox-img' && img.complete && img.naturalWidth === 0 && img.getAttribute('src')) {
+        setTimeout(() => {
+          if (img.naturalWidth === 0 && img.getAttribute('src')) {
+            const rawSrc = img.src.split('?')[0];
+            img.src = `${rawSrc}?fix=${Date.now()}`;
+          }
+        }, 1200);
+      }
+    });
+  }
+
+  // Progressive Idle Background Preloader for all 60 slide assets
+  function startBackgroundSlidePreloader() {
+    // If user has Data Saver enabled on mobile, respect bandwidth
+    if (navigator.connection && (navigator.connection.saveData || navigator.connection.effectiveType === '2g')) {
+      return;
+    }
+
+    let idx = 0;
+    let cachedCount = 0;
+    const total = allSlides.length;
+
+    function processBatch() {
+      if (idx >= total) {
+        updateCacheMeta(cachedCount, total);
+        return;
+      }
+
+      // Preload 2 slides per batch to keep main thread and cellular connection smooth
+      const batch = allSlides.slice(idx, idx + 2);
+      idx += 2;
+
+      Promise.all(batch.map((src) => cacheImage(src)))
+        .then(() => {
+          cachedCount = Math.min(idx, total);
+          updateCacheMeta(cachedCount, total);
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(processBatch, { timeout: 1500 });
+          } else {
+            setTimeout(processBatch, 180);
+          }
+        })
+        .catch(() => {
+          setTimeout(processBatch, 300);
+        });
+    }
+
+    // Delay start slightly after initial page load to prioritize critical UI paint
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(processBatch, { timeout: 2500 });
+    } else {
+      setTimeout(processBatch, 1200);
+    }
+  }
+
+  // Initialize after page load
+  window.addEventListener('load', () => {
+    // 1. Register Service Worker for persistent caching across sessions
+    if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+      navigator.serviceWorker.register('sw.js', { scope: './' }).catch(() => {});
+    }
+
+    // 2. Attach resilience and retry logic to all images
+    setupImageResilience();
+
+    // 3. Preload all visible in-page images immediately into CacheStorage
+    document.querySelectorAll('img[src]').forEach((img) => {
+      const src = img.getAttribute('src');
+      if (src) cacheImage(src);
+    });
+
+    // 4. Start idle background prefetch of all 60 slides
+    startBackgroundSlidePreloader();
+  });
+})();
+
 

@@ -764,14 +764,15 @@ a {
   border: 1px solid var(--border);
   cursor: zoom-in;
   position: relative;
-  background: #000;
+  background: #0d0e14;
 }
 
 .slide-img-box img {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+  content-visibility: auto;
 }
 
 .slide-img-box:hover img {
@@ -821,6 +822,7 @@ a {
   object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .lightbox-close-btn {
