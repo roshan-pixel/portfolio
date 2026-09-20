@@ -298,31 +298,16 @@
               </div>
             </div>
           </div>
-          <!-- 3D Card Stack for Experience Focus -->
-          <div class="card-stack-wrapper" id="exp-stack-wrapper">
-            <div class="card-stack-controls">
-              <span class="stack-indicator">🗂️ 3D Layered Card Stack (Click card or button to cycle)</span>
-              <button class="stack-cycle-btn" onclick="cycleCardStack(event)">Next Slide 🔀</button>
-            </div>
-            <div class="card-stack" id="exp-focus-stack" onclick="cycleCardStack(event)">
-              <div class="stack-card card-pos-1" data-index="0">
-                <img src="assets/slide_24.jpg" alt="Experience Focus — Identity Foundation" />
-                <div class="stack-card-badge">Card 1 / 3 — Brand Identity Mark</div>
-              </div>
-              <div class="stack-card card-pos-2" data-index="1">
-                <img src="assets/slide_25.jpg" alt="Experience Focus — Stationery & Tokens" />
-                <div class="stack-card-badge">Card 2 / 3 — Guidelines & Collateral</div>
-              </div>
-              <div class="stack-card card-pos-3" data-index="2">
-                <img src="assets/slide_26.jpg" alt="Experience Focus — Digital Applications" />
-                <div class="stack-card-badge">Card 3 / 3 — Digital Presentation</div>
-              </div>
+          <div class="slides-gallery">
+            <div class="slide-img-box" onclick="openLightbox('assets/slide_25.jpg', 'Experience Focus Brand Guidelines & Collateral')">
+              <img src="assets/slide_25.jpg" alt="Experience Focus identity showcase" loading="lazy" />
+              <div class="slide-caption-overlay">Inspect stationery and tokens</div>
             </div>
           </div>
         </article>
 
         <!-- Case Study: All In Agents (AIA) -->
-        <article class="case-study-card" id="aia-case-study">
+        <article class="case-study-card">
           <div class="case-study-header">
             <div>
               <h3 class="case-study-title">All In Agents (AIA)</h3>
@@ -336,42 +321,16 @@
               </div>
             </div>
           </div>
-
-          <!-- Interactive Walkthrough Preview (NO LIGHTBOX POPUP) -->
-          <div class="aia-preview-container" id="aia-preview-container">
-            <div class="aia-step-nav">
-              <button class="aia-step-btn active" onclick="setAiaStep(0, this)">
-                <span class="step-num">01</span>
-                <span>About Project</span>
-              </button>
-              <button class="aia-step-btn" onclick="setAiaStep(1, this)">
-                <span class="step-num">02</span>
-                <span>Left (Mark)</span>
-              </button>
-              <button class="aia-step-btn" onclick="setAiaStep(2, this)">
-                <span class="step-num">03</span>
-                <span>Center (AIA Core)</span>
-              </button>
-              <button class="aia-step-btn" onclick="setAiaStep(3, this)">
-                <span class="step-num">04</span>
-                <span>Bottom (Assets)</span>
-              </button>
-            </div>
-
-            <div class="aia-preview-viewport" onclick="cycleAiaStep()">
-              <img id="aia-preview-img" src="assets/slide_29.jpg" alt="All In Agents Preview" class="aia-preview-img" />
-              <div class="aia-caption-bar">
-                <span id="aia-caption-text">01 • About the Project: Strategic Identity Narrative</span>
-                <span class="aia-no-popup-badge">🔒 Inline Preview (No Lightbox)</span>
-              </div>
-              <button class="aia-nav-arrow aia-arrow-prev" onclick="changeAiaStep(-1, event)" aria-label="Previous View">‹</button>
-              <button class="aia-nav-arrow aia-arrow-next" onclick="changeAiaStep(1, event)" aria-label="Next View">›</button>
+          <div class="slides-gallery">
+            <div class="slide-img-box" onclick="openLightbox('assets/slide_29.jpg', 'All In Agents Brand Narrative')">
+              <img src="assets/slide_29.jpg" alt="All In Agents identity narrative" loading="lazy" />
+              <div class="slide-caption-overlay">Inspect case study overview</div>
             </div>
           </div>
         </article>
 
         <!-- Case Study: LMNT (Element) Events -->
-        <article class="case-study-card" id="lmnt-case-study">
+        <article class="case-study-card">
           <div class="case-study-header">
             <div>
               <h3 class="case-study-title">LMNT (Element) Events</h3>
@@ -385,41 +344,14 @@
               </div>
             </div>
           </div>
-
-          <!-- Horizontally Scrolling Image Reel for LMNT -->
-          <div class="lmnt-scroll-showcase">
-            <div class="lmnt-reel-header">
-              <span class="lmnt-reel-label">🎞️ Scrollable Brand Gallery (Drag or use arrows)</span>
-              <div class="lmnt-reel-controls">
-                <button class="lmnt-scroll-btn" onclick="scrollLmnt(-1)" aria-label="Scroll Left">‹</button>
-                <button class="lmnt-scroll-btn" onclick="scrollLmnt(1)" aria-label="Scroll Right">›</button>
-              </div>
+          <div class="slides-gallery">
+            <div class="slide-img-box" onclick="openLightbox('assets/slide_33.jpg', 'LMNT Brand Intro')">
+              <img src="assets/slide_33.jpg" alt="LMNT brand overview" loading="lazy" />
+              <div class="slide-caption-overlay">Overview slide</div>
             </div>
-            <div class="lmnt-track-wrapper" id="lmnt-scroll-track">
-              <div class="lmnt-slide-card" onclick="openLightbox('assets/slide_33.jpg', 'LMNT Brand Intro')">
-                <img src="assets/slide_33.jpg" alt="LMNT brand overview" loading="lazy" />
-                <div class="lmnt-slide-tag">01 Overview</div>
-              </div>
-              <div class="lmnt-slide-card" onclick="openLightbox('assets/slide_34.jpg', 'LMNT Dynamic 3D Prism')">
-                <img src="assets/slide_34.jpg" alt="LMNT dynamic prism" loading="lazy" />
-                <div class="lmnt-slide-tag">02 3D Prism Mark</div>
-              </div>
-              <div class="lmnt-slide-card" onclick="openLightbox('assets/slide_35.jpg', 'LMNT Sub-Brand Architecture')">
-                <img src="assets/slide_35.jpg" alt="LMNT sub-brands" loading="lazy" />
-                <div class="lmnt-slide-tag">03 Sub-Brands</div>
-              </div>
-              <div class="lmnt-slide-card" onclick="openLightbox('assets/slide_36.jpg', 'LMNT AV & Production')">
-                <img src="assets/slide_36.jpg" alt="LMNT AV production" loading="lazy" />
-                <div class="lmnt-slide-tag">04 AV & Lights</div>
-              </div>
-              <div class="lmnt-slide-card" onclick="openLightbox('assets/slide_37.jpg', 'LMNT Typography & Guidelines')">
-                <img src="assets/slide_37.jpg" alt="LMNT typography scale" loading="lazy" />
-                <div class="lmnt-slide-tag">05 Typography</div>
-              </div>
-              <div class="lmnt-slide-card" onclick="openLightbox('assets/slide_38.jpg', 'LMNT Live Event Showcase')">
-                <img src="assets/slide_38.jpg" alt="LMNT event mockups" loading="lazy" />
-                <div class="lmnt-slide-tag">06 Live Showcase</div>
-              </div>
+            <div class="slide-img-box" onclick="openLightbox('assets/slide_37.jpg', 'LMNT Comprehensive Brand Guidelines')">
+              <img src="assets/slide_37.jpg" alt="LMNT brand guidelines presentation" loading="lazy" />
+              <div class="slide-caption-overlay">Click to inspect complete typography & sub-brand sheets</div>
             </div>
           </div>
         </article>
