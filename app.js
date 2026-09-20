@@ -369,58 +369,63 @@ document.addEventListener('click', (e) => {
 });
 
 // ==========================================================================
-// 🔤 HERO TITLE — ANIMATED FONT CYCLING
+// 🔤 HERO TITLE — ANIMATED FONT CYCLING (fast, capital P)
 // ==========================================================================
 const fontCycleList = [
-  { font: '"Playfair Display", serif',       label: 'Playfair Display' },
-  { font: '"JetBrains Mono", monospace',     label: 'JetBrains Mono' },
-  { font: '"Georgia", serif',                label: 'Georgia' },
-  { font: '"Courier New", monospace',        label: 'Courier New' },
-  { font: '"Trebuchet MS", sans-serif',      label: 'Trebuchet MS' },
-  { font: '"Inter", sans-serif',             label: 'Inter' },
+  { font: '"Playfair Display", serif' },
+  { font: '"JetBrains Mono", monospace' },
+  { font: '"Georgia", serif' },
+  { font: '"Courier New", monospace' },
+  { font: '"Trebuchet MS", sans-serif' },
+  { font: '"Inter", sans-serif' },
 ];
 let fontCycleIdx = 0;
 const portfolioTitle = document.getElementById('portfolio-title');
+
+// Ensure Capital P
+if (portfolioTitle) {
+  portfolioTitle.textContent = 'Portfolio.';
+}
 
 function cycleFontStep() {
   if (!portfolioTitle) return;
   fontCycleIdx = (fontCycleIdx + 1) % fontCycleList.length;
   const next = fontCycleList[fontCycleIdx];
-  // flash out
-  portfolioTitle.style.transition = 'opacity 0.18s ease, transform 0.18s ease';
+  portfolioTitle.style.transition = 'opacity 0.08s ease, transform 0.08s ease';
   portfolioTitle.style.opacity = '0';
   portfolioTitle.style.transform = 'scale(0.94) translateY(6px)';
   setTimeout(() => {
+    portfolioTitle.textContent = 'Portfolio.';
     portfolioTitle.style.fontFamily = next.font;
     portfolioTitle.style.opacity = '1';
     portfolioTitle.style.transform = 'scale(1) translateY(0)';
-  }, 200);
+  }, 90);
 }
 
-// Start cycling every 1.6 seconds after 1s delay
+// Cycle every 0.6s — snappy and fast
 let fontCycleInterval = null;
 window.addEventListener('load', () => {
   setTimeout(() => {
-    fontCycleInterval = setInterval(cycleFontStep, 1600);
-    // Stop after 10 cycles so it doesn't distract forever
+    fontCycleInterval = setInterval(cycleFontStep, 600);
+    // Settle cleanly back to Playfair Display after 14 cycles
     setTimeout(() => {
       clearInterval(fontCycleInterval);
-      // Settle back to default
       if (portfolioTitle) {
-        portfolioTitle.style.transition = 'opacity 0.4s ease, transform 0.4s ease, font-family 0s';
+        portfolioTitle.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
         portfolioTitle.style.opacity = '0';
         setTimeout(() => {
+          portfolioTitle.textContent = 'Portfolio.';
           portfolioTitle.style.fontFamily = '"Playfair Display", serif';
           portfolioTitle.style.opacity = '1';
           portfolioTitle.style.transform = 'scale(1)';
-        }, 420);
+        }, 260);
       }
-    }, 1600 * 10 + 1200);
-  }, 1000);
+    }, 600 * 14 + 500);
+  }, 300);
 });
 
 // ==========================================================================
-// 🎨 TEPI POPUP — fires once when Branding Systems section enters viewport
+// 🎨 TEPI POPUP — fires when user reaches Branding Systems section
 // ==========================================================================
 let tepiShown = false;
 
@@ -433,7 +438,6 @@ function closeTepiPopupDirect() {
   const overlay = document.getElementById('tepi-popup-overlay');
   if (overlay) {
     overlay.classList.remove('open');
-    document.body.style.overflow = '';
   }
 }
 
@@ -444,16 +448,26 @@ function showTepiPopup() {
   const overlay = document.getElementById('tepi-popup-overlay');
   if (overlay) {
     overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
     // Auto-dismiss after 6s
     setTimeout(() => {
-      overlay.classList.remove('open');
-      document.body.style.overflow = '';
+      closeTepiPopupDirect();
     }, 6000);
   }
 }
 
-// Intersection Observer — trigger tepi when branding section is 40% visible
+// Reliable dual-detection: Scroll Event + IntersectionObserver
+function checkBrandingPosition() {
+  if (tepiShown) return;
+  const branding = document.getElementById('branding');
+  if (!branding) return;
+  const rect = branding.getBoundingClientRect();
+  // When top of branding section enters upper 70% of viewport
+  if (rect.top <= window.innerHeight * 0.7 && rect.bottom >= 50) {
+    showTepiPopup();
+  }
+}
+window.addEventListener('scroll', checkBrandingPosition, { passive: true });
+
 const brandingSection = document.getElementById('branding');
 if (brandingSection) {
   const tepiObserver = new IntersectionObserver((entries) => {
@@ -462,8 +476,11 @@ if (brandingSection) {
         showTepiPopup();
       }
     });
-  }, { threshold: 0.4 });
+  }, { threshold: 0.02, rootMargin: '0px 0px -10% 0px' });
   tepiObserver.observe(brandingSection);
+
+  const brandingHeader = brandingSection.querySelector('.section-header');
+  if (brandingHeader) tepiObserver.observe(brandingHeader);
 }
 
 // ==========================================================================
@@ -526,25 +543,36 @@ if (brandingSection) {
 })();
 
 // ==========================================================================
-// 🌊 SCROLL-REVEAL — Fade-in sections on scroll
+// 🌊 SCROLL-REVEAL — Fade-in sections on scroll (Works Down AND Up!)
 // ==========================================================================
 (function initScrollReveal() {
   const revealEls = document.querySelectorAll('.case-study-card, .logo-card, .metric-box, .slide-img-box');
   revealEls.forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(28px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
   });
 
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+      const el = entry.target;
       if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        revealObserver.unobserve(entry.target);
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      } else {
+        // Element left viewport — reset position based on scroll direction so it animates when re-entering
+        const rect = entry.boundingClientRect;
+        if (rect.top > window.innerHeight) {
+          el.style.transform = 'translateY(24px)';
+          el.style.opacity = '0';
+        } else if (rect.bottom < 0) {
+          el.style.transform = 'translateY(-24px)';
+          el.style.opacity = '0';
+        }
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.08, rootMargin: '40px 0px 40px 0px' });
 
   revealEls.forEach(el => revealObserver.observe(el));
 })();
+
