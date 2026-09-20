@@ -438,7 +438,6 @@
 
               <div class="slide-caption-overlay">
                 <span>Inspect design tokens & font hierarchy</span>
-                <button class="replay-drops-btn" onclick="triggerHsiColorDrops(event)">🎨 Replay Color Drops</button>
               </div>
             </div>
           </div>
@@ -466,15 +465,20 @@
           <div class="interactive-simulator-box">
             <div class="sim-header">
               <div class="sim-title">
-                <span>📱 Interactive Flow Explorer:</span>
+                <span>📱 Interactive Flow Explorer</span>
+                <span class="sim-badge">Live Prototype</span>
               </div>
               <div class="sim-tabs">
-                <button class="sim-tab-btn active" onclick="switchSimSlide('assets/slide_45.jpg', this)">01 In-Context Mockup</button>
-                <button class="sim-tab-btn" onclick="switchSimSlide('assets/slide_49.jpg', this)">02 Full Screen Architecture (9 Flows)</button>
+                <button class="sim-tab-btn active" onclick="switchSimSlide('assets/slide_45.jpg', this, '01 • In-Context Mobile Mockup — Active Clinical Workflow')">01 In-Context Mockup</button>
+                <button class="sim-tab-btn" onclick="switchSimSlide('assets/slide_49.jpg', this, '02 • Full Screen Architecture — 9 Core Clinical Flows')">02 Screen Architecture (9 Flows)</button>
               </div>
             </div>
             <div class="sim-preview-area">
               <img id="tap-sim-img" class="sim-preview-img" src="assets/slide_45.jpg" alt="TAP App Flow" onclick="openLightbox(this.src, 'TAP App Interactive Flow')" style="cursor: zoom-in;" />
+              <div class="sim-caption-bar">
+                <span id="sim-caption-text">01 • In-Context Mobile Mockup — Active Clinical Workflow</span>
+                <span class="sim-zoom-hint">🔍 Click to enlarge</span>
+              </div>
             </div>
           </div>
 

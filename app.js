@@ -155,8 +155,9 @@ function filterCategory(category, btnElement) {
 }
 
 // Interactive TAP App Mobile Simulator Tab Switcher
-function switchSimSlide(src, btnElement) {
+function switchSimSlide(src, btnElement, captionText) {
   const simImg = document.getElementById('tap-sim-img');
+  const caption = document.getElementById('sim-caption-text');
   if (!simImg) return;
 
   // Update tabs active state
@@ -168,15 +169,23 @@ function switchSimSlide(src, btnElement) {
   }
 
   // Smooth transition
-  simImg.style.opacity = '0.2';
-  simImg.style.transform = 'scale(0.98)';
+  simImg.style.opacity = '0.3';
+  simImg.style.transform = 'scale(0.985)';
   setTimeout(() => {
     simImg.src = src;
+    if (caption && captionText) {
+      caption.textContent = captionText;
+    }
     simImg.onload = () => {
       simImg.style.opacity = '1';
       simImg.style.transform = 'scale(1)';
     };
-  }, 150);
+    // Fallback for cached images where onload has already fired
+    setTimeout(() => {
+      simImg.style.opacity = '1';
+      simImg.style.transform = 'scale(1)';
+    }, 60);
+  }, 100);
 }
 
 // Interactive Bloomcare Botanical Camera AI Scanner
@@ -601,14 +610,12 @@ if (brandingSection) {
 })();
 
 // ==========================================================================
-// 🎨 HSI INTERACTIVE COLOR DROPS ANIMATION (POPS & PLUNGES)
+// 🎨 HSI INTERACTIVE COLOR DROPS ANIMATION (CONTINUOUS MOTION)
 // ==========================================================================
+let hsiContinuousInterval = null;
 let hsiDropTimers = [];
-let hsiDropsRunning = false;
 
-function triggerHsiColorDrops(e) {
-  if (e) e.stopPropagation();
-
+function runHsiCycle() {
   const blue = document.getElementById('drop-blue');
   const soft = document.getElementById('drop-soft');
   const white = document.getElementById('drop-white');
@@ -621,8 +628,6 @@ function triggerHsiColorDrops(e) {
   [blue, soft, white].forEach(drop => {
     drop.classList.remove('popped', 'plunging');
   });
-
-  hsiDropsRunning = true;
 
   function pulseImage() {
     if (targetImg) {
@@ -663,27 +668,39 @@ function triggerHsiColorDrops(e) {
     [blue, soft, white].forEach(drop => {
       drop.classList.remove('plunging');
     });
-    hsiDropsRunning = false;
-  }, 3100));
+  }, 3050));
+}
+
+function startHsiContinuousMotion() {
+  if (hsiContinuousInterval) return;
+  runHsiCycle();
+  hsiContinuousInterval = setInterval(runHsiCycle, 3500);
+}
+
+function stopHsiContinuousMotion() {
+  if (hsiContinuousInterval) {
+    clearInterval(hsiContinuousInterval);
+    hsiContinuousInterval = null;
+  }
+  hsiDropTimers.forEach(t => clearTimeout(t));
+  hsiDropTimers = [];
+  const drops = document.querySelectorAll('.color-pop-droplet');
+  drops.forEach(drop => drop.classList.remove('popped', 'plunging'));
 }
 
 (function initHsiObserver() {
   const stage = document.getElementById('hsi-color-stage');
   if (!stage) return;
 
-  let hsiTriggered = false;
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && !hsiTriggered) {
-        hsiTriggered = true;
-        setTimeout(() => {
-          triggerHsiColorDrops();
-        }, 300);
-      } else if (!entry.isIntersecting && entry.boundingClientRect.top > window.innerHeight) {
-        hsiTriggered = false;
+      if (entry.isIntersecting) {
+        startHsiContinuousMotion();
+      } else {
+        stopHsiContinuousMotion();
       }
     });
-  }, { threshold: 0.35 });
+  }, { threshold: 0.15 });
 
   observer.observe(stage);
 })();
