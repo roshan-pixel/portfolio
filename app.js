@@ -546,7 +546,7 @@ if (brandingSection) {
 // 🌊 SCROLL-REVEAL — Fade-in sections on scroll (Works Down AND Up!)
 // ==========================================================================
 (function initScrollReveal() {
-  const revealEls = document.querySelectorAll('.case-study-card, .logo-card, .metric-box, .slide-img-box');
+  const revealEls = document.querySelectorAll('.case-study-card, .metric-box, .slide-img-box');
   revealEls.forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(24px)';
@@ -574,5 +574,330 @@ if (brandingSection) {
   }, { threshold: 0.08, rootMargin: '40px 0px 40px 0px' });
 
   revealEls.forEach(el => revealObserver.observe(el));
+})();
+
+// ==========================================================================
+// 🎨 LOGOFOLIO ALTERNATING SLIDE-IN (LEFT & RIGHT) ON SCROLL
+// ==========================================================================
+(function initLogofolioScroll() {
+  const logoCards = document.querySelectorAll('.logo-card.from-left, .logo-card.from-right');
+  if (!logoCards.length) return;
+
+  const logoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      } else {
+        // Reset when scrolled out of view so it animates again on scroll up/down
+        const rect = entry.boundingClientRect;
+        if (rect.top > window.innerHeight || rect.bottom < 0) {
+          entry.target.classList.remove('in-view');
+        }
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '20px 0px 20px 0px' });
+
+  logoCards.forEach(card => logoObserver.observe(card));
+})();
+
+// ==========================================================================
+// 🗂️ EXPERIENCE FOCUS 3D CARD STACK
+// ==========================================================================
+let isStackCycling = false;
+function cycleCardStack(e) {
+  if (e) e.stopPropagation();
+  if (isStackCycling) return;
+  const stack = document.getElementById('exp-focus-stack');
+  if (!stack) return;
+
+  const card1 = stack.querySelector('.card-pos-1');
+  const card2 = stack.querySelector('.card-pos-2');
+  const card3 = stack.querySelector('.card-pos-3');
+  if (!card1 || !card2 || !card3) return;
+
+  isStackCycling = true;
+  card1.classList.add('sliding-out');
+
+  setTimeout(() => {
+    card1.classList.remove('card-pos-1', 'sliding-out');
+    card1.classList.add('card-pos-3');
+
+    card2.classList.remove('card-pos-2');
+    card2.classList.add('card-pos-1');
+
+    card3.classList.remove('card-pos-3');
+    card3.classList.add('card-pos-2');
+
+    isStackCycling = false;
+  }, 280);
+}
+
+// ==========================================================================
+// ✈️ ALL IN AGENTS (AIA) GUIDED PREVIEW (NO POPUP)
+// ==========================================================================
+const aiaSteps = [
+  {
+    src: 'assets/slide_29.jpg',
+    caption: '01 • About the Project: Strategic Identity Narrative'
+  },
+  {
+    src: 'assets/slide_30.jpg',
+    caption: '02 • Left: AIA Brand Mark Construction'
+  },
+  {
+    src: 'assets/slide_31.jpg',
+    caption: '03 • Center: AIA Identity System & Core Elements'
+  },
+  {
+    src: 'assets/slide_32.jpg',
+    caption: '04 • Bottom: Brand Assets, Guidelines & Touchpoints'
+  }
+];
+
+let currentAiaStep = 0;
+let aiaAutoTourStarted = false;
+let aiaTourInterval = null;
+
+function setAiaStep(index, btnEl) {
+  if (index < 0 || index >= aiaSteps.length) return;
+  currentAiaStep = index;
+
+  const img = document.getElementById('aia-preview-img');
+  const caption = document.getElementById('aia-caption-text');
+  const navBtns = document.querySelectorAll('.aia-step-btn');
+
+  navBtns.forEach((btn, idx) => {
+    btn.classList.toggle('active', idx === currentAiaStep);
+  });
+
+  if (img) {
+    img.style.opacity = '0.35';
+    img.style.transform = 'scale(0.985)';
+    setTimeout(() => {
+      img.src = aiaSteps[currentAiaStep].src;
+      if (caption) caption.textContent = aiaSteps[currentAiaStep].caption;
+      img.onload = () => {
+        img.style.opacity = '1';
+        img.style.transform = 'scale(1)';
+      };
+    }, 100);
+  }
+}
+
+function cycleAiaStep() {
+  const next = (currentAiaStep + 1) % aiaSteps.length;
+  setAiaStep(next);
+}
+
+function changeAiaStep(delta, e) {
+  if (e) e.stopPropagation();
+  if (aiaTourInterval) {
+    clearInterval(aiaTourInterval);
+    aiaTourInterval = null;
+  }
+  let next = currentAiaStep + delta;
+  if (next < 0) next = aiaSteps.length - 1;
+  if (next >= aiaSteps.length) next = 0;
+  setAiaStep(next);
+}
+
+(function initAiaAutoPreview() {
+  const aiaSection = document.getElementById('aia-case-study') || document.getElementById('aia-preview-container');
+  if (!aiaSection) return;
+
+  const aiaObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !aiaAutoTourStarted) {
+        aiaAutoTourStarted = true;
+        let step = 0;
+        aiaTourInterval = setInterval(() => {
+          step++;
+          if (step < aiaSteps.length) {
+            setAiaStep(step);
+          } else {
+            clearInterval(aiaTourInterval);
+            aiaTourInterval = null;
+          }
+        }, 2200);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  aiaObserver.observe(aiaSection);
+})();
+
+// ==========================================================================
+// 🎞️ LMNT HORIZONTAL SCROLLING REEL
+// ==========================================================================
+function scrollLmnt(direction) {
+  const track = document.getElementById('lmnt-scroll-track');
+  if (track) {
+    const scrollAmount = track.clientWidth * 0.75 || 340;
+    track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  }
+}
+
+(function initLmntDragScroll() {
+  const track = document.getElementById('lmnt-scroll-track');
+  if (!track) return;
+
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+
+  track.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  });
+
+  track.addEventListener('mouseleave', () => {
+    isDown = false;
+  });
+
+  track.addEventListener('mouseup', () => {
+    isDown = false;
+  });
+
+  track.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    track.scrollLeft = scrollLeft - walk;
+  });
+})();
+
+// ==========================================================================
+// 🎨 HSI INTERACTIVE COLOR DROPS ANIMATION (POPS & PLUNGES)
+// ==========================================================================
+let hsiDropTimers = [];
+let hsiDropsRunning = false;
+
+function triggerHsiColorDrops(e) {
+  if (e) e.stopPropagation();
+
+  const blue = document.getElementById('drop-blue');
+  const soft = document.getElementById('drop-soft');
+  const white = document.getElementById('drop-white');
+  const targetImg = document.getElementById('hsi-target-img');
+  if (!blue || !soft || !white) return;
+
+  hsiDropTimers.forEach(t => clearTimeout(t));
+  hsiDropTimers = [];
+
+  [blue, soft, white].forEach(drop => {
+    drop.classList.remove('popped', 'plunging');
+  });
+
+  hsiDropsRunning = true;
+
+  function pulseImage() {
+    if (targetImg) {
+      targetImg.style.transition = 'filter 0.25s ease';
+      targetImg.style.filter = 'brightness(1.12) contrast(1.04)';
+      setTimeout(() => {
+        targetImg.style.filter = '';
+      }, 300);
+    }
+  }
+
+  // Sequence: Blue pops -> Plunges into image & Soft pops -> Plunges & White pops -> Plunges
+  hsiDropTimers.push(setTimeout(() => {
+    blue.classList.add('popped');
+  }, 100));
+
+  hsiDropTimers.push(setTimeout(() => {
+    blue.classList.remove('popped');
+    blue.classList.add('plunging');
+    pulseImage();
+    soft.classList.add('popped');
+  }, 850));
+
+  hsiDropTimers.push(setTimeout(() => {
+    soft.classList.remove('popped');
+    soft.classList.add('plunging');
+    pulseImage();
+    white.classList.add('popped');
+  }, 1600));
+
+  hsiDropTimers.push(setTimeout(() => {
+    white.classList.remove('popped');
+    white.classList.add('plunging');
+    pulseImage();
+  }, 2350));
+
+  hsiDropTimers.push(setTimeout(() => {
+    [blue, soft, white].forEach(drop => {
+      drop.classList.remove('plunging');
+    });
+    hsiDropsRunning = false;
+  }, 3100));
+}
+
+(function initHsiObserver() {
+  const stage = document.getElementById('hsi-color-stage');
+  if (!stage) return;
+
+  let hsiTriggered = false;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hsiTriggered) {
+        hsiTriggered = true;
+        setTimeout(() => {
+          triggerHsiColorDrops();
+        }, 300);
+      } else if (!entry.isIntersecting && entry.boundingClientRect.top > window.innerHeight) {
+        hsiTriggered = false;
+      }
+    });
+  }, { threshold: 0.35 });
+
+  observer.observe(stage);
+})();
+
+// ==========================================================================
+// ⌨️ TYPEWRITER EFFECT FOR FOOTER
+// ==========================================================================
+(function initTypewriterFooter() {
+  const footerHeading = document.getElementById('typewriter-footer');
+  const typoText = document.getElementById('typo-text');
+  if (!footerHeading || !typoText) return;
+
+  const phrase = 'Thanks for watching!';
+  let isTyping = false;
+  let typeTimer = null;
+
+  function startTyping() {
+    if (isTyping) return;
+    isTyping = true;
+    typoText.textContent = '';
+    let idx = 0;
+
+    clearInterval(typeTimer);
+    typeTimer = setInterval(() => {
+      if (idx < phrase.length) {
+        typoText.textContent += phrase[idx];
+        idx++;
+      } else {
+        clearInterval(typeTimer);
+        typeTimer = null;
+      }
+    }, 65);
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startTyping();
+      } else {
+        isTyping = false;
+        clearInterval(typeTimer);
+        typeTimer = null;
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(footerHeading);
 })();
 

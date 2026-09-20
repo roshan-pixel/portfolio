@@ -1592,3 +1592,494 @@ footer {
 .slide-img-box {
   will-change: opacity, transform;
 }
+
+/* ============================================================
+   🎨 LOGOFOLIO ALTERNATING LEFT/RIGHT SCROLL ANIMATION
+   ============================================================ */
+.logo-card {
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.logo-card.from-left {
+  opacity: 0;
+  transform: translateX(-70px) scale(0.95);
+}
+
+.logo-card.from-right {
+  opacity: 0;
+  transform: translateX(70px) scale(0.95);
+}
+
+.logo-card.in-view {
+  opacity: 1 !important;
+  transform: translateX(0) scale(1) !important;
+}
+
+/* ============================================================
+   🗂️ EXPERIENCE FOCUS 3D CARD STACK
+   ============================================================ */
+.card-stack-wrapper {
+  padding: 12px 32px 36px;
+  perspective: 1200px;
+}
+
+.card-stack-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.stack-indicator {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #c4b5d4;
+  letter-spacing: 0.02em;
+}
+
+.stack-cycle-btn {
+  background: linear-gradient(135deg, #6648f8, #50edda);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(102, 72, 248, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stack-cycle-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 20px rgba(102, 72, 248, 0.5);
+}
+
+.card-stack {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .card-stack {
+    height: 320px;
+  }
+}
+
+.stack-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease, z-index 0.5s ease;
+  will-change: transform, opacity;
+  background: #141417;
+}
+
+.stack-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #0d0d10;
+  display: block;
+}
+
+.stack-card-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  background: rgba(18, 18, 20, 0.85);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.stack-card.card-pos-1 {
+  transform: translateY(0) scale(1) rotate(0deg);
+  z-index: 3;
+  opacity: 1;
+}
+
+.stack-card.card-pos-2 {
+  transform: translateY(22px) scale(0.95) rotate(2deg);
+  z-index: 2;
+  opacity: 0.88;
+  filter: brightness(0.85);
+}
+
+.stack-card.card-pos-3 {
+  transform: translateY(44px) scale(0.9) rotate(-2deg);
+  z-index: 1;
+  opacity: 0.68;
+  filter: brightness(0.7);
+}
+
+.stack-card.sliding-out {
+  transform: translateX(110%) rotate(12deg) scale(0.85);
+  opacity: 0;
+}
+
+/* ============================================================
+   ✈️ ALL IN AGENTS GUIDED PREVIEW (NO POPUP)
+   ============================================================ */
+.aia-preview-container {
+  padding: 12px 32px 32px;
+}
+
+.aia-step-nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.aia-step-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-muted);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.aia-step-btn .step-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent-turquoise);
+}
+
+.aia-step-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.aia-step-btn.active {
+  background: #ffffff;
+  color: #121214;
+  border-color: #ffffff;
+  box-shadow: 0 4px 14px rgba(255,255,255,0.2);
+}
+
+.aia-step-btn.active .step-num {
+  color: #6648f8;
+}
+
+.aia-preview-viewport {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0d0d10;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+
+.aia-preview-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.aia-caption-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 20px;
+  background: linear-gradient(180deg, transparent 0%, rgba(10,10,12,0.92) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+  color: #f4f4f6;
+}
+
+.aia-no-popup-badge {
+  font-size: 11px;
+  padding: 3px 10px;
+  background: rgba(80, 237, 218, 0.15);
+  color: #50edda;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  border: 1px solid rgba(80, 237, 218, 0.3);
+}
+
+.aia-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(18, 18, 20, 0.7);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 5;
+}
+
+.aia-nav-arrow:hover {
+  background: #ffffff;
+  color: #121214;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.aia-arrow-prev { left: 14px; }
+.aia-arrow-next { right: 14px; }
+
+/* ============================================================
+   🎞️ LMNT HORIZONTAL SCROLLING REEL
+   ============================================================ */
+.lmnt-scroll-showcase {
+  padding: 12px 32px 32px;
+}
+
+.lmnt-reel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.lmnt-reel-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #c4b5d4;
+}
+
+.lmnt-reel-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.lmnt-scroll-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lmnt-scroll-btn:hover {
+  background: #fff;
+  color: #121214;
+  transform: scale(1.08);
+}
+
+.lmnt-track-wrapper {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 4px 18px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+  cursor: grab;
+}
+
+.lmnt-track-wrapper:active {
+  cursor: grabbing;
+}
+
+.lmnt-track-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.lmnt-track-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+}
+
+.lmnt-slide-card {
+  flex: 0 0 380px;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0d0d10;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  cursor: zoom-in;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (max-width: 768px) {
+  .lmnt-slide-card {
+    flex: 0 0 280px;
+  }
+}
+
+.lmnt-slide-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(102, 72, 248, 0.25);
+  border-color: rgba(102, 72, 248, 0.4);
+}
+
+.lmnt-slide-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.lmnt-slide-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(14, 14, 18, 0.85);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* ============================================================
+   🎨 HSI INTERACTIVE COLOR DROPS ANIMATION
+   ============================================================ */
+.hsi-color-drop-stage {
+  position: relative;
+  overflow: hidden;
+}
+
+.hsi-color-drops-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.color-pop-droplet {
+  position: absolute;
+  top: 15%;
+  opacity: 0;
+  transform: scale(0) translateY(0);
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+  pointer-events: auto;
+}
+
+.color-pop-droplet.drop-blue {
+  left: 18%;
+}
+
+.color-pop-droplet.drop-soft {
+  left: 45%;
+}
+
+.color-pop-droplet.drop-white {
+  left: 72%;
+}
+
+.droplet-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(18, 18, 24, 0.92);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+}
+
+.droplet-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.droplet-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.color-pop-droplet.popped {
+  opacity: 1;
+  transform: scale(1) translateY(-20px);
+}
+
+.color-pop-droplet.plunging {
+  opacity: 0;
+  transform: scale(0.35) translateY(180px);
+  transition: transform 0.55s cubic-bezier(0.55, 0.085, 0.68, 0.53), opacity 0.55s ease;
+}
+
+.replay-drops-btn {
+  background: linear-gradient(135deg, #1A49FF, #6648f8);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 4px 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.replay-drops-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ============================================================
+   ⌨️ TYPEWRITER EFFECT FOR FOOTER
+   ============================================================ */
+.typo-title {
+  min-height: 1.3em;
+  display: inline-flex;
+  align-items: center;
+}
+
+.typo-cursor {
+  display: inline-block;
+  color: #6648f8;
+  font-weight: 400;
+  margin-left: 2px;
+  animation: typoBlink 0.75s infinite;
+}
+
+@keyframes typoBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
