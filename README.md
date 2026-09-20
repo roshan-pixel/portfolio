@@ -6,6 +6,23 @@ Built with zero external framework dependencies using vanilla **HTML5**, **CSS3*
 
 ---
 
+## 🌐 Live Interactive Architecture & Graphify Cluster
+
+| View Type | Live Hosted Link | Description |
+|---|---|---|
+| 🧠 **Interactive 3D Physics Graph** | **[portfolio-4inj.onrender.com/graph.html](https://portfolio-4inj.onrender.com/graph.html)** | Real-time force-directed physics graph with draggable nodes & community filter |
+| 📊 **Mermaid Call-Flow Architecture** | **[portfolio-4inj.onrender.com/callflow.html](https://portfolio-4inj.onrender.com/callflow.html)** | Interactive visual callflow diagram with zoom & pan controls |
+| 🌲 **Hierarchical D3 Tree** | **[portfolio-4inj.onrender.com/tree.html](https://portfolio-4inj.onrender.com/tree.html)** | Collapsible directory & symbol dependency hierarchy |
+| 📄 **System Architecture Report** | **[`PORTFOLIO_SYSTEM_ARCHITECTURE.md`](./PORTFOLIO_SYSTEM_ARCHITECTURE.md)** | Deep technical report with sequence diagrams & subsystem specs |
+
+### 🔍 Graphify Cluster View (Rendered on GitHub)
+
+[![Graphify Knowledge Graph Clusters](./graphify-out/graph.png)](https://portfolio-4inj.onrender.com/graph.html)
+
+> 💡 **Interactive Mode**: Click the graph image above to explore the live interactive physics simulation in full screen!
+
+---
+
 ## 🌟 Key Features & Interactive Systems
 
 ### 1. 🎨 HSI Healthcare Continuous 5-Color Pinning Engine
