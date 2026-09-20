@@ -367,3 +367,184 @@ document.addEventListener('click', (e) => {
     triggerRishwat(e, destination);
   }
 });
+
+// ==========================================================================
+// 🔤 HERO TITLE — ANIMATED FONT CYCLING
+// ==========================================================================
+const fontCycleList = [
+  { font: '"Playfair Display", serif',       label: 'Playfair Display' },
+  { font: '"JetBrains Mono", monospace',     label: 'JetBrains Mono' },
+  { font: '"Georgia", serif',                label: 'Georgia' },
+  { font: '"Courier New", monospace',        label: 'Courier New' },
+  { font: '"Trebuchet MS", sans-serif',      label: 'Trebuchet MS' },
+  { font: '"Inter", sans-serif',             label: 'Inter' },
+];
+let fontCycleIdx = 0;
+const portfolioTitle = document.getElementById('portfolio-title');
+
+function cycleFontStep() {
+  if (!portfolioTitle) return;
+  fontCycleIdx = (fontCycleIdx + 1) % fontCycleList.length;
+  const next = fontCycleList[fontCycleIdx];
+  // flash out
+  portfolioTitle.style.transition = 'opacity 0.18s ease, transform 0.18s ease';
+  portfolioTitle.style.opacity = '0';
+  portfolioTitle.style.transform = 'scale(0.94) translateY(6px)';
+  setTimeout(() => {
+    portfolioTitle.style.fontFamily = next.font;
+    portfolioTitle.style.opacity = '1';
+    portfolioTitle.style.transform = 'scale(1) translateY(0)';
+  }, 200);
+}
+
+// Start cycling every 1.6 seconds after 1s delay
+let fontCycleInterval = null;
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    fontCycleInterval = setInterval(cycleFontStep, 1600);
+    // Stop after 10 cycles so it doesn't distract forever
+    setTimeout(() => {
+      clearInterval(fontCycleInterval);
+      // Settle back to default
+      if (portfolioTitle) {
+        portfolioTitle.style.transition = 'opacity 0.4s ease, transform 0.4s ease, font-family 0s';
+        portfolioTitle.style.opacity = '0';
+        setTimeout(() => {
+          portfolioTitle.style.fontFamily = '"Playfair Display", serif';
+          portfolioTitle.style.opacity = '1';
+          portfolioTitle.style.transform = 'scale(1)';
+        }, 420);
+      }
+    }, 1600 * 10 + 1200);
+  }, 1000);
+});
+
+// ==========================================================================
+// 🎨 TEPI POPUP — fires once when Branding Systems section enters viewport
+// ==========================================================================
+let tepiShown = false;
+
+function closeTepiPopup(e) {
+  if (e && e.target !== document.getElementById('tepi-popup-overlay')) return;
+  closeTepiPopupDirect();
+}
+
+function closeTepiPopupDirect() {
+  const overlay = document.getElementById('tepi-popup-overlay');
+  if (overlay) {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+function showTepiPopup() {
+  if (tepiShown) return;
+  tepiShown = true;
+  playCuteChime('pop');
+  const overlay = document.getElementById('tepi-popup-overlay');
+  if (overlay) {
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    // Auto-dismiss after 6s
+    setTimeout(() => {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }, 6000);
+  }
+}
+
+// Intersection Observer — trigger tepi when branding section is 40% visible
+const brandingSection = document.getElementById('branding');
+if (brandingSection) {
+  const tepiObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !tepiShown) {
+        showTepiPopup();
+      }
+    });
+  }, { threshold: 0.4 });
+  tepiObserver.observe(brandingSection);
+}
+
+// ==========================================================================
+// ✨ CURSOR GLOW TRAIL
+// ==========================================================================
+(function initCursorTrail() {
+  const canvas = document.getElementById('cursor-trail');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W = canvas.width = window.innerWidth;
+  let H = canvas.height = window.innerHeight;
+
+  window.addEventListener('resize', () => {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  });
+
+  const particles = [];
+  let mx = -999, my = -999;
+
+  window.addEventListener('mousemove', e => {
+    mx = e.clientX;
+    my = e.clientY;
+    for (let i = 0; i < 3; i++) {
+      particles.push({
+        x: mx + (Math.random() - 0.5) * 10,
+        y: my + (Math.random() - 0.5) * 10,
+        r: Math.random() * 6 + 2,
+        alpha: 0.7 + Math.random() * 0.3,
+        hue: Math.random() * 60 + 200, // blue-purple range
+        vx: (Math.random() - 0.5) * 1.2,
+        vy: (Math.random() - 0.5) * 1.2 - 0.5,
+      });
+    }
+  });
+
+  function animateTrail() {
+    ctx.clearRect(0, 0, W, H);
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.r *= 0.94;
+      p.alpha *= 0.88;
+      if (p.alpha < 0.02 || p.r < 0.3) {
+        particles.splice(i, 1);
+        continue;
+      }
+      ctx.beginPath();
+      const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
+      grad.addColorStop(0, `hsla(${p.hue}, 80%, 70%, ${p.alpha})`);
+      grad.addColorStop(1, `hsla(${p.hue}, 80%, 70%, 0)`);
+      ctx.fillStyle = grad;
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    requestAnimationFrame(animateTrail);
+  }
+  animateTrail();
+})();
+
+// ==========================================================================
+// 🌊 SCROLL-REVEAL — Fade-in sections on scroll
+// ==========================================================================
+(function initScrollReveal() {
+  const revealEls = document.querySelectorAll('.case-study-card, .logo-card, .metric-box, .slide-img-box');
+  revealEls.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(28px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  });
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealEls.forEach(el => revealObserver.observe(el));
+})();

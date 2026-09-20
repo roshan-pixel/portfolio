@@ -23,7 +23,7 @@
           <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8 9a1 1 0 112 0 1 1 0 01-2 0zm4 4a1 1 0 11-2 0 1 1 0 012 0z"/></svg>
           Himanshi Parihar
         </span>
-        <span class="nav-tag">2025</span>
+        <span class="nav-tag">2026</span>
       </div>
 
       <div class="nav-links">
@@ -52,8 +52,7 @@
         <div class="browser-header">
           <div class="browser-search-bar">
             <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-            <span class="pill-item">Himanshi Parihar</span>
-            <span class="pill-item">2025</span>
+            <span class="pill-item">Portfolio 2026</span>
           </div>
           <div class="browser-controls">
             <div class="control-circle"></div>
@@ -61,7 +60,7 @@
           </div>
         </div>
 
-        <h1 class="hero-main-title">portfolio.</h1>
+        <h1 class="hero-main-title" id="portfolio-title">portfolio.</h1>
 
         <div class="hero-badges">
           <a href="#branding" class="hero-badge">↗ Graphic Designer</a>
@@ -735,6 +734,24 @@
 
   <!-- Interactive Feedback Toast -->
   <div id="toast" class="toast">Copied to clipboard!</div>
+
+  <!-- 🎨 Tepi Popup (appears when user reaches Branding Systems section) -->
+  <div id="tepi-popup-overlay" class="tepi-overlay" onclick="closeTepiPopup(event)">
+    <div class="tepi-card">
+      <div class="tepi-emoji-row">🎨✨🖌️</div>
+      <div class="tepi-title">Tereko kya lag rhi hai?</div>
+      <div class="tepi-body">
+        Yeh <strong>tepi</strong> hai — haathon se banai hai!<br/>
+        Himanshi ne khud design kiya hai har ek pixel! 🤌💅
+      </div>
+      <div class="tepi-footer">
+        <button class="tepi-btn" onclick="closeTepiPopupDirect()">Wah bhai wah! 🙌</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cursor Glow Trail Canvas -->
+  <canvas id="cursor-trail" style="position:fixed;top:0;left:0;pointer-events:none;z-index:9999;"></canvas>
 
   <script src="app.js"></script>
 </body>

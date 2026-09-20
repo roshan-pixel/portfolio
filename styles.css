@@ -1475,3 +1475,120 @@ footer {
   border-color: #121214;
   transform: translateY(-1px);
 }
+
+/* ============================================================
+   🎨 TEPI POPUP
+   ============================================================ */
+.tepi-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: fadeIn 0.25s ease;
+}
+
+.tepi-overlay.open {
+  display: flex;
+}
+
+.tepi-card {
+  background: linear-gradient(135deg, #1e1e2e 0%, #2a1a3e 100%);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: 28px;
+  padding: 36px 40px 28px;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(150,100,255,0.2);
+  animation: tepiPopIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes tepiPopIn {
+  from { transform: scale(0.5) rotate(-8deg); opacity: 0; }
+  to   { transform: scale(1) rotate(0deg);    opacity: 1; }
+}
+
+.tepi-emoji-row {
+  font-size: 36px;
+  margin-bottom: 12px;
+  animation: emojiBounce 0.7s ease 0.3s both;
+}
+
+@keyframes emojiBounce {
+  0%   { transform: translateY(-20px); opacity: 0; }
+  60%  { transform: translateY(4px); }
+  80%  { transform: translateY(-3px); }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.tepi-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: #e8d5ff;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.tepi-body {
+  font-size: 15px;
+  color: #c4b5d4;
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+.tepi-body strong {
+  color: #f0e0ff;
+  font-weight: 700;
+}
+
+.tepi-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.tepi-btn {
+  background: linear-gradient(135deg, #9b59b6, #6648f8);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px rgba(102,72,248,0.4);
+  letter-spacing: 0.01em;
+}
+
+.tepi-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 30px rgba(102,72,248,0.55);
+}
+
+.tepi-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* ============================================================
+   🌟 HERO TITLE — font-morph animation initial state
+   ============================================================ */
+.hero-main-title {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  will-change: opacity, transform, font-family;
+}
+
+/* ============================================================
+   🌊 SCROLL-REVEAL — prevent FOUC
+   ============================================================ */
+.case-study-card,
+.logo-card,
+.metric-box,
+.slide-img-box {
+  will-change: opacity, transform;
+}
