@@ -8,621 +8,972 @@
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L1",
+      "id": "app_js",
       "community": 0,
-      "norm_label": "app.js",
-      "id": "app_js"
+      "norm_label": "app.js"
     },
     {
       "label": "allSlides",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L5",
+      "id": "stephanie_perez_portfolio_app_allslides",
       "community": 0,
-      "norm_label": "allslides",
-      "id": "stephanie_perez_portfolio_app_allslides"
+      "norm_label": "allslides"
     },
     {
       "label": "scrollToSection()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L16",
+      "id": "stephanie_perez_portfolio_app_scrolltosection",
       "community": 8,
-      "norm_label": "scrolltosection()",
-      "id": "stephanie_perez_portfolio_app_scrolltosection"
+      "norm_label": "scrolltosection()"
     },
     {
       "label": "cacheImage()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L32",
+      "id": "stephanie_perez_portfolio_app_cacheimage",
       "community": 5,
-      "norm_label": "cacheimage()",
-      "id": "stephanie_perez_portfolio_app_cacheimage"
+      "norm_label": "cacheimage()"
     },
     {
       "label": "preloadNeighborSlides()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L61",
+      "id": "stephanie_perez_portfolio_app_preloadneighborslides",
       "community": 2,
-      "norm_label": "preloadneighborslides()",
-      "id": "stephanie_perez_portfolio_app_preloadneighborslides"
+      "norm_label": "preloadneighborslides()"
     },
     {
       "label": "lightboxModal",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L70",
+      "id": "stephanie_perez_portfolio_app_lightboxmodal",
       "community": 0,
-      "norm_label": "lightboxmodal",
-      "id": "stephanie_perez_portfolio_app_lightboxmodal"
+      "norm_label": "lightboxmodal"
     },
     {
       "label": "lightboxImg",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L71",
+      "id": "stephanie_perez_portfolio_app_lightboximg",
       "community": 0,
-      "norm_label": "lightboximg",
-      "id": "stephanie_perez_portfolio_app_lightboximg"
+      "norm_label": "lightboximg"
     },
     {
       "label": "openLightbox()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L73",
+      "id": "stephanie_perez_portfolio_app_openlightbox",
       "community": 2,
-      "norm_label": "openlightbox()",
-      "id": "stephanie_perez_portfolio_app_openlightbox"
+      "norm_label": "openlightbox()"
     },
     {
       "label": "closeLightboxDirect()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L85",
+      "id": "stephanie_perez_portfolio_app_closelightboxdirect",
       "community": 2,
-      "norm_label": "closelightboxdirect()",
-      "id": "stephanie_perez_portfolio_app_closelightboxdirect"
+      "norm_label": "closelightboxdirect()"
     },
     {
       "label": "closeLightbox()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L90",
+      "id": "stephanie_perez_portfolio_app_closelightbox",
       "community": 2,
-      "norm_label": "closelightbox()",
-      "id": "stephanie_perez_portfolio_app_closelightbox"
+      "norm_label": "closelightbox()"
     },
     {
       "label": "navigateLightbox()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L96",
+      "id": "stephanie_perez_portfolio_app_navigatelightbox",
       "community": 2,
-      "norm_label": "navigatelightbox()",
-      "id": "stephanie_perez_portfolio_app_navigatelightbox"
+      "norm_label": "navigatelightbox()"
     },
     {
       "label": "rishwat",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L118",
+      "id": "stephanie_perez_portfolio_app_rishwat",
       "community": 0,
-      "norm_label": "rishwat",
-      "id": "stephanie_perez_portfolio_app_rishwat"
+      "norm_label": "rishwat"
     },
     {
       "label": "handleLightboxSwipe()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L143",
+      "id": "stephanie_perez_portfolio_app_handlelightboxswipe",
       "community": 2,
-      "norm_label": "handlelightboxswipe()",
-      "id": "stephanie_perez_portfolio_app_handlelightboxswipe"
+      "norm_label": "handlelightboxswipe()"
     },
     {
       "label": "filterCategory()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L165",
+      "id": "stephanie_perez_portfolio_app_filtercategory",
       "community": 8,
-      "norm_label": "filtercategory()",
-      "id": "stephanie_perez_portfolio_app_filtercategory"
+      "norm_label": "filtercategory()"
     },
     {
       "label": "switchSimSlide()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L200",
+      "id": "stephanie_perez_portfolio_app_switchsimslide",
       "community": 5,
-      "norm_label": "switchsimslide()",
-      "id": "stephanie_perez_portfolio_app_switchsimslide"
+      "norm_label": "switchsimslide()"
     },
     {
       "label": "runPlantScan()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L237",
+      "id": "stephanie_perez_portfolio_app_runplantscan",
       "community": 0,
-      "norm_label": "runplantscan()",
-      "id": "stephanie_perez_portfolio_app_runplantscan"
+      "norm_label": "runplantscan()"
     },
     {
       "label": "drawer",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L268",
+      "id": "stephanie_perez_portfolio_app_drawer",
       "community": 0,
-      "norm_label": "drawer",
-      "id": "stephanie_perez_portfolio_app_drawer"
+      "norm_label": "drawer"
     },
     {
       "label": "overlay",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L269",
+      "id": "stephanie_perez_portfolio_app_overlay",
       "community": 0,
-      "norm_label": "overlay",
-      "id": "stephanie_perez_portfolio_app_overlay"
+      "norm_label": "overlay"
     },
     {
       "label": "openResume()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L271",
+      "id": "stephanie_perez_portfolio_app_openresume",
       "community": 0,
-      "norm_label": "openresume()",
-      "id": "stephanie_perez_portfolio_app_openresume"
+      "norm_label": "openresume()"
     },
     {
       "label": "closeResume()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L279",
+      "id": "stephanie_perez_portfolio_app_closeresume",
       "community": 0,
-      "norm_label": "closeresume()",
-      "id": "stephanie_perez_portfolio_app_closeresume"
+      "norm_label": "closeresume()"
     },
     {
       "label": "toast",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L288",
+      "id": "stephanie_perez_portfolio_app_toast",
       "community": 0,
-      "norm_label": "toast",
-      "id": "stephanie_perez_portfolio_app_toast"
+      "norm_label": "toast"
     },
     {
       "label": "showToast()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L291",
+      "id": "stephanie_perez_portfolio_app_showtoast",
       "community": 3,
-      "norm_label": "showtoast()",
-      "id": "stephanie_perez_portfolio_app_showtoast"
+      "norm_label": "showtoast()"
     },
     {
       "label": "copyHex()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L302",
+      "id": "stephanie_perez_portfolio_app_copyhex",
       "community": 0,
-      "norm_label": "copyhex()",
-      "id": "stephanie_perez_portfolio_app_copyhex"
+      "norm_label": "copyhex()"
     },
     {
       "label": "copyContactEmail()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L311",
+      "id": "stephanie_perez_portfolio_app_copycontactemail",
       "community": 0,
-      "norm_label": "copycontactemail()",
-      "id": "stephanie_perez_portfolio_app_copycontactemail"
+      "norm_label": "copycontactemail()"
     },
     {
       "label": "playCuteChime()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L324",
+      "id": "stephanie_perez_portfolio_app_playcutechime",
       "community": 3,
-      "norm_label": "playcutechime()",
-      "id": "stephanie_perez_portfolio_app_playcutechime"
+      "norm_label": "playcutechime()"
     },
     {
       "label": "rishwatOverlay",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L362",
+      "id": "stephanie_perez_portfolio_app_rishwatoverlay",
       "community": 0,
-      "norm_label": "rishwatoverlay",
-      "id": "stephanie_perez_portfolio_app_rishwatoverlay"
+      "norm_label": "rishwatoverlay"
     },
     {
       "label": "rishwatSuccessState",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L363",
+      "id": "stephanie_perez_portfolio_app_rishwatsuccessstate",
       "community": 0,
-      "norm_label": "rishwatsuccessstate",
-      "id": "stephanie_perez_portfolio_app_rishwatsuccessstate"
+      "norm_label": "rishwatsuccessstate"
     },
     {
       "label": "triggerRishwat()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L365",
+      "id": "stephanie_perez_portfolio_app_triggerrishwat",
       "community": 3,
-      "norm_label": "triggerrishwat()",
-      "id": "stephanie_perez_portfolio_app_triggerrishwat"
+      "norm_label": "triggerrishwat()"
     },
     {
       "label": "closeRishwatPopupDirect()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L381",
+      "id": "stephanie_perez_portfolio_app_closerishwatpopupdirect",
       "community": 6,
-      "norm_label": "closerishwatpopupdirect()",
-      "id": "stephanie_perez_portfolio_app_closerishwatpopupdirect"
+      "norm_label": "closerishwatpopupdirect()"
     },
     {
       "label": "closeRishwatPopup()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L388",
+      "id": "stephanie_perez_portfolio_app_closerishwatpopup",
       "community": 6,
-      "norm_label": "closerishwatpopup()",
-      "id": "stephanie_perez_portfolio_app_closerishwatpopup"
+      "norm_label": "closerishwatpopup()"
     },
     {
       "label": "payRishwat()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L394",
+      "id": "stephanie_perez_portfolio_app_payrishwat",
       "community": 3,
-      "norm_label": "payrishwat()",
-      "id": "stephanie_perez_portfolio_app_payrishwat"
+      "norm_label": "payrishwat()"
     },
     {
       "label": "targetLink",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L415",
+      "id": "stephanie_perez_portfolio_app_targetlink",
       "community": 0,
-      "norm_label": "targetlink",
-      "id": "stephanie_perez_portfolio_app_targetlink"
+      "norm_label": "targetlink"
     },
     {
       "label": "fontCycleList",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L427",
+      "id": "stephanie_perez_portfolio_app_fontcyclelist",
       "community": 0,
-      "norm_label": "fontcyclelist",
-      "id": "stephanie_perez_portfolio_app_fontcyclelist"
+      "norm_label": "fontcyclelist"
     },
     {
       "label": "portfolioTitle",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L436",
+      "id": "stephanie_perez_portfolio_app_portfoliotitle",
       "community": 0,
-      "norm_label": "portfoliotitle",
-      "id": "stephanie_perez_portfolio_app_portfoliotitle"
+      "norm_label": "portfoliotitle"
     },
     {
       "label": "cycleFontStep()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L443",
+      "id": "stephanie_perez_portfolio_app_cyclefontstep",
       "community": 0,
-      "norm_label": "cyclefontstep()",
-      "id": "stephanie_perez_portfolio_app_cyclefontstep"
+      "norm_label": "cyclefontstep()"
     },
     {
       "label": "closeTepiPopup()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L485",
+      "id": "stephanie_perez_portfolio_app_closetepipopup",
       "community": 7,
-      "norm_label": "closetepipopup()",
-      "id": "stephanie_perez_portfolio_app_closetepipopup"
+      "norm_label": "closetepipopup()"
     },
     {
       "label": "closeTepiPopupDirect()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L490",
+      "id": "stephanie_perez_portfolio_app_closetepipopupdirect",
       "community": 7,
-      "norm_label": "closetepipopupdirect()",
-      "id": "stephanie_perez_portfolio_app_closetepipopupdirect"
+      "norm_label": "closetepipopupdirect()"
     },
     {
       "label": "showTepiPopup()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L497",
+      "id": "stephanie_perez_portfolio_app_showtepipopup",
       "community": 3,
-      "norm_label": "showtepipopup()",
-      "id": "stephanie_perez_portfolio_app_showtepipopup"
+      "norm_label": "showtepipopup()"
     },
     {
       "label": "checkBrandingPosition()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L512",
+      "id": "stephanie_perez_portfolio_app_checkbrandingposition",
       "community": 3,
-      "norm_label": "checkbrandingposition()",
-      "id": "stephanie_perez_portfolio_app_checkbrandingposition"
+      "norm_label": "checkbrandingposition()"
     },
     {
       "label": "brandingSection",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L524",
+      "id": "stephanie_perez_portfolio_app_brandingsection",
       "community": 0,
-      "norm_label": "brandingsection",
-      "id": "stephanie_perez_portfolio_app_brandingsection"
+      "norm_label": "brandingsection"
     },
     {
       "label": "tepiObserver",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L526",
+      "id": "stephanie_perez_portfolio_app_tepiobserver",
       "community": 0,
-      "norm_label": "tepiobserver",
-      "id": "stephanie_perez_portfolio_app_tepiobserver"
+      "norm_label": "tepiobserver"
     },
     {
       "label": "brandingHeader",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L535",
+      "id": "stephanie_perez_portfolio_app_brandingheader",
       "community": 0,
-      "norm_label": "brandingheader",
-      "id": "stephanie_perez_portfolio_app_brandingheader"
+      "norm_label": "brandingheader"
     },
     {
       "label": "canvas",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L543",
+      "id": "stephanie_perez_portfolio_app_canvas",
       "community": 0,
-      "norm_label": "canvas",
-      "id": "stephanie_perez_portfolio_app_canvas"
+      "norm_label": "canvas"
     },
     {
       "label": "ctx",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L545",
+      "id": "stephanie_perez_portfolio_app_ctx",
       "community": 0,
-      "norm_label": "ctx",
-      "id": "stephanie_perez_portfolio_app_ctx"
+      "norm_label": "ctx"
     },
     {
       "label": "particles",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L554",
+      "id": "stephanie_perez_portfolio_app_particles",
       "community": 0,
-      "norm_label": "particles",
-      "id": "stephanie_perez_portfolio_app_particles"
+      "norm_label": "particles"
     },
     {
       "label": "animateTrail()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L573",
+      "id": "stephanie_perez_portfolio_app_animatetrail",
       "community": 0,
-      "norm_label": "animatetrail()",
-      "id": "stephanie_perez_portfolio_app_animatetrail"
+      "norm_label": "animatetrail()"
     },
     {
       "label": "revealEls",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L602",
+      "id": "stephanie_perez_portfolio_app_revealels",
       "community": 0,
-      "norm_label": "revealels",
-      "id": "stephanie_perez_portfolio_app_revealels"
+      "norm_label": "revealels"
     },
     {
       "label": "revealObserver",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L609",
+      "id": "stephanie_perez_portfolio_app_revealobserver",
       "community": 0,
-      "norm_label": "revealobserver",
-      "id": "stephanie_perez_portfolio_app_revealobserver"
+      "norm_label": "revealobserver"
     },
     {
       "label": "logoCards",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L627",
+      "id": "stephanie_perez_portfolio_app_logocards",
       "community": 0,
-      "norm_label": "logocards",
-      "id": "stephanie_perez_portfolio_app_logocards"
+      "norm_label": "logocards"
     },
     {
       "label": "logoObserver",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L630",
+      "id": "stephanie_perez_portfolio_app_logoobserver",
       "community": 0,
-      "norm_label": "logoobserver",
-      "id": "stephanie_perez_portfolio_app_logoobserver"
+      "norm_label": "logoobserver"
     },
     {
       "label": "hsiDropTimers",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L651",
+      "id": "stephanie_perez_portfolio_app_hsidroptimers",
       "community": 0,
-      "norm_label": "hsidroptimers",
-      "id": "stephanie_perez_portfolio_app_hsidroptimers"
+      "norm_label": "hsidroptimers"
     },
     {
       "label": "runHsiCycle()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L653",
+      "id": "stephanie_perez_portfolio_app_runhsicycle",
       "community": 9,
-      "norm_label": "runhsicycle()",
-      "id": "stephanie_perez_portfolio_app_runhsicycle"
+      "norm_label": "runhsicycle()"
     },
     {
       "label": "startHsiContinuousMotion()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L733",
+      "id": "stephanie_perez_portfolio_app_starthsicontinuousmotion",
       "community": 9,
-      "norm_label": "starthsicontinuousmotion()",
-      "id": "stephanie_perez_portfolio_app_starthsicontinuousmotion"
+      "norm_label": "starthsicontinuousmotion()"
     },
     {
       "label": "stopHsiContinuousMotion()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L739",
+      "id": "stephanie_perez_portfolio_app_stophsicontinuousmotion",
       "community": 0,
-      "norm_label": "stophsicontinuousmotion()",
-      "id": "stephanie_perez_portfolio_app_stophsicontinuousmotion"
+      "norm_label": "stophsicontinuousmotion()"
     },
     {
       "label": "stage",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L751",
+      "id": "stephanie_perez_portfolio_app_stage",
       "community": 0,
-      "norm_label": "stage",
-      "id": "stephanie_perez_portfolio_app_stage"
+      "norm_label": "stage"
     },
     {
       "label": "observer",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L754",
+      "id": "stephanie_perez_portfolio_app_observer",
       "community": 0,
-      "norm_label": "observer",
-      "id": "stephanie_perez_portfolio_app_observer"
+      "norm_label": "observer"
     },
     {
       "label": "footerHeading",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L771",
+      "id": "stephanie_perez_portfolio_app_footerheading",
       "community": 0,
-      "norm_label": "footerheading",
-      "id": "stephanie_perez_portfolio_app_footerheading"
+      "norm_label": "footerheading"
     },
     {
       "label": "typoText",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L772",
+      "id": "stephanie_perez_portfolio_app_typotext",
       "community": 0,
-      "norm_label": "typotext",
-      "id": "stephanie_perez_portfolio_app_typotext"
+      "norm_label": "typotext"
     },
     {
       "label": "startTyping()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L779",
+      "id": "stephanie_perez_portfolio_app_starttyping",
       "community": 0,
-      "norm_label": "starttyping()",
-      "id": "stephanie_perez_portfolio_app_starttyping"
+      "norm_label": "starttyping()"
     },
     {
       "label": "updateCacheMeta()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L817",
+      "id": "stephanie_perez_portfolio_app_updatecachemeta",
       "community": 0,
-      "norm_label": "updatecachemeta()",
-      "id": "stephanie_perez_portfolio_app_updatecachemeta"
+      "norm_label": "updatecachemeta()"
     },
     {
       "label": "setupImageResilience()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L830",
+      "id": "stephanie_perez_portfolio_app_setupimageresilience",
       "community": 0,
-      "norm_label": "setupimageresilience()",
-      "id": "stephanie_perez_portfolio_app_setupimageresilience"
+      "norm_label": "setupimageresilience()"
     },
     {
       "label": "startBackgroundSlidePreloader()",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L862",
+      "id": "stephanie_perez_portfolio_app_startbackgroundslidepreloader",
       "community": 0,
-      "norm_label": "startbackgroundslidepreloader()",
-      "id": "stephanie_perez_portfolio_app_startbackgroundslidepreloader"
+      "norm_label": "startbackgroundslidepreloader()"
     },
     {
       "label": "src",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L917",
+      "id": "stephanie_perez_portfolio_app_src",
       "community": 0,
-      "norm_label": "src",
-      "id": "stephanie_perez_portfolio_app_src"
+      "norm_label": "src"
     },
     {
       "label": "download_assets.py",
       "file_type": "code",
       "source_file": "download_assets.py",
       "source_location": "L1",
+      "id": "download_assets_py",
       "community": 10,
-      "norm_label": "download_assets.py",
-      "id": "download_assets_py"
+      "norm_label": "download_assets.py"
     },
     {
       "label": "sw.js",
       "file_type": "code",
       "source_file": "sw.js",
       "source_location": "L1",
+      "id": "sw_js",
       "community": 4,
-      "norm_label": "sw.js",
-      "id": "sw_js"
+      "norm_label": "sw.js"
     },
     {
       "label": "PRECACHE_ASSETS",
       "file_type": "code",
       "source_file": "sw.js",
       "source_location": "L7",
+      "id": "stephanie_perez_portfolio_sw_precache_assets",
       "community": 4,
-      "norm_label": "precache_assets",
-      "id": "stephanie_perez_portfolio_sw_precache_assets"
+      "norm_label": "precache_assets"
     },
     {
       "label": "url",
       "file_type": "code",
       "source_file": "sw.js",
       "source_location": "L57",
+      "id": "stephanie_perez_portfolio_sw_url",
       "community": 4,
-      "norm_label": "url",
-      "id": "stephanie_perez_portfolio_sw_url"
+      "norm_label": "url"
     },
     {
       "label": "clone",
       "file_type": "code",
       "source_file": "sw.js",
       "source_location": "L91",
+      "id": "stephanie_perez_portfolio_sw_clone",
       "community": 4,
-      "norm_label": "clone",
-      "id": "stephanie_perez_portfolio_sw_clone"
+      "norm_label": "clone"
+    },
+    {
+      "label": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L1",
+      "id": "portfolio_system_architecture_md",
+      "community": 11,
+      "norm_label": "portfolio_system_architecture.md"
+    },
+    {
+      "label": "Portfolio System Architecture & Graphify Knowledge Graph",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L1",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_portfolio_system_architecture_graphify_knowledge_graph",
+      "community": 11,
+      "norm_label": "portfolio system architecture & graphify knowledge graph"
+    },
+    {
+      "label": "1. Graphify Knowledge Graph Summary",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L7",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_1_graphify_knowledge_graph_summary",
+      "community": 11,
+      "norm_label": "1. graphify knowledge graph summary"
+    },
+    {
+      "label": "Graphify Artifacts Generated in `graphify-out/`",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L11",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_graphify_artifacts_generated_in_graphify_out",
+      "community": 11,
+      "norm_label": "graphify artifacts generated in `graphify-out/`"
+    },
+    {
+      "label": "code:block1 (Graphify Topology Metrics:)",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L18",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_1",
+      "community": 11,
+      "norm_label": "code:block1 (graphify topology metrics:)"
+    },
+    {
+      "label": "2. Clustered Functional Communities",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L28",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_2_clustered_functional_communities",
+      "community": 11,
+      "norm_label": "2. clustered functional communities"
+    },
+    {
+      "label": "code:mermaid (flowchart TD)",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L30",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_2",
+      "community": 11,
+      "norm_label": "code:mermaid (flowchart td)"
+    },
+    {
+      "label": "Community Breakdown",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L64",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_community_breakdown",
+      "community": 11,
+      "norm_label": "community breakdown"
+    },
+    {
+      "label": "3. Deep System Architecture",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L81",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_3_deep_system_architecture",
+      "community": 11,
+      "norm_label": "3. deep system architecture"
+    },
+    {
+      "label": "code:mermaid (flowchart TD)",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L85",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_3",
+      "community": 11,
+      "norm_label": "code:mermaid (flowchart td)"
+    },
+    {
+      "label": "4. Key Subsystem Workflows",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L120",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_4_key_subsystem_workflows",
+      "community": 13,
+      "norm_label": "4. key subsystem workflows"
+    },
+    {
+      "label": "Subsystem A: Service Worker & Offline Image Cache",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L122",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_subsystem_a_service_worker_offline_image_cache",
+      "community": 13,
+      "norm_label": "subsystem a: service worker & offline image cache"
+    },
+    {
+      "label": "code:mermaid (sequenceDiagram)",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L125",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_4",
+      "community": 13,
+      "norm_label": "code:mermaid (sequencediagram)"
+    },
+    {
+      "label": "Subsystem B: HSI Healthcare 5-Color Pinning Engine",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L151",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_subsystem_b_hsi_healthcare_5_color_pinning_engine",
+      "community": 13,
+      "norm_label": "subsystem b: hsi healthcare 5-color pinning engine"
+    },
+    {
+      "label": "code:mermaid (sequenceDiagram)",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L154",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_5",
+      "community": 13,
+      "norm_label": "code:mermaid (sequencediagram)"
+    },
+    {
+      "label": "Subsystem C: Predictive Lightbox & Touch Gestures",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L186",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_subsystem_c_predictive_lightbox_touch_gestures",
+      "community": 13,
+      "norm_label": "subsystem c: predictive lightbox & touch gestures"
+    },
+    {
+      "label": "5. Web Audio API Procedural Synthesizer",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L194",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_5_web_audio_api_procedural_synthesizer",
+      "community": 11,
+      "norm_label": "5. web audio api procedural synthesizer"
+    },
+    {
+      "label": "6. How to Query the Graphify Graph",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L202",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_6_how_to_query_the_graphify_graph",
+      "community": 11,
+      "norm_label": "6. how to query the graphify graph"
+    },
+    {
+      "label": "code:bash (# 1. Open the interactive 3D/2D force-directed knowledge gra)",
+      "file_type": "document",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L206",
+      "id": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_6",
+      "community": 11,
+      "norm_label": "code:bash (# 1. open the interactive 3d/2d force-directed knowledge gra)"
     },
     {
       "label": "README.md",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L1",
+      "id": "readme_md",
       "community": 1,
-      "norm_label": "readme.md",
-      "id": "readme_md"
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "Himanshi Parihar \u2014 UI/UX & Graphic Designer Portfolio",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "id": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio",
+      "community": 1,
+      "norm_label": "himanshi parihar \u2014 ui/ux & graphic designer portfolio"
+    },
+    {
+      "label": "\ud83c\udf1f Key Features & Interactive Systems",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L9",
+      "id": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
+      "community": 12,
+      "norm_label": "\ud83c\udf1f key features & interactive systems"
+    },
+    {
+      "label": "1. \ud83c\udfa8 HSI Healthcare Continuous 5-Color Pinning Engine",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L11",
+      "id": "stephanie_perez_portfolio_readme_1_hsi_healthcare_continuous_5_color_pinning_engine",
+      "community": 12,
+      "norm_label": "1. \ud83c\udfa8 hsi healthcare continuous 5-color pinning engine"
+    },
+    {
+      "label": "2. \u26a1 Dual-Layer Caching & Offline PWA Engine (`sw.js`)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L22",
+      "id": "stephanie_perez_portfolio_readme_2_dual_layer_caching_offline_pwa_engine_sw_js",
+      "community": 12,
+      "norm_label": "2. \u26a1 dual-layer caching & offline pwa engine (`sw.js`)"
+    },
+    {
+      "label": "3. \ud83d\uddbc\ufe0f Native-App Lightbox & Touch Gestures",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L27",
+      "id": "stephanie_perez_portfolio_readme_3_native_app_lightbox_touch_gestures",
+      "community": 12,
+      "norm_label": "3. \ud83d\uddbc\ufe0f native-app lightbox & touch gestures"
+    },
+    {
+      "label": "4. \ud83d\udcf1 Interactive Phone Prototype Simulator",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L32",
+      "id": "stephanie_perez_portfolio_readme_4_interactive_phone_prototype_simulator",
+      "community": 12,
+      "norm_label": "4. \ud83d\udcf1 interactive phone prototype simulator"
+    },
+    {
+      "label": "5. \ud83c\udf3f Bloomcare AI Botanical Scanner Simulator",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L36",
+      "id": "stephanie_perez_portfolio_readme_5_bloomcare_ai_botanical_scanner_simulator",
+      "community": 12,
+      "norm_label": "5. \ud83c\udf3f bloomcare ai botanical scanner simulator"
+    },
+    {
+      "label": "6. \ud83d\udd0a Procedural Web Audio API Synthesizer",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L39",
+      "id": "stephanie_perez_portfolio_readme_6_procedural_web_audio_api_synthesizer",
+      "community": 12,
+      "norm_label": "6. \ud83d\udd0a procedural web audio api synthesizer"
+    },
+    {
+      "label": "7. \ud83c\udf81 Cultural Easter Eggs",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L43",
+      "id": "stephanie_perez_portfolio_readme_7_cultural_easter_eggs",
+      "community": 12,
+      "norm_label": "7. \ud83c\udf81 cultural easter eggs"
+    },
+    {
+      "label": "8. \ud83d\udcc4 Interactive Resume & Bio Drawer",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L47",
+      "id": "stephanie_perez_portfolio_readme_8_interactive_resume_bio_drawer",
+      "community": 12,
+      "norm_label": "8. \ud83d\udcc4 interactive resume & bio drawer"
+    },
+    {
+      "label": "\ud83c\udfd7\ufe0f System Architecture & Knowledge Graph",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L54",
+      "id": "stephanie_perez_portfolio_readme_system_architecture_knowledge_graph",
+      "community": 1,
+      "norm_label": "\ud83c\udfd7\ufe0f system architecture & knowledge graph"
+    },
+    {
+      "label": "Clustered Functional Communities (77 Nodes \u00b7 88 Edges)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L64",
+      "id": "stephanie_perez_portfolio_readme_clustered_functional_communities_77_nodes_88_edges",
+      "community": 1,
+      "norm_label": "clustered functional communities (77 nodes \u00b7 88 edges)"
+    },
+    {
+      "label": "\ud83d\ude80 How to Run Locally",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L79",
+      "id": "stephanie_perez_portfolio_readme_how_to_run_locally",
+      "community": 1,
+      "norm_label": "\ud83d\ude80 how to run locally"
+    },
+    {
+      "label": "Method 1: Local HTTP Server (Recommended)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L81",
+      "id": "stephanie_perez_portfolio_readme_method_1_local_http_server_recommended",
+      "community": 1,
+      "norm_label": "method 1: local http server (recommended)"
+    },
+    {
+      "label": "code:powershell (# Navigate to the portfolio folder)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L84",
+      "id": "stephanie_perez_portfolio_readme_codeblock_1",
+      "community": 1,
+      "norm_label": "code:powershell (# navigate to the portfolio folder)"
+    },
+    {
+      "label": "Method 2: Direct File Open",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L93",
+      "id": "stephanie_perez_portfolio_readme_method_2_direct_file_open",
+      "community": 1,
+      "norm_label": "method 2: direct file open"
+    },
+    {
+      "label": "code:powershell (Start-Process \"C:\\Users\\sgarm\\stephanie-perez-portfolio\\inde)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L95",
+      "id": "stephanie_perez_portfolio_readme_codeblock_2",
+      "community": 1,
+      "norm_label": "code:powershell (start-process \"c:\\users\\sgarm\\stephanie-perez-portfolio\\inde)"
+    },
+    {
+      "label": "\ud83d\udd0d Exploring the Graphify Knowledge Graph",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L101",
+      "id": "stephanie_perez_portfolio_readme_exploring_the_graphify_knowledge_graph",
+      "community": 1,
+      "norm_label": "\ud83d\udd0d exploring the graphify knowledge graph"
+    },
+    {
+      "label": "code:powershell (# Open the interactive 3D/2D physics graph)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L105",
+      "id": "stephanie_perez_portfolio_readme_codeblock_3",
+      "community": 1,
+      "norm_label": "code:powershell (# open the interactive 3d/2d physics graph)"
+    },
+    {
+      "label": "\ud83d\udee0\ufe0f Tech Stack",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L127",
+      "id": "stephanie_perez_portfolio_readme_tech_stack",
+      "community": 1,
+      "norm_label": "\ud83d\udee0\ufe0f tech stack"
     },
     {
       "label": "Himanshi Parihar \u2014 UI/UX & Graphic Designer Portfolio (Interactive Clone)",
@@ -659,42 +1010,6 @@
       "community": 1,
       "norm_label": "method 1: local http server (active on port 8080)",
       "id": "stephanie_perez_portfolio_readme_method_1_local_http_server_active_on_port_8080"
-    },
-    {
-      "label": "code:block1 (http://localhost:8080)",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L21",
-      "community": 1,
-      "norm_label": "code:block1 (http://localhost:8080)",
-      "id": "stephanie_perez_portfolio_readme_codeblock_1"
-    },
-    {
-      "label": "code:powershell (cd C:\\Users\\sgarm\\stephanie-perez-portfolio)",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L26",
-      "community": 1,
-      "norm_label": "code:powershell (cd c:\\users\\sgarm\\stephanie-perez-portfolio)",
-      "id": "stephanie_perez_portfolio_readme_codeblock_2"
-    },
-    {
-      "label": "Method 2: Direct File Open",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L31",
-      "community": 1,
-      "norm_label": "method 2: direct file open",
-      "id": "stephanie_perez_portfolio_readme_method_2_direct_file_open"
-    },
-    {
-      "label": "code:powershell (Start-Process \"C:\\Users\\sgarm\\stephanie-perez-portfolio\\inde)",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L33",
-      "community": 1,
-      "norm_label": "code:powershell (start-process \"c:\\users\\sgarm\\stephanie-perez-portfolio\\inde)",
-      "id": "stephanie_perez_portfolio_readme_codeblock_3"
     }
   ],
   "links": [
@@ -1516,12 +1831,432 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "portfolio_system_architecture_md",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_portfolio_system_architecture_graphify_knowledge_graph",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_portfolio_system_architecture_graphify_knowledge_graph",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_1_graphify_knowledge_graph_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_portfolio_system_architecture_graphify_knowledge_graph",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_2_clustered_functional_communities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_portfolio_system_architecture_graphify_knowledge_graph",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_3_deep_system_architecture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_portfolio_system_architecture_graphify_knowledge_graph",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_4_key_subsystem_workflows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L194",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_portfolio_system_architecture_graphify_knowledge_graph",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_5_web_audio_api_procedural_synthesizer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L202",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_portfolio_system_architecture_graphify_knowledge_graph",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_6_how_to_query_the_graphify_graph",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_1_graphify_knowledge_graph_summary",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_graphify_artifacts_generated_in_graphify_out",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_graphify_artifacts_generated_in_graphify_out",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_2_clustered_functional_communities",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_2_clustered_functional_communities",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_community_breakdown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_3_deep_system_architecture",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L122",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_4_key_subsystem_workflows",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_subsystem_a_service_worker_offline_image_cache",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L151",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_4_key_subsystem_workflows",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_subsystem_b_hsi_healthcare_5_color_pinning_engine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L186",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_4_key_subsystem_workflows",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_subsystem_c_predictive_lightbox_touch_gestures",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_subsystem_a_service_worker_offline_image_cache",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_subsystem_b_hsi_healthcare_5_color_pinning_engine",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_5",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PORTFOLIO_SYSTEM_ARCHITECTURE.md",
+      "source_location": "L206",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_portfolio_system_architecture_6_how_to_query_the_graphify_graph",
+      "target": "stephanie_perez_portfolio_portfolio_system_architecture_codeblock_6",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "readme_md",
+      "target": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "README.md",
       "source_location": "L1",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "readme_md",
       "target": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio_interactive_clone"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio",
+      "target": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio",
+      "target": "stephanie_perez_portfolio_readme_system_architecture_knowledge_graph",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio",
+      "target": "stephanie_perez_portfolio_readme_how_to_run_locally",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio",
+      "target": "stephanie_perez_portfolio_readme_exploring_the_graphify_knowledge_graph",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio",
+      "target": "stephanie_perez_portfolio_readme_tech_stack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
+      "target": "stephanie_perez_portfolio_readme_1_hsi_healthcare_continuous_5_color_pinning_engine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
+      "target": "stephanie_perez_portfolio_readme_2_dual_layer_caching_offline_pwa_engine_sw_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
+      "target": "stephanie_perez_portfolio_readme_3_native_app_lightbox_touch_gestures",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
+      "target": "stephanie_perez_portfolio_readme_4_interactive_phone_prototype_simulator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
+      "target": "stephanie_perez_portfolio_readme_5_bloomcare_ai_botanical_scanner_simulator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
+      "target": "stephanie_perez_portfolio_readme_6_procedural_web_audio_api_synthesizer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
+      "target": "stephanie_perez_portfolio_readme_7_cultural_easter_eggs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_key_features_interactive_systems",
+      "target": "stephanie_perez_portfolio_readme_8_interactive_resume_bio_drawer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_system_architecture_knowledge_graph",
+      "target": "stephanie_perez_portfolio_readme_clustered_functional_communities_77_nodes_88_edges",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_how_to_run_locally",
+      "target": "stephanie_perez_portfolio_readme_method_1_local_http_server_recommended",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_how_to_run_locally",
+      "target": "stephanie_perez_portfolio_readme_method_2_direct_file_open",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_method_1_local_http_server_recommended",
+      "target": "stephanie_perez_portfolio_readme_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_readme_method_1_local_http_server_active_on_port_8080",
+      "target": "stephanie_perez_portfolio_readme_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_method_2_direct_file_open",
+      "target": "stephanie_perez_portfolio_readme_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_readme_how_to_run",
+      "target": "stephanie_perez_portfolio_readme_method_2_direct_file_open"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_readme_method_2_direct_file_open",
+      "target": "stephanie_perez_portfolio_readme_codeblock_3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_readme_method_1_local_http_server_active_on_port_8080",
+      "target": "stephanie_perez_portfolio_readme_codeblock_2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "stephanie_perez_portfolio_readme_exploring_the_graphify_knowledge_graph",
+      "target": "stephanie_perez_portfolio_readme_codeblock_3",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1552,48 +2287,8 @@
       "confidence_score": 1.0,
       "source": "stephanie_perez_portfolio_readme_how_to_run",
       "target": "stephanie_perez_portfolio_readme_method_1_local_http_server_active_on_port_8080"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L31",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "stephanie_perez_portfolio_readme_how_to_run",
-      "target": "stephanie_perez_portfolio_readme_method_2_direct_file_open"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "stephanie_perez_portfolio_readme_method_1_local_http_server_active_on_port_8080",
-      "target": "stephanie_perez_portfolio_readme_codeblock_1"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "stephanie_perez_portfolio_readme_method_1_local_http_server_active_on_port_8080",
-      "target": "stephanie_perez_portfolio_readme_codeblock_2"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "stephanie_perez_portfolio_readme_method_2_direct_file_open",
-      "target": "stephanie_perez_portfolio_readme_codeblock_3"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a539a21c40b4e8448e0c1891a577e8583dc6f129"
+  "built_at_commit": "31304d99f673a2bc042f960f6b3479450dc84b90"
 }
