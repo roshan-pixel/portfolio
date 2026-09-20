@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Himanshi Parihar — UI/UX & Graphic Designer Portfolio</title>
+  <meta name="description" content="Portfolio of Himanshi Parihar — Senior Graphic Designer and UI/UX Designer. Specializing in branding, design systems, and digital product design." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Floating Navigation -->
+  <div class="container top-nav">
+    <nav class="nav-pill-wrapper">
+      <div class="search-mock">
+        <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <span class="nav-tag">
+          <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8 9a1 1 0 112 0 1 1 0 01-2 0zm4 4a1 1 0 11-2 0 1 1 0 012 0z"/></svg>
+          Himanshi Parihar
+        </span>
+        <span class="nav-tag">2025</span>
+      </div>
+
+      <div class="nav-links">
+        <button class="nav-btn" onclick="scrollToSection('logofolio')">01 Logofolio</button>
+        <button class="nav-btn" onclick="scrollToSection('branding')">02 Branding</button>
+        <button class="nav-btn" onclick="scrollToSection('uiux')">03 UI/UX Design</button>
+        <button class="nav-btn" onclick="openResume()">About & Resume</button>
+        <button class="nav-btn rishwat-trigger" onclick="triggerRishwat(event, 'Behance')">Behance ↗</button>
+        <button class="nav-btn cta" onclick="copyContactEmail()">Contact</button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-menu-btn" onclick="openResume()" aria-label="Open Menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </nav>
+  </div>
+
+  <main class="container">
+
+    <!-- Hero Showcase Card -->
+    <section class="hero">
+      <div class="hero-browser-card">
+        <div class="browser-header">
+          <div class="browser-search-bar">
+            <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <span class="pill-item">Himanshi Parihar</span>
+            <span class="pill-item">2025</span>
+          </div>
+          <div class="browser-controls">
+            <div class="control-circle"></div>
+            <div class="control-circle"></div>
+          </div>
+        </div>
+
+        <h1 class="hero-main-title">portfolio.</h1>
+
+        <div class="hero-badges">
+          <a href="#branding" class="hero-badge">↗ Graphic Designer</a>
+          <a href="#uiux" class="hero-badge">↗ UI UX Designer</a>
+          <button class="hero-badge" style="background: rgba(0,0,0,0.06); border-color: #ddd;" onclick="openResume()">📄 View Resume</button>
+          <button class="hero-badge rishwat-trigger" onclick="triggerRishwat(event, 'Behance Profile')">↗ Behance Gallery</button>
+        </div>
+
+        <div class="hero-meta-footer">
+          <span class="contact-pill-link" onclick="copyContactEmail()">
+            ✉ himanshiparihar.design@gmail.com
+          </span>
+          <span style="font-weight: 500;">Product Design & Branding</span>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Bar -->
+      <div class="metrics-row">
+        <div class="metric-box">
+          <span class="metric-num">6+</span>
+          <span class="metric-label">Years Experience</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-num">15+</span>
+          <span class="metric-label">Brand Marks Created</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-num">ISDi</span>
+          <span class="metric-label">Bachelor's Degree in Design</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-num">+46%</span>
+          <span class="metric-label">Proven Traffic Growth</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Work Category Filter Tabs -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCategory('all', this)">All Work (60 Slides)</button>
+      <button class="filter-btn" onclick="filterCategory('logofolio', this)">01 Logofolio</button>
+      <button class="filter-btn" onclick="filterCategory('branding', this)">02 Branding Systems</button>
+      <button class="filter-btn" onclick="filterCategory('uiux', this)">03 UI/UX Design</button>
+    </div>
+
+    <!-- Index Summary Card -->
+    <section class="filterable-section all" style="margin-bottom: 40px;">
+      <div class="slide-img-box" onclick="openLightbox('assets/slide_3.jpg', 'Index & Table of Contents')">
+        <img src="assets/slide_3.jpg" alt="Index: 01 Logofolio, 02 Branding, 03 UI/UX Design" loading="lazy" />
+        <div class="slide-caption-overlay">Click to expand Index</div>
+      </div>
+    </section>
+
+    <!-- 01 LOGOFOLIO SECTION -->
+    <section id="logofolio" class="filterable-section all logofolio">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-num">01</span>
+          <h2 class="section-title">Logofolio</h2>
+        </div>
+        <span class="section-subtitle">15 Curated Brand Identity Marks</span>
+      </div>
+
+      <div class="logofolio-grid" style="margin-bottom: 24px;">
+        <div class="logo-card" onclick="openLightbox('assets/slide_5.jpg', 'Logofolio: Full 15 Marks Grid')">
+          <span class="logo-badge-num">01</span>
+          <div class="logo-brand-name">Digitala</div>
+          <div class="logo-tag-desc">Digital Agency</div>
+        </div>
+        <div class="logo-card" onclick="openLightbox('assets/slide_5.jpg', 'Logofolio: Full 15 Marks Grid')">
+          <span class="logo-badge-num">02</span>
+          <div class="logo-brand-name">Lilies of the Mountain</div>
+          <div class="logo-tag-desc">Geometric Floral Brand</div>
+        </div>
+        <div class="logo-card" onclick="openLightbox('assets/slide_5.jpg', 'Logofolio: Full 15 Marks Grid')">
+          <span class="logo-badge-num">03</span>
+          <div class="logo-brand-name">Experience Focus</div>
+          <div class="logo-tag-desc">UX & Product Consulting</div>
+        </div>
+        <div class="logo-card" onclick="openLightbox('assets/slide_5.jpg', 'Logofolio: Full 15 Marks Grid')">
+          <span class="logo-badge-num">04</span>
+          <div class="logo-brand-name">Digital Inclusion</div>
+          <div class="logo-tag-desc">Accessibility Initiative</div>
+        </div>
+        <div class="logo-card" onclick="openLightbox('assets/slide_5.jpg', 'Logofolio: Full 15 Marks Grid')">
+          <span class="logo-badge-num">05</span>
+          <div class="logo-brand-name">Women in Cyber</div>
+          <div class="logo-tag-desc">Tech Empowerment</div>
+        </div>
+        <div class="logo-card" onclick="openLightbox('assets/slide_5.jpg', 'Logofolio: Full 15 Marks Grid')">
+          <span class="logo-badge-num">06</span>
+          <div class="logo-brand-name">All In Agents (AIA)</div>
+          <div class="logo-tag-desc">Travel & Tourism</div>
+        </div>
+        <div class="logo-card" onclick="openLightbox('assets/slide_5.jpg', 'Logofolio: Full 15 Marks Grid')">
+          <span class="logo-badge-num">07</span>
+          <div class="logo-brand-name">Venture Spark</div>
+          <div class="logo-tag-desc">Startup Incubator</div>
+        </div>
+        <div class="logo-card" onclick="openLightbox('assets/slide_5.jpg', 'Logofolio: Full 15 Marks Grid')">
+          <span class="logo-badge-num">08</span>
+          <div class="logo-brand-name">Express Travel</div>
+          <div class="logo-tag-desc">Transportation & Booking</div>
+        </div>
+        <div class="logo-card" onclick="openLightbox('assets/slide_5.jpg', 'Logofolio: Full 15 Marks Grid')">
+          <span class="logo-badge-num">09</span>
+          <div class="logo-brand-name">TAP</div>
+          <div class="logo-tag-desc">Clinical Task Management</div>
+        </div>
+        <div class="logo-card" onclick="openLightbox('assets/slide_5.jpg', 'Logofolio: Full 15 Marks Grid')">
+          <span class="logo-badge-num">10</span>
+          <div class="logo-brand-name">Havana Barbershop</div>
+          <div class="logo-tag-desc">Vintage Grooming & Tattoo</div>
+        </div>
+        <div class="logo-card" onclick="openLightbox('assets/slide_5.jpg', 'Logofolio: Full 15 Marks Grid')">
+          <span class="logo-badge-num">11</span>
+          <div class="logo-brand-name">Travel Cuba</div>
+          <div class="logo-tag-desc">Cultural Tourism</div>
+        </div>
+        <div class="logo-card" onclick="openLightbox('assets/slide_5.jpg', 'Logofolio: Full 15 Marks Grid')">
+          <span class="logo-badge-num">12</span>
+          <div class="logo-brand-name">Medium Coders</div>
+          <div class="logo-tag-desc">Developer Community</div>
+        </div>
+        <div class="logo-card" onclick="openLightbox('assets/slide_5.jpg', 'Logofolio: Full 15 Marks Grid')">
+          <span class="logo-badge-num">13</span>
+          <div class="logo-brand-name">Barlazo</div>
+          <div class="logo-tag-desc">Luxury Brand (Est. 2024)</div>
+        </div>
+        <div class="logo-card" onclick="openLightbox('assets/slide_5.jpg', 'Logofolio: Full 15 Marks Grid')">
+          <span class="logo-badge-num">14</span>
+          <div class="logo-brand-name">Radio Galenos</div>
+          <div class="logo-tag-desc">Medical Broadcasting</div>
+        </div>
+        <div class="logo-card" onclick="openLightbox('assets/slide_5.jpg', 'Logofolio: Full 15 Marks Grid')">
+          <span class="logo-badge-num">15</span>
+          <div class="logo-brand-name">ACL Copilot</div>
+          <div class="logo-tag-desc">Enterprise AI Navigation</div>
+        </div>
+      </div>
+
+      <!-- High-Res Slide Viewer for Logofolio -->
+      <div class="slide-img-box" onclick="openLightbox('assets/slide_5.jpg', 'Logofolio Marks Showcase')">
+        <img src="assets/slide_5.jpg" alt="15 Logo Marks Showcase" loading="lazy" />
+        <div class="slide-caption-overlay">Click to inspect full Logofolio in high resolution</div>
+      </div>
+    </section>
+
+    <!-- 02 BRANDING SECTION -->
+    <section id="branding" class="filterable-section all branding">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-num">02</span>
+          <h2 class="section-title">Branding Systems</h2>
+        </div>
+        <span class="section-subtitle">Identity, Typography & Multi-Touchpoint Guidelines</span>
+      </div>
+
+      <div class="case-studies-list">
+
+        <!-- Case Study: Women in Cyber -->
+        <article class="case-study-card">
+          <div class="case-study-header">
+            <div>
+              <h3 class="case-study-title">Women in Cyber</h3>
+              <p class="case-study-desc">
+                Empowering women in technology through an accessible, high-impact visual identity. Built with modern curved typographic connections that reflect digital community and empowerment.
+              </p>
+              <div class="case-tags">
+                <span class="case-tag">Identity Design</span>
+                <span class="case-tag">Community Branding</span>
+                <span class="case-tag">Typography</span>
+              </div>
+              <button class="case-study-wide-btn rishwat-trigger" onclick="triggerRishwat(event, 'Women in Cyber External Study')">↗ Open Full Case Study on Other Page</button>
+            </div>
+          </div>
+          <div class="slides-gallery">
+            <div class="slide-img-box" onclick="openLightbox('assets/slide_13.jpg', 'Women in Cyber — Brand Application')">
+              <img src="assets/slide_13.jpg" alt="Women in Cyber application mockup" loading="lazy" />
+              <div class="slide-caption-overlay">Inspect brand application</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study: Havana Barbershop & Tattoo -->
+        <article class="case-study-card">
+          <div class="case-study-header">
+            <div>
+              <h3 class="case-study-title">Havana Barbershop & Tattoo</h3>
+              <p class="case-study-desc">
+                A classic heritage badge system combining vintage men's grooming aesthetics with bespoke tattoo parlor typography. Designed for high durability across apparel, exterior signage, and packaging.
+              </p>
+              <div class="case-tags">
+                <span class="case-tag">Vintage Badge</span>
+                <span class="case-tag">Packaging</span>
+                <span class="case-tag">Signage</span>
+              </div>
+            </div>
+          </div>
+          <div class="slides-gallery">
+            <div class="slide-img-box" onclick="openLightbox('assets/slide_17.jpg', 'Havana Barbershop & Tattoo Showcase')">
+              <img src="assets/slide_17.jpg" alt="Havana Barbershop showcase" loading="lazy" />
+              <div class="slide-caption-overlay">Inspect identity details</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study: Experience Focus -->
+        <article class="case-study-card">
+          <div class="case-study-header">
+            <div>
+              <h3 class="case-study-title">Experience Focus</h3>
+              <p class="case-study-desc">
+                Digital product and UX consulting firm visual identity. Combines dual-circuit connection iconography with an electric high-contrast digital palette designed to build credibility across client pitches.
+              </p>
+              <!-- Interactive Color Tokens -->
+              <div class="color-tokens-row">
+                <div class="color-swatch-badge" onclick="copyHex('#6648F8')">
+                  <span class="swatch-circle" style="background: #6648F8;"></span>
+                  <span class="swatch-code">Indigo #6648F8 (Click to copy)</span>
+                </div>
+                <div class="color-swatch-badge" onclick="copyHex('#50EDDA')">
+                  <span class="swatch-circle" style="background: #50EDDA;"></span>
+                  <span class="swatch-code">Turquoise #50EDDA (Click to copy)</span>
+                </div>
+                <div class="color-swatch-badge" onclick="copyHex('#212121')">
+                  <span class="swatch-circle" style="background: #212121;"></span>
+                  <span class="swatch-code">Jet Black #212121 (Click to copy)</span>
+                </div>
+              </div>
+              <div class="case-tags">
+                <span class="case-tag">UX Agency</span>
+                <span class="case-tag">Color System</span>
+                <span class="case-tag">Stationery</span>
+              </div>
+            </div>
+          </div>
+          <div class="slides-gallery">
+            <div class="slide-img-box" onclick="openLightbox('assets/slide_25.jpg', 'Experience Focus Brand Guidelines & Collateral')">
+              <img src="assets/slide_25.jpg" alt="Experience Focus identity showcase" loading="lazy" />
+              <div class="slide-caption-overlay">Inspect stationery and tokens</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study: All In Agents (AIA) -->
+        <article class="case-study-card">
+          <div class="case-study-header">
+            <div>
+              <h3 class="case-study-title">All In Agents (AIA)</h3>
+              <p class="case-study-desc">
+                Comprehensive identity system for the modern travel and tourism sector. Ground-up branding encompassing logo architecture, corporate presentation decks, business stationery, and web layout foundations.
+              </p>
+              <div class="case-tags">
+                <span class="case-tag">Travel & Tourism</span>
+                <span class="case-tag">Brand System</span>
+                <span class="case-tag">Corporate Decks</span>
+              </div>
+            </div>
+          </div>
+          <div class="slides-gallery">
+            <div class="slide-img-box" onclick="openLightbox('assets/slide_29.jpg', 'All In Agents Brand Narrative')">
+              <img src="assets/slide_29.jpg" alt="All In Agents identity narrative" loading="lazy" />
+              <div class="slide-caption-overlay">Inspect case study overview</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study: LMNT (Element) Events -->
+        <article class="case-study-card">
+          <div class="case-study-header">
+            <div>
+              <h3 class="case-study-title">LMNT (Element) Events</h3>
+              <p class="case-study-desc">
+                Multi-service event production identity uniting lights, music, and cutting-edge AV technology. Features a fluid 3D dynamic prism mark and full sub-brand architecture (*Bloom*, *Lumina*, *Ornamnt*, *Sync*, *Custm*, *Levels*).
+              </p>
+              <div class="case-tags">
+                <span class="case-tag">Event Production</span>
+                <span class="case-tag">PP Neue Machina</span>
+                <span class="case-tag">Sub-branding System</span>
+              </div>
+            </div>
+          </div>
+          <div class="slides-gallery">
+            <div class="slide-img-box" onclick="openLightbox('assets/slide_33.jpg', 'LMNT Brand Intro')">
+              <img src="assets/slide_33.jpg" alt="LMNT brand overview" loading="lazy" />
+              <div class="slide-caption-overlay">Overview slide</div>
+            </div>
+            <div class="slide-img-box" onclick="openLightbox('assets/slide_37.jpg', 'LMNT Comprehensive Brand Guidelines')">
+              <img src="assets/slide_37.jpg" alt="LMNT brand guidelines presentation" loading="lazy" />
+              <div class="slide-caption-overlay">Click to inspect complete typography & sub-brand sheets</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 03 UI / UX DESIGN SECTION -->
+    <section id="uiux" class="filterable-section all uiux">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-num">03</span>
+          <h2 class="section-title">UI / UX Design</h2>
+        </div>
+        <span class="section-subtitle">SaaS Portals, Clinical Workflows & Mobile Product Design</span>
+      </div>
+
+      <div class="case-studies-list">
+
+        <!-- Case Study 1: HSI Healthcare Portal -->
+        <article class="case-study-card">
+          <div class="case-study-header">
+            <div>
+              <h3 class="case-study-title">HSI Healthcare Enterprise Landing Page</h3>
+              <p class="case-study-desc">
+                High-converting enterprise portal presenting 4 interconnected digital health solutions (S'mores App, TAP App, CG Connect, Alpha Scan App). Designed with clinical confidence tokens and structured typography hierarchy.
+              </p>
+              <!-- Healthcare Color Tokens -->
+              <div class="color-tokens-row">
+                <div class="color-swatch-badge" onclick="copyHex('#1A49FF')">
+                  <span class="swatch-circle" style="background: #1A49FF;"></span>
+                  <span class="swatch-code">Clinical Blue #1A49FF</span>
+                </div>
+                <div class="color-swatch-badge" onclick="copyHex('#B4C2FA')">
+                  <span class="swatch-circle" style="background: #B4C2FA;"></span>
+                  <span class="swatch-code">Soft Tint #B4C2FA</span>
+                </div>
+                <div class="color-swatch-badge" onclick="copyHex('#FAFAFA')">
+                  <span class="swatch-circle" style="background: #FAFAFA; border: 1px solid #ccc;"></span>
+                  <span class="swatch-code">Canvas White #FAFAFA</span>
+                </div>
+              </div>
+              <div class="case-tags">
+                <span class="case-tag">Enterprise SaaS</span>
+                <span class="case-tag">DM Sans Typography</span>
+                <span class="case-tag">Web Portal</span>
+              </div>
+            </div>
+          </div>
+          <div class="slides-gallery">
+            <div class="slide-img-box" onclick="openLightbox('assets/slide_39.jpg', 'HSI Desktop Presentation Mockup')">
+              <img src="assets/slide_39.jpg" alt="HSI Healthcare landing page desktop mockup" loading="lazy" />
+              <div class="slide-caption-overlay">Inspect desktop portal layout</div>
+            </div>
+            <div class="slide-img-box" onclick="openLightbox('assets/slide_41.jpg', 'HSI Typography & Color Hierarchy')">
+              <img src="assets/slide_41.jpg" alt="HSI design system tokens and typography scale" loading="lazy" />
+              <div class="slide-caption-overlay">Inspect design tokens & font hierarchy</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 2: TAP App v1.0 + Interactive Mobile Simulator -->
+        <article class="case-study-card">
+          <div class="case-study-header">
+            <div>
+              <h3 class="case-study-title">TAP App v1.0 — Clinical Task Management</h3>
+              <p class="case-study-desc">
+                Specialized mobile application for healthcare supervisors, nurses, and care coordinators. Streamlines clinical daily schedules, timestamped photo evidence verification, and interactive progress checklists.
+              </p>
+              <div class="case-tags">
+                <span class="case-tag">iOS / Android</span>
+                <span class="case-tag">HealthTech</span>
+                <span class="case-tag">Design System</span>
+                <span class="case-tag">Clinical Flows</span>
+              </div>
+              <button class="case-study-wide-btn rishwat-trigger" onclick="triggerRishwat(event, 'TAP App Clinical Workflow')">↗ Open Full Case Study on Other Page</button>
+            </div>
+          </div>
+
+          <!-- Interactive Mobile Flow Navigator -->
+          <div class="interactive-simulator-box">
+            <div class="sim-header">
+              <div class="sim-title">
+                <span>📱 Interactive Flow Explorer:</span>
+              </div>
+              <div class="sim-tabs">
+                <button class="sim-tab-btn active" onclick="switchSimSlide('assets/slide_45.jpg', this)">01 In-Context Mockup</button>
+                <button class="sim-tab-btn" onclick="switchSimSlide('assets/slide_49.jpg', this)">02 Full Screen Architecture (9 Flows)</button>
+              </div>
+            </div>
+            <div class="sim-preview-area">
+              <img id="tap-sim-img" class="sim-preview-img" src="assets/slide_45.jpg" alt="TAP App Flow" onclick="openLightbox(this.src, 'TAP App Interactive Flow')" style="cursor: zoom-in;" />
+            </div>
+          </div>
+
+          <div class="slides-gallery">
+            <div class="slide-img-box" onclick="openLightbox('assets/slide_49.jpg', 'TAP App 9 Core Flows')">
+              <img src="assets/slide_49.jpg" alt="TAP App 9 core user journey screens" loading="lazy" />
+              <div class="slide-caption-overlay">Inspect complete 9-screen user journey</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 3: Bloomcare App + Interactive Diagnosis Simulator -->
+        <article class="case-study-card">
+          <div class="case-study-header">
+            <div>
+              <h3 class="case-study-title">Bloomcare — Botanical AI Diagnosis & Plant Care</h3>
+              <p class="case-study-desc">
+                Consumer botanical health platform designed to identify house plants and diagnose diseases using visual camera recognition. Guides users from symptom detection to step-by-step plant treatment plans.
+              </p>
+              <div class="case-tags">
+                <span class="case-tag">Design Thinking</span>
+                <span class="case-tag">UX Research</span>
+                <span class="case-tag">Camera Viewfinder UX</span>
+                <span class="case-tag">Botanical System</span>
+              </div>
+              <button class="case-study-wide-btn rishwat-trigger" onclick="triggerRishwat(event, 'Bloomcare Live Case Study')">↗ Open Full Case Study on Other Page</button>
+            </div>
+          </div>
+
+          <!-- Interactive Botanical AI Diagnostic Simulator -->
+          <div class="plant-scanner-card">
+            <div class="scanner-flex">
+              <div>
+                <h4 style="font-size: 1.1rem; color: #2ecc71; margin-bottom: 4px;">🌿 Live Camera AI Diagnosis Simulator</h4>
+                <p style="font-size: 13.5px; color: #c4d7cb;">Test the visual recognition workflow designed for Monstera Deliciosa (Swiss Cheese Plant).</p>
+              </div>
+              <button id="scan-trigger-btn" class="scanner-btn" onclick="runPlantScan()">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                Run AI Diagnosis Scan
+              </button>
+            </div>
+
+            <div id="scan-result-box" class="scan-result-box">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                <strong style="color: #2ecc71; font-size: 15px;">✓ Species Identified: Swiss Cheese Plant (Monstera Deliciosa)</strong>
+                <span style="background: #e74c3c; color: #fff; font-size: 11px; padding: 2px 10px; border-radius: 999px; font-weight: 700;">Needs Treatment</span>
+              </div>
+              <p style="font-size: 13.5px; color: #eee; margin-bottom: 6px;">
+                <strong>Symptoms Detected:</strong> Yellowing foliage and leaf discoloration due to inadequate indirect sunlight and irregular watering cycles.
+              </p>
+              <p style="font-size: 13px; color: #a4bfae;">
+                <strong>Recommended Care Plan:</strong> Relocate to bright, filtered indirect light (18–24°C). Reduce watering frequency until top 2 inches of soil are dry. Apply balanced organic fertilizer once monthly.
+              </p>
+            </div>
+          </div>
+
+          <div class="slides-gallery">
+            <div class="slide-img-box" onclick="openLightbox('assets/slide_53.jpg', 'Bloomcare Overview & Rationale')">
+              <img src="assets/slide_53.jpg" alt="Bloomcare project introduction" loading="lazy" />
+              <div class="slide-caption-overlay">Project overview</div>
+            </div>
+            <div class="slide-img-box" onclick="openLightbox('assets/slide_57.jpg', 'Bloomcare Visual Camera Diagnosis & Encyclopedia')">
+              <img src="assets/slide_57.jpg" alt="Bloomcare camera diagnosis and treatment UI" loading="lazy" />
+              <div class="slide-caption-overlay">Inspect camera diagnosis & care workflows</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Outro / Contact Card -->
+    <footer>
+      <div class="footer-card">
+        <h2 class="footer-title">Thanks for watching!</h2>
+        <p style="font-size: 1.15rem; color: #555; margin-bottom: 24px;">
+          Himanshi Parihar — Senior Graphic & UI/UX Designer
+        </p>
+        <div class="footer-links-grid">
+          <button class="footer-ext-link rishwat-trigger" onclick="triggerRishwat(event, 'Behance Full Showcase')">Behance Showcase ↗</button>
+          <button class="footer-ext-link rishwat-trigger" onclick="triggerRishwat(event, 'Dribbble Profile')">Dribbble Shots ↗</button>
+          <button class="footer-ext-link rishwat-trigger" onclick="triggerRishwat(event, 'LinkedIn Profile')">LinkedIn Network ↗</button>
+          <button class="footer-ext-link rishwat-trigger" onclick="triggerRishwat(event, 'Figma Specs')">Figma Master File ↗</button>
+        </div>
+        <button class="hero-badge" style="background: #121214; color: #fff; cursor: pointer;" onclick="copyContactEmail()">
+          ✉ Copy himanshiparihar.design@gmail.com
+        </button>
+      </div>
+      <p style="color: var(--text-muted); font-size: 13px;">
+        Designed & Built with Clean Minimalist Brutalism • Mobile-Responsive Architecture
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- Universal Lightbox Modal -->
+  <div id="lightbox" class="lightbox-modal" onclick="closeLightbox(event)">
+    <div class="lightbox-top-bar">
+      <button class="lightbox-action-btn rishwat-trigger" onclick="triggerRishwat(event, 'Lightbox Wide View')">
+        <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        <span>Open wide on other page ↗</span>
+      </button>
+      <button class="lightbox-close-btn" onclick="closeLightboxDirect()" aria-label="Close Lightbox">✕</button>
+    </div>
+    <button class="lightbox-nav-btn prev" onclick="navigateLightbox(-1, event)" aria-label="Previous Slide">‹</button>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Enlarged Portfolio Slide" />
+    <button class="lightbox-nav-btn next" onclick="navigateLightbox(1, event)" aria-label="Next Slide">›</button>
+  </div>
+
+  <!-- Cute "Madam ji iske liye toh rishwat lagegi" Popup Modal -->
+  <div id="rishwat-popup-overlay" class="rishwat-overlay" onclick="closeRishwatPopup(event)">
+    <div class="rishwat-card" onclick="event.stopPropagation()">
+      <button class="rishwat-close-btn" onclick="closeRishwatPopupDirect()" aria-label="Close Modal">✕</button>
+      
+      <!-- Cute Animated Mascot Header -->
+      <div class="rishwat-mascot-box">
+        <div class="rishwat-avatar-pulse">
+          <span class="mascot-face">🐱☕</span>
+        </div>
+        <div class="floating-bribe bribe-1">💰</div>
+        <div class="floating-bribe bribe-2">☕</div>
+        <div class="floating-bribe bribe-3">🥟</div>
+        <div class="floating-bribe bribe-4">✨</div>
+      </div>
+
+      <div class="rishwat-vip-pill">
+        <span class="pulse-dot"></span>
+        RESTRICTED AREA • VIP ACCESS
+      </div>
+
+      <h3 class="rishwat-headline">
+        Madam ji, iske liye toh rishwat lagegi! ☕💸
+      </h3>
+
+      <p class="rishwat-subtext">
+        Arre aise kaise doosre page pe chale jaoge? Secret design vaults aur wide external links unlock karne ke liye pehle Himanshi ji ko cutting chai aur garam samosa sponsor karna padega! 😉
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="rishwat-btn-group">
+        <button class="rishwat-action-btn primary" onclick="payRishwat('chai')">
+          <span>☕ Garam Chai Bhejo</span>
+        </button>
+        <button class="rishwat-action-btn samosa" onclick="payRishwat('samosa')">
+          <span>🥟 Samosa & Chutney</span>
+        </button>
+        <button class="rishwat-action-btn secondary" onclick="closeRishwatPopupDirect()">
+          <span>Achha baba maaf karo! 😂</span>
+        </button>
+      </div>
+
+      <!-- Success celebration message -->
+      <div id="rishwat-success-state" class="rishwat-success-state">
+        <div class="success-icon">🎉</div>
+        <div class="success-title">Rishwat Successfully Accepted!</div>
+        <p class="success-desc">
+          Waah! Cutting chai & samosa delivery is on the way! ☕🥟<br/>Himanshi ji khush hui, par tab tak yahi portfolio ghoom lo! 🥳
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide-out Resume Drawer -->
+  <div id="drawer-overlay" class="drawer-overlay" onclick="closeResume()"></div>
+  <aside id="resume-drawer" class="resume-drawer">
+    <button class="drawer-close" onclick="closeResume()" aria-label="Close Resume">✕</button>
+    
+    <!-- Mobile / Drawer Navigation Links -->
+    <div class="drawer-quick-nav">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #777; font-weight: 700; margin-bottom: 8px;">Navigation</div>
+      <div class="drawer-nav-buttons">
+        <button class="drawer-nav-btn" onclick="closeResume(); scrollToSection('logofolio');">01 Logofolio</button>
+        <button class="drawer-nav-btn" onclick="closeResume(); scrollToSection('branding');">02 Branding</button>
+        <button class="drawer-nav-btn" onclick="closeResume(); scrollToSection('uiux');">03 UI/UX Design</button>
+        <button class="drawer-nav-btn" onclick="closeResume(); copyContactEmail();">✉ Contact</button>
+      </div>
+    </div>
+
+    <h2 class="resume-title">About me</h2>
+    <div class="resume-meta">
+      Himanshi Parihar — Senior Graphic & UI/UX Designer
+    </div>
+
+    <div class="resume-bio-grid">
+      <p>
+        As a seasoned <strong>Graphic & UI/UX Designer with 6 years of professional experience</strong>, I hold a <strong>Bachelor's Degree from the Higher Institute of Design (ISDi)</strong>.
+      </p>
+      <p>
+        Throughout my career, I have successfully <strong>worked on a diverse range of projects</strong>, showcasing my ability to seamlessly adapt to the unique requirements of each client.
+      </p>
+      <p>
+        With a proven track record of delivering <strong>exceptional results</strong>, I consistently prioritize <strong>customer satisfaction</strong> while ensuring the highest quality of design.
+      </p>
+    </div>
+
+    <h3 class="resume-section-heading">Work Experience</h3>
+
+    <div class="exp-item">
+      <div class="exp-role-company">
+        <span>Sr Graphic Designer — NCL Holdings</span>
+        <span class="exp-period">2024 - Present</span>
+      </div>
+      <p class="exp-desc">
+        Led and coordinated graphic design initiatives for various internal applications developed under the Proxima project. Created presentations, flyers, brochures, and visual assets to support communication and product adoption. Contributed to UI/UX work collaborating with developers.
+      </p>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-role-company">
+        <span>Sr Graphic Designer — AIC Hotel Group</span>
+        <span class="exp-period">2024</span>
+      </div>
+      <p class="exp-desc">
+        Crafted high-impact digital experiences for luxury hospitality brands like <strong>Hard Rock</strong> and <strong>Nobu</strong>. Turned concepts into user-centered digital solutions across mobile applications and responsive websites.
+      </p>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-role-company">
+        <span>Graphic Designer — ACL</span>
+        <span class="exp-period">2022 - 2023</span>
+      </div>
+      <p class="exp-desc">
+        Effectively managed and coordinated branding and visual identity projects, digital marketing collateral, and high-stakes corporate presentation decks.
+      </p>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-role-company">
+        <span>Graphic Designer — Akane Digital</span>
+        <span class="exp-period">2020 - 2022</span>
+      </div>
+      <p class="exp-desc">
+        Led brand redesign for the marketing agency, modernizing corporate identity, social media assets, and creating the agency's official website and blog.
+      </p>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-role-company">
+        <span>Graphic Designer — MultiCuba</span>
+        <span class="exp-period">2019 - 2020</span>
+      </div>
+      <p class="exp-desc">
+        Led company rebranding, revamping web portal and digital marketing assets, producing a <strong>46% increase in website visits</strong> and boosting sales.
+      </p>
+    </div>
+
+    <h3 class="resume-section-heading">Education</h3>
+    <div class="exp-item">
+      <div class="exp-role-company">
+        <span>Higher Institute of Design (ISDi)</span>
+      </div>
+      <p class="exp-desc">Bachelor's Degree in Graphic Design</p>
+    </div>
+
+    <h3 class="resume-section-heading">Softwares & Tools</h3>
+    <div class="skills-pill-group">
+      <span class="skill-pill">Figma</span>
+      <span class="skill-pill">Adobe Illustrator</span>
+      <span class="skill-pill">Adobe Photoshop</span>
+      <span class="skill-pill">After Effects</span>
+      <span class="skill-pill">Adobe XD</span>
+      <span class="skill-pill">InDesign</span>
+      <span class="skill-pill">Canva</span>
+      <span class="skill-pill">Microsoft Office</span>
+    </div>
+
+    <h3 class="resume-section-heading">Skills & Specializations</h3>
+    <div class="skills-pill-group">
+      <span class="skill-pill">Graphic Design</span>
+      <span class="skill-pill">Branding & Visual Identity</span>
+      <span class="skill-pill">UI / UX Design</span>
+      <span class="skill-pill">User-Centered Design</span>
+      <span class="skill-pill">Design Systems</span>
+      <span class="skill-pill">Typography & Layout</span>
+      <span class="skill-pill">Print & Brochure Design</span>
+      <span class="skill-pill">Agile / Scrum</span>
+      <span class="skill-pill">Cross-functional Teams</span>
+      <span class="skill-pill">Video Editing</span>
+    </div>
+
+    <div style="margin-top: 36px;">
+      <button class="hero-badge" style="background: #121214; color: #fff; cursor: pointer; width: 100%; justify-content: center;" onclick="copyContactEmail()">
+        ✉ Contact: himanshiparihar.design@gmail.com
+      </button>
+    </div>
+  </aside>
+
+  <!-- Interactive Feedback Toast -->
+  <div id="toast" class="toast">Copied to clipboard!</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
