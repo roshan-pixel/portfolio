@@ -1,0 +1,327 @@
+{
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\app.js": {
+    "mtime": 1789920003.2761416,
+    "ast_hash": "9ffd2c0e64cc76bf08f871d8dcec883c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\download_assets.py": {
+    "mtime": 1789903358.5036962,
+    "ast_hash": "a267cf275cdf6eefdf1b4bef7f6011fd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\sw.js": {
+    "mtime": 1789918591.9151487,
+    "ast_hash": "3566cc48d57531e19019b9522d5310e3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\index.html": {
+    "mtime": 1789919960.1158707,
+    "ast_hash": "ed064c63bae8adca0a400345cf6552c5",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\README.md": {
+    "mtime": 1789903868.793048,
+    "ast_hash": "15d915fd45103d88a3c4cca349682921",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_1.jpg": {
+    "mtime": 1789902962.204029,
+    "ast_hash": "af42c682b8c23963ba6d08dc8fc48aee",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_10.jpg": {
+    "mtime": 1789903368.6781602,
+    "ast_hash": "6ac65c308aa759236d8c7ee25f73500b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_11.jpg": {
+    "mtime": 1789903369.179499,
+    "ast_hash": "08e5ae3422de5e1bb20eb51a5d0064ab",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_12.jpg": {
+    "mtime": 1789903369.5852249,
+    "ast_hash": "d58e2ef8b19678dd3fb4cad5142dc795",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_13.jpg": {
+    "mtime": 1789902993.9606028,
+    "ast_hash": "ee4313a18b3b4d68878dc4a23d3e8637",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_14.jpg": {
+    "mtime": 1789903370.2566836,
+    "ast_hash": "926f0b30c94fa7d2a25c1ee3cdef446f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_15.jpg": {
+    "mtime": 1789903371.0512168,
+    "ast_hash": "1a3475f50162be563209b93610da4c85",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_16.jpg": {
+    "mtime": 1789903372.808529,
+    "ast_hash": "f331eaae81812bfa731a7aef0a5a8898",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_17.jpg": {
+    "mtime": 1789902995.3381853,
+    "ast_hash": "0bc3e695a9cdf710b539281b4ae74c26",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_18.jpg": {
+    "mtime": 1789903373.4489968,
+    "ast_hash": "8d20136a68fe4a272ccbc46b06d83877",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_19.jpg": {
+    "mtime": 1789903373.959338,
+    "ast_hash": "fde0cd537d34dee3415bd95787de6642",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_2.jpg": {
+    "mtime": 1789902962.7605672,
+    "ast_hash": "4826eedfd2032f40c995576eaffcb0c6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_20.jpg": {
+    "mtime": 1789903375.7784324,
+    "ast_hash": "85bf7e44c93ab07569ad136828273259",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_21.jpg": {
+    "mtime": 1789902996.8692172,
+    "ast_hash": "0dcd865f92e8e81a3b358485dbf8eeae",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_22.jpg": {
+    "mtime": 1789903376.404426,
+    "ast_hash": "84c047155c452a4f91196321268a1776",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_23.jpg": {
+    "mtime": 1789903377.1306734,
+    "ast_hash": "9cd3756bb9652fd15f9f9ab2a0f13f13",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_24.jpg": {
+    "mtime": 1789903377.693892,
+    "ast_hash": "be69cf4db8a4a03361308854f0b321d8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_25.jpg": {
+    "mtime": 1789902997.3868861,
+    "ast_hash": "b14d7e6db62b13289b4d635cac239f88",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_26.jpg": {
+    "mtime": 1789903379.2171025,
+    "ast_hash": "b3d778287841d7b8c417afc67523218f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_27.jpg": {
+    "mtime": 1789903379.6193652,
+    "ast_hash": "8be69874f25fb58ae38373c72c7ca122",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_28.jpg": {
+    "mtime": 1789903380.4009688,
+    "ast_hash": "e1ee5b0d7f24c8e277399f18db45cb48",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_29.jpg": {
+    "mtime": 1789902997.881609,
+    "ast_hash": "404367092dc2e92fb61207378d59feca",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_3.jpg": {
+    "mtime": 1789902963.163918,
+    "ast_hash": "cda98aadbba2131ad48e2de8c5870103",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_30.jpg": {
+    "mtime": 1789903381.9176764,
+    "ast_hash": "c07baa6159d45f325b26ff84bcf77434",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_31.jpg": {
+    "mtime": 1789903383.3305185,
+    "ast_hash": "161aed889a713a895709cabd268dd752",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_32.jpg": {
+    "mtime": 1789903384.7965221,
+    "ast_hash": "479c73c6cc00ae09cdbd43dacb33d394",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_33.jpg": {
+    "mtime": 1789902998.371195,
+    "ast_hash": "5ac42fe14453fd1a0c952e841b701dae",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_34.jpg": {
+    "mtime": 1789903385.3137653,
+    "ast_hash": "639fb01109db8a2196fc8a5134382472",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_35.jpg": {
+    "mtime": 1789903385.9432838,
+    "ast_hash": "b6b0ec905ea56baa7b35ba69980371a0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_36.jpg": {
+    "mtime": 1789903386.4813182,
+    "ast_hash": "c8d2c8da053590868d0446cd30b3b864",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_37.jpg": {
+    "mtime": 1789902998.8715389,
+    "ast_hash": "ad4a04e75bf57671b6af7a921aa2dbf0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_38.jpg": {
+    "mtime": 1789903108.4158406,
+    "ast_hash": "22f81f10ba119b8baa4c6b2c6cd4f7f1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_39.jpg": {
+    "mtime": 1789903109.0212674,
+    "ast_hash": "cc602eae74c1dc41f63572d5899c715d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_4.jpg": {
+    "mtime": 1789902963.6148233,
+    "ast_hash": "f1efcab8c68ae0b04cdeff09ee56f6d3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_40.jpg": {
+    "mtime": 1789903109.470826,
+    "ast_hash": "bb52fc74a2c5da2503c40fb7d899bcab",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_41.jpg": {
+    "mtime": 1789902999.3416011,
+    "ast_hash": "b62b86a858e97bee011d2c97b42dba97",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_42.jpg": {
+    "mtime": 1789903387.04555,
+    "ast_hash": "5fcba7569410438da667827fc4599b89",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_43.jpg": {
+    "mtime": 1789903387.7062328,
+    "ast_hash": "dd0e3c8528d93313e274cf32e4ba1129",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_44.jpg": {
+    "mtime": 1789903391.1453588,
+    "ast_hash": "affee299b008453da692749143357232",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_45.jpg": {
+    "mtime": 1789903020.9564238,
+    "ast_hash": "ebb69686cdc531a1bc4be11e4ca0a1f6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_46.jpg": {
+    "mtime": 1789903392.6636975,
+    "ast_hash": "ce7b7e32809f585f676e036a7ea46ee9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_47.jpg": {
+    "mtime": 1789903393.3425634,
+    "ast_hash": "7a558de27604c0173a83e17b2fe88e51",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_48.jpg": {
+    "mtime": 1789903409.0705235,
+    "ast_hash": "e0248b0b990332485c65e8cf4b6f9789",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_49.jpg": {
+    "mtime": 1789903021.6638565,
+    "ast_hash": "86d64679467c4804ad7073c14624540f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_5.jpg": {
+    "mtime": 1789902964.1600537,
+    "ast_hash": "a1f4ad3c1afb15a466de7e986ab84740",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_50.jpg": {
+    "mtime": 1789903409.6143718,
+    "ast_hash": "c16e1a5b96a111442e64cbcbc00036ca",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_51.jpg": {
+    "mtime": 1789903411.062184,
+    "ast_hash": "ffad5ff4da8bc70c87f1f6e26c7f6519",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_52.jpg": {
+    "mtime": 1789903411.858615,
+    "ast_hash": "5a0d91aad68d4d0af76dbd02e4bf2a08",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_53.jpg": {
+    "mtime": 1789903022.2612557,
+    "ast_hash": "c0bbbc7a17740b5c6d4dce8db81c9b61",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_54.jpg": {
+    "mtime": 1789903413.0421772,
+    "ast_hash": "14214527590d7cf1b2f045bbfcd184e5",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_55.jpg": {
+    "mtime": 1789903414.857589,
+    "ast_hash": "e89545edfb2223a7db11da44461aaf77",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_56.jpg": {
+    "mtime": 1789903415.540221,
+    "ast_hash": "482aa0829187c8b06cc2ca48e5dffda4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_57.jpg": {
+    "mtime": 1789903029.9882894,
+    "ast_hash": "bdaa842cf7fff04f5b14eea0c63ea2d5",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_58.jpg": {
+    "mtime": 1789903416.1204374,
+    "ast_hash": "dd1090b0d4a25d3ca65d7534866bbf38",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_59.jpg": {
+    "mtime": 1789903416.790333,
+    "ast_hash": "b81425cec4c4a2584c4ee607e3b0f6c6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_6.jpg": {
+    "mtime": 1789902992.7329404,
+    "ast_hash": "53e5530de9eeb2e8ac33e53f63ab2601",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_60.jpg": {
+    "mtime": 1789903051.4797385,
+    "ast_hash": "ee62eaf1dc4fd250bad1fb71097d3d1d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_7.jpg": {
+    "mtime": 1789903367.6736534,
+    "ast_hash": "20f0e952aa3e0bdcb6829b7be8696c2b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_8.jpg": {
+    "mtime": 1789903368.1729944,
+    "ast_hash": "c4feeb5e0ecfadcaaac7c85dc68db2e0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\sgarm\\stephanie-perez-portfolio\\assets\\slide_9.jpg": {
+    "mtime": 1789902993.3578272,
+    "ast_hash": "98d389ab913d37c6e49eb9e53c16fcf3",
+    "semantic_hash": ""
+  }
+}

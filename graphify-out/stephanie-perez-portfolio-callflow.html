@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>stephanie-perez-portfolio — Complete Call Flow &amp; Architecture Documentation</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<style>
+:root {
+  --bg: #0f172a; --surface: #1e293b; --border: #334155;
+  --text: #e2e8f0; --muted: #94a3b8; --accent: #38bdf8;
+  --warn: #fbbf24; --err: #f87171; --ok: #34d399;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
+h1 { font-size: 2.4rem; margin-bottom: 8px; background: linear-gradient(135deg, var(--accent), #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+h2 { font-size: 1.7rem; margin: 48px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); }
+h3 { font-size: 1.25rem; margin: 32px 0 12px; color: var(--accent); }
+h4 { font-size: 1.05rem; margin: 20px 0 8px; color: var(--warn); }
+p { margin: 8px 0; color: var(--muted); }
+.subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; }
+.mermaid { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 20px 0; overflow-x: auto; position: relative; }
+.mermaid.is-enhanced { padding: 0; overflow: hidden; min-height: 260px; }
+.mermaid-viewport { padding: 54px 24px 24px; overflow: hidden; cursor: grab; touch-action: none; min-height: 260px; }
+.mermaid-viewport.is-dragging { cursor: grabbing; }
+.mermaid-viewport svg { max-width: none !important; height: auto; transform-origin: 0 0; transition: transform 120ms ease; }
+.mermaid-toolbar { position: absolute; top: 10px; right: 10px; z-index: 3; display: flex; align-items: center; gap: 6px; padding: 6px; background: rgba(15,23,42,0.92); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.28); }
+.mermaid-toolbar button, .mermaid-toolbar .zoom-level { height: 28px; min-width: 32px; border: 1px solid var(--border); border-radius: 6px; background: #1e293b; color: var(--text); font: 600 0.78rem system-ui, sans-serif; display: inline-flex; align-items: center; justify-content: center; }
+.mermaid-toolbar button { cursor: pointer; }
+.mermaid-toolbar button:hover { border-color: var(--accent); color: var(--accent); }
+.mermaid-toolbar .zoom-level { min-width: 52px; color: var(--muted); background: transparent; }
+.call-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.92rem; }
+.call-table th { background: #1a2744; color: var(--accent); text-align: left; padding: 10px 14px; border: 1px solid var(--border); }
+.call-table td { padding: 8px 14px; border: 1px solid var(--border); vertical-align: top; }
+.call-table tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+.tag-async { background: #7c3aed33; color: #a78bfa; }
+.tag-class { background: #05966933; color: var(--ok); }
+.tag-func { background: #2563eb33; color: var(--accent); }
+.tag-cmd { background: #d9770633; color: var(--warn); }
+.tag-endpoint { background: #dc262633; color: var(--err); }
+.tag-hook { background: #db277733; color: #f472b6; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin: 16px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; margin: 16px 0; }
+.arrow-chain { font-family: 'Fira Code', monospace; font-size: 0.85rem; color: var(--accent); padding: 10px; background: rgba(56,189,248,0.06); border-radius: 6px; }
+code { font-family: 'Fira Code', 'Cascadia Code', monospace; background: rgba(255,255,255,0.06); padding: 1px 6px; border-radius: 3px; font-size: 0.88em; }
+ul, ol { margin: 8px 0 8px 24px; color: var(--muted); }
+li { margin: 4px 0; }
+a { color: var(--accent); }
+hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+.nav { position: sticky; top: 0; background: var(--bg); z-index: 10; padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.9rem; }
+.nav a { text-decoration: none; }
+.nav a:hover { text-decoration: underline; }
+@media (max-width: 768px) { .container { padding: 16px; } h1 { font-size: 1.8rem; } }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>stephanie-perez-portfolio — Complete Call Flow &amp; Architecture Documentation</h1>
+<p class="subtitle">Generated from graphify knowledge graph: 77 nodes, 88 edges, 11 communities. Commit: a539a21</p>
+
+<div class="nav">
+    <a href="#overview">Architecture Overview</a>
+    <a href="#ingest-cache-update">Ingestion &amp; Updates</a>
+    <a href="#ui-core-global-state">UI Core &amp; Global State</a>
+    <a href="#project-documentation-setup">Project Documentation &amp; Setup</a>
+    <a href="#interactive-lightbox-slide-nav">Interactive Lightbox &amp; Slide Nav</a>
+    <a href="#easter-eggs-audio-feedback">Easter Eggs &amp; Audio Feedback</a>
+    <a href="#prototype-simulator-storage">Prototype Simulator &amp; Storage</a>
+    <a href="#rishwat-modal-dialogs">Rishwat Modal Dialogs</a>
+    <a href="#tepi-popup-triggers">Tepi Popup Triggers</a>
+    <a href="#navigation-filter-engine">Navigation &amp; Filter Engine</a>
+    <a href="#hsi-color-pinning-animation">HSI Color Pinning Animation</a>
+</div>
+
+<!-- ====== Architecture Overview ====== -->
+<h2 id="overview">1. Architecture Overview</h2>
+
+<div class="mermaid">
+
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    INGEST_CACHE_UPDATE_FF457338("Ingestion &amp; Updates<br/><small>5 nodes</small>")
+    class INGEST_CACHE_UPDATE_FF457338 module;
+    UI_CORE_GLOBAL_STATE_D46A32AF("UI Core &amp; Global State<br/><small>41 nodes</small>")
+    class UI_CORE_GLOBAL_STATE_D46A32AF module;
+    PROJECT_DOCUMENTATION_SETUP_EC95B528("Project Documentation &amp; Setup<br/><small>9 nodes</small>")
+    class PROJECT_DOCUMENTATION_SETUP_EC95B528 module;
+    INTERACTIVE_LIGHTBOX_SLIDE_NAV_9827D9E8("Interactive Lightbox &amp; Slide Nav<br/><small>6 nodes</small>")
+    class INTERACTIVE_LIGHTBOX_SLIDE_NAV_9827D9E8 module;
+    EASTER_EGGS_AUDIO_FEEDBACK_C5A4FEEC("Easter Eggs &amp; Audio Feedback<br/><small>6 nodes</small>")
+    class EASTER_EGGS_AUDIO_FEEDBACK_C5A4FEEC module;
+    PROTOTYPE_SIMULATOR_STORAGE_FAD3481E("Prototype Simulator &amp; Storage<br/><small>2 nodes</small>")
+    class PROTOTYPE_SIMULATOR_STORAGE_FAD3481E module;
+    RISHWAT_MODAL_DIALOGS_85A425EA("Rishwat Modal Dialogs<br/><small>2 nodes</small>")
+    class RISHWAT_MODAL_DIALOGS_85A425EA module;
+    TEPI_POPUP_TRIGGERS_8A4EE2CD("Tepi Popup Triggers<br/><small>2 nodes</small>")
+    class TEPI_POPUP_TRIGGERS_8A4EE2CD module;
+    NAVIGATION_FILTER_ENGINE_5DD458EF("Navigation &amp; Filter Engine<br/><small>2 nodes</small>")
+    class NAVIGATION_FILTER_ENGINE_5DD458EF module;
+    HSI_COLOR_PINNING_ANIMATION_BD67A961("HSI Color Pinning Animation<br/><small>2 nodes</small>")
+    class HSI_COLOR_PINNING_ANIMATION_BD67A961 module;
+    UI_CORE_GLOBAL_STATE_D46A32AF -->|contains x6| INTERACTIVE_LIGHTBOX_SLIDE_NAV_9827D9E8
+    UI_CORE_GLOBAL_STATE_D46A32AF -->|contains x6| EASTER_EGGS_AUDIO_FEEDBACK_C5A4FEEC
+    UI_CORE_GLOBAL_STATE_D46A32AF -->|contains x2| NAVIGATION_FILTER_ENGINE_5DD458EF
+    UI_CORE_GLOBAL_STATE_D46A32AF -->|contains x2| PROTOTYPE_SIMULATOR_STORAGE_FAD3481E
+    UI_CORE_GLOBAL_STATE_D46A32AF -->|contains x2| RISHWAT_MODAL_DIALOGS_85A425EA
+    UI_CORE_GLOBAL_STATE_D46A32AF -->|contains x2| TEPI_POPUP_TRIGGERS_8A4EE2CD
+    UI_CORE_GLOBAL_STATE_D46A32AF -->|contains x2| HSI_COLOR_PINNING_ANIMATION_BD67A961
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<div class="grid">
+  <div class="card">
+    <h4>Architecture Layers</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>Layer</th><th>Nodes</th><th>Communities</th></tr>
+      <tr><td>Ingestion &amp; Updates</td><td>5</td><td><code>4, 10</code></td></tr><tr><td>UI Core &amp; Global State</td><td>41</td><td><code>0</code></td></tr><tr><td>Project Documentation &amp; Setup</td><td>9</td><td><code>1</code></td></tr><tr><td>Interactive Lightbox &amp; Slide Nav</td><td>6</td><td><code>2</code></td></tr><tr><td>Easter Eggs &amp; Audio Feedback</td><td>6</td><td><code>3</code></td></tr><tr><td>Prototype Simulator &amp; Storage</td><td>2</td><td><code>5</code></td></tr><tr><td>Rishwat Modal Dialogs</td><td>2</td><td><code>6</code></td></tr><tr><td>Tepi Popup Triggers</td><td>2</td><td><code>7</code></td></tr><tr><td>Navigation &amp; Filter Engine</td><td>2</td><td><code>8</code></td></tr><tr><td>HSI Color Pinning Animation</td><td>2</td><td><code>9</code></td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Core Flow</h4>
+    <div class="arrow-chain">Ingestion &amp; Updates -&gt; UI Core &amp; Global State -&gt; Interactive Lightbox &amp; Slide Nav -&gt; Project Documentation &amp; Setup -&gt; Easter Eggs &amp; Audio Feedback -&gt; Prototype Simulator &amp; Storage -&gt; Rishwat Modal Dialogs</div>
+  </div>
+</div>
+<div class="grid">
+  <div class="card">
+    <h4>Graph Report Highlights</h4>
+    <ul>
+      <li>77 nodes · 88 edges · 11 communities (6 shown, 5 thin omitted)</li>
+      <li>Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS</li>
+      <li>Token cost: 0 input · 0 output</li>
+      <li>1. `playCuteChime()` - 4 edges</li>
+      <li>2. `preloadNeighborSlides()` - 3 edges</li>
+      <li>3. `closeLightboxDirect()` - 3 edges</li>
+    </ul>
+  </div>
+</div>
+<hr>
+<!-- ====== 2. Ingestion & Updates ====== -->
+<h2 id="ingest-cache-update">2. Ingestion &amp; Updates</h2>
+<p>Ingestion &amp; Updates groups implementation around swjs, download, assetspy, precache, mostly in sw.js, download_assets.py. This section covers 5 nodes and 3 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Ingestion &amp; Updates (5 nodes, 3 edges)
+    subgraph ingest_cache_update_sw_js_7f9db13a["sw.js"]
+        sw_js_7b62307e("sw.js")
+        stephanie_perez_portfolio_sw_precache_assets_7831feb8("PRECACHE_ASSETS<br/><small>sw.js</small>")
+        stephanie_perez_portfolio_sw_url_77c8d999("url<br/><small>sw.js</small>")
+        stephanie_perez_portfolio_sw_clone_22b987a5("clone<br/><small>sw.js</small>")
+    end
+    download_assets_py_d4f276d4("download_assets.py")
+    sw_js_7b62307e -->|contains| stephanie_perez_portfolio_sw_precache_assets_7831feb8
+    sw_js_7b62307e -->|contains| stephanie_perez_portfolio_sw_url_77c8d999
+    sw_js_7b62307e -->|contains| stephanie_perez_portfolio_sw_clone_22b987a5
+    class sw_js_7b62307e module;
+    class stephanie_perez_portfolio_sw_precache_assets_7831feb8 async;
+    class stephanie_perez_portfolio_sw_url_77c8d999 function;
+    class stephanie_perez_portfolio_sw_clone_22b987a5 function;
+    class download_assets_py_d4f276d4 async;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>sw.js</code><br><small style="color:var(--muted)">sw.js</small></td>
+  <td><span class="tag tag-class">Module</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>sw.js node in sw.js.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>PRECACHE_ASSETS</code><br><small style="color:var(--muted)">sw.js</small></td>
+  <td><span class="tag tag-async">Async</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Caches analysis results or computes cache keys.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>url</code><br><small style="color:var(--muted)">sw.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>url node in sw.js.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>clone</code><br><small style="color:var(--muted)">sw.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Turns a local path or remote repository into analysis context.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>download_assets.py</code><br><small style="color:var(--muted)">download_assets.py</small></td>
+  <td><span class="tag tag-async">Async</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Module file in download_assets.py.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>sw.js</code></td><td>4 nodes</td></tr>
+<tr><td><code>download_assets.py</code></td><td>1 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x3. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 3. UI Core & Global State ====== -->
+<h2 id="ui-core-global-state">3. UI Core &amp; Global State</h2>
+<p>UI Core &amp; Global State groups implementation around appjs, allslides, lightboxmodal, lightboximg, mostly in app.js. This section covers 41 nodes and 40 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: UI Core &amp; Global State (41 nodes, 40 edges)
+    app_js_bb19ecbf("app.js")
+    stephanie_perez_portfolio_app_allslides_ea82bf31("allSlides<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_lightboxmodal_4495a971("lightboxModal<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_lightboximg_ddc2503c("lightboxImg<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_rishwat_75869844("rishwat<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_runplantscan_c8f9d134("runPlantScan()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_drawer_df13f38e("drawer<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_overlay_2abc0384("overlay<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_openresume_7d045d48("openResume()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_closeresume_4dd3e572("closeResume()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_toast_917f82b9("toast<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_copyhex_ee91cfaa("copyHex()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_copycontactemail_2641f17b("copyContactEmail()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_rishwatoverlay_3e13ffa9("rishwatOverlay<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_rishwatsuccessstat_30c7608c("rishwatSuccessState<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_targetlink_5fe44e9d("targetLink<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_fontcyclelist_069b6f29("fontCycleList<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_portfoliotitle_11dc108e("portfolioTitle<br/><small>app.js</small>")
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_allslides_ea82bf31
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_lightboxmodal_4495a971
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_lightboximg_ddc2503c
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_rishwat_75869844
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_runplantscan_c8f9d134
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_drawer_df13f38e
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_overlay_2abc0384
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_openresume_7d045d48
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_closeresume_4dd3e572
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_toast_917f82b9
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_copyhex_ee91cfaa
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_copycontactemail_2641f17b
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_rishwatoverlay_3e13ffa9
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_rishwatsuccessstat_30c7608c
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_targetlink_5fe44e9d
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_fontcyclelist_069b6f29
+    app_js_bb19ecbf -->|contains| stephanie_perez_portfolio_app_portfoliotitle_11dc108e
+    %% Omitted for readability: 23 nodes, 0 edges
+    class app_js_bb19ecbf module;
+    class stephanie_perez_portfolio_app_allslides_ea82bf31 function;
+    class stephanie_perez_portfolio_app_lightboxmodal_4495a971 function;
+    class stephanie_perez_portfolio_app_lightboximg_ddc2503c function;
+    class stephanie_perez_portfolio_app_rishwat_75869844 function;
+    class stephanie_perez_portfolio_app_runplantscan_c8f9d134 function;
+    class stephanie_perez_portfolio_app_drawer_df13f38e function;
+    class stephanie_perez_portfolio_app_overlay_2abc0384 function;
+    class stephanie_perez_portfolio_app_openresume_7d045d48 function;
+    class stephanie_perez_portfolio_app_closeresume_4dd3e572 function;
+    class stephanie_perez_portfolio_app_toast_917f82b9 function;
+    class stephanie_perez_portfolio_app_copyhex_ee91cfaa function;
+    class stephanie_perez_portfolio_app_copycontactemail_2641f17b function;
+    class stephanie_perez_portfolio_app_rishwatoverlay_3e13ffa9 function;
+    class stephanie_perez_portfolio_app_rishwatsuccessstat_30c7608c function;
+    class stephanie_perez_portfolio_app_targetlink_5fe44e9d function;
+    class stephanie_perez_portfolio_app_fontcyclelist_069b6f29 function;
+    class stephanie_perez_portfolio_app_portfoliotitle_11dc108e function;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>app.js</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-class">Module</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>app.js node in app.js.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>allSlides</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>allSlides node in app.js.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>lightboxModal</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>lightboxModal node in app.js.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>lightboxImg</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>lightboxImg node in app.js.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>rishwat</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>rishwat node in app.js.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>runPlantScan()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Starts scanning or handles scan status.</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>drawer</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>drawer node in app.js.</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>overlay</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>overlay node in app.js.</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>openResume()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>openResume() node in app.js.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>closeResume()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>closeResume() node in app.js.</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>toast</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>toast node in app.js.</td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><code>copyHex()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>copyHex() node in app.js.</td>
+</tr>
+<tr>
+  <td>13</td>
+  <td><code>copyContactEmail()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>copyContactEmail() node in app.js.</td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>rishwatOverlay</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>rishwatOverlay node in app.js.</td>
+</tr>
+<tr>
+  <td>15</td>
+  <td><code>rishwatSuccessState</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>rishwatSuccessState node in app.js.</td>
+</tr>
+<tr>
+  <td>16</td>
+  <td><code>targetLink</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>targetLink node in app.js.</td>
+</tr>
+<tr>
+  <td>17</td>
+  <td><code>fontCycleList</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>fontCycleList node in app.js.</td>
+</tr>
+<tr>
+  <td>18</td>
+  <td><code>portfolioTitle</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>portfolioTitle node in app.js.</td>
+</tr>
+<tr>
+  <td>19</td>
+  <td><code>cycleFontStep()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>cycleFontStep() node in app.js.</td>
+</tr>
+<tr>
+  <td>20</td>
+  <td><code>brandingSection</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>brandingSection node in app.js.</td>
+</tr>
+<tr>
+  <td>21</td>
+  <td><code>tepiObserver</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>tepiObserver node in app.js.</td>
+</tr>
+<tr>
+  <td>22</td>
+  <td><code>brandingHeader</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>brandingHeader node in app.js.</td>
+</tr>
+<tr>
+  <td>23</td>
+  <td><code>canvas</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>canvas node in app.js.</td>
+</tr>
+<tr>
+  <td>24</td>
+  <td><code>ctx</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>ctx node in app.js.</td>
+</tr>
+<tr>
+  <td>25</td>
+  <td><code>particles</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>particles node in app.js.</td>
+</tr>
+<tr>
+  <td>26</td>
+  <td><code>animateTrail()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>animateTrail() node in app.js.</td>
+</tr>
+<tr>
+  <td>27</td>
+  <td><code>revealEls</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>revealEls node in app.js.</td>
+</tr>
+<tr>
+  <td>28</td>
+  <td><code>revealObserver</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>revealObserver node in app.js.</td>
+</tr>
+<tr>
+  <td>29</td>
+  <td><code>logoCards</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>logoCards node in app.js.</td>
+</tr>
+<tr>
+  <td>30</td>
+  <td><code>logoObserver</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>logoObserver node in app.js.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>app.js</code></td><td>41 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x40. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 4. Project Documentation & Setup ====== -->
+<h2 id="project-documentation-setup">4. Project Documentation &amp; Setup</h2>
+<p>Project Documentation &amp; Setup groups implementation around readmemd, portfolio, http, codepowershell, mostly in README.md. This section covers 9 nodes and 8 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Project Documentation &amp; Setup (9 nodes, 8 edges)
+    stephanie_perez_portfolio_readme_himanshi_pariha_639caddd("Himanshi Parihar — UI/UX &amp; Graphic Desi...<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_how_to_run_cf43409e("🚀 How to Run<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_method_1_local_68c6368c("Method 1: Local HTTP Server (Active on...<br/><small>README.md</small>")
+    readme_md_eeb98ce0("README.md")
+    stephanie_perez_portfolio_readme_method_2_direct_4b6d4b73("Method 2: Direct File Open<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_features_d14bdecb("🌟 Features<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_codeblock_1_8e8eecac("code:block1 (http://localhost:8080)<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_codeblock_3_adf10fef("code:powershell (Start-Process 'C:\User...<br/><small>README.md</small>")
+    stephanie_perez_portfolio_readme_codeblock_2_33d9d80d("code:powershell (cd C:\Users\sgarm\step...<br/><small>README.md</small>")
+    readme_md_eeb98ce0 -->|contains| stephanie_perez_portfolio_readme_himanshi_pariha_639caddd
+    stephanie_perez_portfolio_readme_himanshi_pariha_639caddd -->|contains| stephanie_perez_portfolio_readme_features_d14bdecb
+    stephanie_perez_portfolio_readme_himanshi_pariha_639caddd -->|contains| stephanie_perez_portfolio_readme_how_to_run_cf43409e
+    stephanie_perez_portfolio_readme_how_to_run_cf43409e -->|contains| stephanie_perez_portfolio_readme_method_1_local_68c6368c
+    stephanie_perez_portfolio_readme_how_to_run_cf43409e -->|contains| stephanie_perez_portfolio_readme_method_2_direct_4b6d4b73
+    stephanie_perez_portfolio_readme_method_1_local_68c6368c -->|contains| stephanie_perez_portfolio_readme_codeblock_1_8e8eecac
+    stephanie_perez_portfolio_readme_method_1_local_68c6368c -->|contains| stephanie_perez_portfolio_readme_codeblock_2_33d9d80d
+    stephanie_perez_portfolio_readme_method_2_direct_4b6d4b73 -->|contains| stephanie_perez_portfolio_readme_codeblock_3_adf10fef
+    class stephanie_perez_portfolio_readme_himanshi_pariha_639caddd concept;
+    class stephanie_perez_portfolio_readme_how_to_run_cf43409e concept;
+    class stephanie_perez_portfolio_readme_method_1_local_68c6368c concept;
+    class readme_md_eeb98ce0 concept;
+    class stephanie_perez_portfolio_readme_method_2_direct_4b6d4b73 concept;
+    class stephanie_perez_portfolio_readme_features_d14bdecb concept;
+    class stephanie_perez_portfolio_readme_codeblock_1_8e8eecac concept;
+    class stephanie_perez_portfolio_readme_codeblock_3_adf10fef concept;
+    class stephanie_perez_portfolio_readme_codeblock_2_33d9d80d concept;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>README.md</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing README.md.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>Himanshi Parihar — UI/UX &amp; Graphic Designer Portfolio (Interactive Clone)</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Himanshi Parihar — UI/UX &amp; Graphic Designer Portfolio (Interactive Clone).</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>🌟 Features</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 🌟 Features.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>🚀 How to Run</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing 🚀 How to Run.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>Method 1: Local HTTP Server (Active on Port 8080)</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Method 1: Local HTTP Server (Active on Port 8080).</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>code:block1 (http://localhost:8080)</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing code:block1 (http://localhost:8080).</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>code:powershell (cd C:\Users\sgarm\stephanie-perez-portfolio)</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing code:powershell (cd C:\Users\sgarm\stephanie-perez-portfolio).</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>Method 2: Direct File Open</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Method 2: Direct File Open.</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>code:powershell (Start-Process &quot;C:\Users\sgarm\stephanie-perez-portfolio\inde)</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing code:powershell (Start-Process &quot;C:\Users\sgarm\stephanie-perez-portfolio\inde).</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>README.md</code></td><td>9 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x8. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 5. Interactive Lightbox & Slide Nav ====== -->
+<h2 id="interactive-lightbox-slide-nav">5. Interactive Lightbox &amp; Slide Nav</h2>
+<p>Interactive Lightbox &amp; Slide Nav groups implementation around appjs, preloadneighborslides, openlightbox, closelightboxdirect, mostly in app.js. This section covers 6 nodes and 5 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Interactive Lightbox &amp; Slide Nav (6 nodes, 5 edges)
+    stephanie_perez_portfolio_app_closelightboxdirec_59f76528("closeLightboxDirect()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_preloadneighborsli_def398da("preloadNeighborSlides()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_navigatelightbox_fd37bcf8("navigateLightbox()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_openlightbox_66b2401f("openLightbox()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_closelightbox_b0adb9c6("closeLightbox()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_handlelightboxswip_9f70b628("handleLightboxSwipe()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_preloadneighborsli_def398da -->|calls| stephanie_perez_portfolio_app_openlightbox_66b2401f
+    stephanie_perez_portfolio_app_preloadneighborsli_def398da -->|calls| stephanie_perez_portfolio_app_navigatelightbox_fd37bcf8
+    stephanie_perez_portfolio_app_closelightboxdirec_59f76528 -->|calls| stephanie_perez_portfolio_app_closelightbox_b0adb9c6
+    stephanie_perez_portfolio_app_closelightboxdirec_59f76528 -->|calls| stephanie_perez_portfolio_app_handlelightboxswip_9f70b628
+    stephanie_perez_portfolio_app_navigatelightbox_fd37bcf8 -->|calls| stephanie_perez_portfolio_app_handlelightboxswip_9f70b628
+    class stephanie_perez_portfolio_app_closelightboxdirec_59f76528 function;
+    class stephanie_perez_portfolio_app_preloadneighborsli_def398da function;
+    class stephanie_perez_portfolio_app_navigatelightbox_fd37bcf8 function;
+    class stephanie_perez_portfolio_app_openlightbox_66b2401f function;
+    class stephanie_perez_portfolio_app_closelightbox_b0adb9c6 function;
+    class stephanie_perez_portfolio_app_handlelightboxswip_9f70b628 function;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>preloadNeighborSlides()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>navigateLightbox()</code><br><small style="color:var(--muted)">app.js</small><br><code>openLightbox()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>preloadNeighborSlides() node in app.js.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>openLightbox()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>preloadNeighborSlides()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>openLightbox() node in app.js.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>closeLightboxDirect()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>closeLightbox()</code><br><small style="color:var(--muted)">app.js</small><br><code>handleLightboxSwipe()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>closeLightboxDirect() node in app.js.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>closeLightbox()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>closeLightboxDirect()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>closeLightbox() node in app.js.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>navigateLightbox()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>preloadNeighborSlides()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>handleLightboxSwipe()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>navigateLightbox() node in app.js.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>handleLightboxSwipe()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>closeLightboxDirect()</code><br><small style="color:var(--muted)">app.js</small><br><code>navigateLightbox()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>handleLightboxSwipe() node in app.js.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>app.js</code></td><td>6 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: calls x5. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 6. Easter Eggs & Audio Feedback ====== -->
+<h2 id="easter-eggs-audio-feedback">6. Easter Eggs &amp; Audio Feedback</h2>
+<p>Easter Eggs &amp; Audio Feedback groups implementation around appjs, showtoast, playcutechime, triggerrishwat, mostly in app.js. This section covers 6 nodes and 5 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Easter Eggs &amp; Audio Feedback (6 nodes, 5 edges)
+    stephanie_perez_portfolio_app_playcutechime_c1905c4a("playCuteChime()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_showtoast_7810fd53("showToast()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_showtepipopup_a6fb3ca4("showTepiPopup()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_payrishwat_775e602e("payRishwat()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_triggerrishwat_a0f1f282("triggerRishwat()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_checkbrandingposit_9341d03d("checkBrandingPosition()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_showtoast_7810fd53 -->|calls| stephanie_perez_portfolio_app_payrishwat_775e602e
+    stephanie_perez_portfolio_app_playcutechime_c1905c4a -->|calls| stephanie_perez_portfolio_app_triggerrishwat_a0f1f282
+    stephanie_perez_portfolio_app_playcutechime_c1905c4a -->|calls| stephanie_perez_portfolio_app_payrishwat_775e602e
+    stephanie_perez_portfolio_app_playcutechime_c1905c4a -->|calls| stephanie_perez_portfolio_app_showtepipopup_a6fb3ca4
+    stephanie_perez_portfolio_app_showtepipopup_a6fb3ca4 -->|calls| stephanie_perez_portfolio_app_checkbrandingposit_9341d03d
+    class stephanie_perez_portfolio_app_playcutechime_c1905c4a function;
+    class stephanie_perez_portfolio_app_showtoast_7810fd53 function;
+    class stephanie_perez_portfolio_app_showtepipopup_a6fb3ca4 function;
+    class stephanie_perez_portfolio_app_payrishwat_775e602e function;
+    class stephanie_perez_portfolio_app_triggerrishwat_a0f1f282 function;
+    class stephanie_perez_portfolio_app_checkbrandingposit_9341d03d function;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>payRishwat()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>showToast() node in app.js.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>playCuteChime()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>payRishwat()</code><br><small style="color:var(--muted)">app.js</small><br><code>showTepiPopup()</code><br><small style="color:var(--muted)">app.js</small><br><code>triggerRishwat()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>playCuteChime() node in app.js.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>triggerRishwat()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>playCuteChime()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>triggerRishwat() node in app.js.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>payRishwat()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>playCuteChime()</code><br><small style="color:var(--muted)">app.js</small><br><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>payRishwat() node in app.js.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>showTepiPopup()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>playCuteChime()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>checkBrandingPosition()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>showTepiPopup() node in app.js.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>checkBrandingPosition()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>showTepiPopup()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>checkBrandingPosition() node in app.js.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>app.js</code></td><td>6 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: calls x5. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 7. Prototype Simulator & Storage ====== -->
+<h2 id="prototype-simulator-storage">7. Prototype Simulator &amp; Storage</h2>
+<p>Prototype Simulator &amp; Storage groups implementation around appjs, cacheimage, switchsimslide, mostly in app.js. This section covers 2 nodes and 1 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Prototype Simulator &amp; Storage (2 nodes, 1 edges)
+    stephanie_perez_portfolio_app_cacheimage_a2066b04("cacheImage()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_switchsimslide_4c4ebb24("switchSimSlide()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_cacheimage_a2066b04 -->|calls| stephanie_perez_portfolio_app_switchsimslide_4c4ebb24
+    class stephanie_perez_portfolio_app_cacheimage_a2066b04 function;
+    class stephanie_perez_portfolio_app_switchsimslide_4c4ebb24 function;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>cacheImage()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>switchSimSlide()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>Caches analysis results or computes cache keys.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>switchSimSlide()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>cacheImage()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>switchSimSlide() node in app.js.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>app.js</code></td><td>2 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: calls x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 8. Rishwat Modal Dialogs ====== -->
+<h2 id="rishwat-modal-dialogs">8. Rishwat Modal Dialogs</h2>
+<p>Rishwat Modal Dialogs groups implementation around appjs, closerishwatpopupdirect, closerishwatpopup, mostly in app.js. This section covers 2 nodes and 1 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Rishwat Modal Dialogs (2 nodes, 1 edges)
+    stephanie_perez_portfolio_app_closerishwatpopupd_83786d6b("closeRishwatPopupDirect()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_closerishwatpopup_4ee6dbc6("closeRishwatPopup()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_closerishwatpopupd_83786d6b -->|calls| stephanie_perez_portfolio_app_closerishwatpopup_4ee6dbc6
+    class stephanie_perez_portfolio_app_closerishwatpopupd_83786d6b function;
+    class stephanie_perez_portfolio_app_closerishwatpopup_4ee6dbc6 function;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>closeRishwatPopupDirect()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>closeRishwatPopup()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>closeRishwatPopupDirect() node in app.js.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>closeRishwatPopup()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>closeRishwatPopupDirect()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>closeRishwatPopup() node in app.js.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>app.js</code></td><td>2 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: calls x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 9. Tepi Popup Triggers ====== -->
+<h2 id="tepi-popup-triggers">9. Tepi Popup Triggers</h2>
+<p>Tepi Popup Triggers groups implementation around appjs, closetepipopup, closetepipopupdirect, mostly in app.js. This section covers 2 nodes and 1 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Tepi Popup Triggers (2 nodes, 1 edges)
+    stephanie_perez_portfolio_app_closetepipopup_5337a46e("closeTepiPopup()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_closetepipopupdire_287c56e3("closeTepiPopupDirect()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_closetepipopup_5337a46e -->|calls| stephanie_perez_portfolio_app_closetepipopupdire_287c56e3
+    class stephanie_perez_portfolio_app_closetepipopup_5337a46e function;
+    class stephanie_perez_portfolio_app_closetepipopupdire_287c56e3 function;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>closeTepiPopup()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>closeTepiPopupDirect()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>closeTepiPopup() node in app.js.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>closeTepiPopupDirect()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>closeTepiPopup()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>closeTepiPopupDirect() node in app.js.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>app.js</code></td><td>2 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: calls x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 10. Navigation & Filter Engine ====== -->
+<h2 id="navigation-filter-engine">10. Navigation &amp; Filter Engine</h2>
+<p>Navigation &amp; Filter Engine groups implementation around appjs, scrolltosection, filtercategory, mostly in app.js. This section covers 2 nodes and 1 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Navigation &amp; Filter Engine (2 nodes, 1 edges)
+    stephanie_perez_portfolio_app_scrolltosection_71386a81("scrollToSection()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_filtercategory_18213622("filterCategory()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_scrolltosection_71386a81 -->|calls| stephanie_perez_portfolio_app_filtercategory_18213622
+    class stephanie_perez_portfolio_app_scrolltosection_71386a81 function;
+    class stephanie_perez_portfolio_app_filtercategory_18213622 function;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>scrollToSection()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>filterCategory()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>scrollToSection() node in app.js.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>filterCategory()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>scrollToSection()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>filterCategory() node in app.js.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>app.js</code></td><td>2 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: calls x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 11. HSI Color Pinning Animation ====== -->
+<h2 id="hsi-color-pinning-animation">11. HSI Color Pinning Animation</h2>
+<p>HSI Color Pinning Animation groups implementation around appjs, runhsicycle, starthsicontinuousmotion, mostly in app.js. This section covers 2 nodes and 1 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: HSI Color Pinning Animation (2 nodes, 1 edges)
+    stephanie_perez_portfolio_app_runhsicycle_469dc3a8("runHsiCycle()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_starthsicontinuous_26f06e2d("startHsiContinuousMotion()<br/><small>app.js</small>")
+    stephanie_perez_portfolio_app_runhsicycle_469dc3a8 -->|calls| stephanie_perez_portfolio_app_starthsicontinuous_26f06e2d
+    class stephanie_perez_portfolio_app_runhsicycle_469dc3a8 function;
+    class stephanie_perez_portfolio_app_starthsicontinuous_26f06e2d function;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>runHsiCycle()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>startHsiContinuousMotion()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>runHsiCycle() node in app.js.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>startHsiContinuousMotion()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>runHsiCycle()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>startHsiContinuousMotion() node in app.js.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>app.js</code></td><td>2 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: calls x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<h2 id="stats">Project Statistics</h2>
+
+<div class="grid">
+  <div class="card">
+    <h4>Graph</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><td>Nodes</td><td>77</td></tr>
+      <tr><td>Edges</td><td>88</td></tr>
+      <tr><td>Hyperedges</td><td>0</td></tr>
+      <tr><td>Communities</td><td>11</td></tr>
+      <tr><td>Documented Sections</td><td>10</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Edge Confidence</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><td>EXTRACTED</td><td>88</td></tr>
+      <tr><td>INFERRED</td><td>0</td></tr>
+      <tr><td>AMBIGUOUS</td><td>0</td></tr>
+    </table>
+  </div>
+</div>
+
+<div style="text-align:center; padding:40px 0; color: var(--muted); font-size:0.9rem;">
+  <p>stephanie-perez-portfolio — Architecture Documentation</p>
+  <p>Generated: 2026-09-20 16:16 UTC · graphify callflow-html</p>
+</div>
+
+</div><!-- .container -->
+
+<script>
+(function () {
+  const mermaidConfig = {
+    startOnLoad: false,
+    theme: 'dark',
+    securityLevel: 'loose',
+    flowchart: { htmlLabels: true, useMaxWidth: true },
+    themeVariables: {
+      primaryColor: '#1e293b',
+      primaryTextColor: '#e2e8f0',
+      primaryBorderColor: '#38bdf8',
+      secondaryColor: '#0f172a',
+      tertiaryColor: '#334155',
+      lineColor: '#64748b',
+      textColor: '#e2e8f0',
+    }
+  };
+
+  mermaid.initialize(mermaidConfig);
+
+  function clamp(value, min, max) {
+    return Math.min(max, Math.max(min, value));
+  }
+
+  function enhanceMermaidDiagrams() {
+    document.querySelectorAll('.mermaid').forEach((container) => {
+      if (container.dataset.zoomReady === 'true') return;
+      const svg = container.querySelector('svg');
+      if (!svg) return;
+
+      container.dataset.zoomReady = 'true';
+      container.classList.add('is-enhanced');
+
+      const viewport = document.createElement('div');
+      viewport.className = 'mermaid-viewport';
+      svg.parentNode.insertBefore(viewport, svg);
+      viewport.appendChild(svg);
+
+      const toolbar = document.createElement('div');
+      toolbar.className = 'mermaid-toolbar';
+      toolbar.innerHTML = [
+        '<button type="button" data-action="zoom-out" title="Zoom out">-</button>',
+        '<span class="zoom-level" data-role="level">100%</span>',
+        '<button type="button" data-action="zoom-in" title="Zoom in">+</button>',
+        '<button type="button" data-action="fit" title="Fit width">Fit</button>',
+        '<button type="button" data-action="reset" title="Reset view">Reset</button>'
+      ].join('');
+      container.insertBefore(toolbar, viewport);
+
+      const state = { scale: 1, x: 0, y: 0, dragging: false, startX: 0, startY: 0, originX: 0, originY: 0 };
+      const level = toolbar.querySelector('[data-role="level"]');
+
+      function applyTransform() {
+        svg.style.transform = `translate(${state.x}px, ${state.y}px) scale(${state.scale})`;
+        level.textContent = `${Math.round(state.scale * 100)}%`;
+      }
+
+      function zoomBy(delta) {
+        state.scale = clamp(state.scale + delta, 0.25, 3);
+        applyTransform();
+      }
+
+      function reset() {
+        state.scale = 1;
+        state.x = 0;
+        state.y = 0;
+        applyTransform();
+      }
+
+      function fitWidth() {
+        const rawWidth = svg.viewBox && svg.viewBox.baseVal && svg.viewBox.baseVal.width
+          ? svg.viewBox.baseVal.width
+          : svg.getBoundingClientRect().width / state.scale;
+        if (!rawWidth) {
+          reset();
+          return;
+        }
+        state.scale = clamp((viewport.clientWidth - 48) / rawWidth, 0.25, 1.4);
+        state.x = 0;
+        state.y = 0;
+        applyTransform();
+      }
+
+      toolbar.addEventListener('click', (event) => {
+        const button = event.target.closest('button[data-action]');
+        if (!button) return;
+        const action = button.dataset.action;
+        if (action === 'zoom-in') zoomBy(0.15);
+        if (action === 'zoom-out') zoomBy(-0.15);
+        if (action === 'fit') fitWidth();
+        if (action === 'reset') reset();
+      });
+
+      viewport.addEventListener('wheel', (event) => {
+        if (!event.ctrlKey && !event.metaKey) return;
+        event.preventDefault();
+        zoomBy(event.deltaY < 0 ? 0.1 : -0.1);
+      }, { passive: false });
+
+      viewport.addEventListener('pointerdown', (event) => {
+        if (event.button !== 0) return;
+        state.dragging = true;
+        state.startX = event.clientX;
+        state.startY = event.clientY;
+        state.originX = state.x;
+        state.originY = state.y;
+        viewport.classList.add('is-dragging');
+        viewport.setPointerCapture(event.pointerId);
+      });
+
+      viewport.addEventListener('pointermove', (event) => {
+        if (!state.dragging) return;
+        state.x = state.originX + event.clientX - state.startX;
+        state.y = state.originY + event.clientY - state.startY;
+        applyTransform();
+      });
+
+      function endDrag(event) {
+        if (!state.dragging) return;
+        state.dragging = false;
+        viewport.classList.remove('is-dragging');
+        if (viewport.hasPointerCapture(event.pointerId)) {
+          viewport.releasePointerCapture(event.pointerId);
+        }
+      }
+
+      viewport.addEventListener('pointerup', endDrag);
+      viewport.addEventListener('pointercancel', endDrag);
+      applyTransform();
+    });
+  }
+
+  function renderMermaid() {
+    const result = mermaid.run
+      ? mermaid.run({ querySelector: '.mermaid' })
+      : Promise.resolve();
+    Promise.resolve(result)
+      .then(enhanceMermaidDiagrams)
+      .catch((error) => {
+        console.error('Mermaid render failed:', error);
+        enhanceMermaidDiagrams();
+      });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderMermaid);
+  } else {
+    renderMermaid();
+  }
+})();
+</script>
+
+</body>
+</html>

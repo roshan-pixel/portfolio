@@ -1,0 +1,1599 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "app.js",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "app.js",
+      "id": "app_js"
+    },
+    {
+      "label": "allSlides",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L5",
+      "community": 0,
+      "norm_label": "allslides",
+      "id": "stephanie_perez_portfolio_app_allslides"
+    },
+    {
+      "label": "scrollToSection()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L16",
+      "community": 8,
+      "norm_label": "scrolltosection()",
+      "id": "stephanie_perez_portfolio_app_scrolltosection"
+    },
+    {
+      "label": "cacheImage()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L32",
+      "community": 5,
+      "norm_label": "cacheimage()",
+      "id": "stephanie_perez_portfolio_app_cacheimage"
+    },
+    {
+      "label": "preloadNeighborSlides()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L61",
+      "community": 2,
+      "norm_label": "preloadneighborslides()",
+      "id": "stephanie_perez_portfolio_app_preloadneighborslides"
+    },
+    {
+      "label": "lightboxModal",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L70",
+      "community": 0,
+      "norm_label": "lightboxmodal",
+      "id": "stephanie_perez_portfolio_app_lightboxmodal"
+    },
+    {
+      "label": "lightboxImg",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L71",
+      "community": 0,
+      "norm_label": "lightboximg",
+      "id": "stephanie_perez_portfolio_app_lightboximg"
+    },
+    {
+      "label": "openLightbox()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L73",
+      "community": 2,
+      "norm_label": "openlightbox()",
+      "id": "stephanie_perez_portfolio_app_openlightbox"
+    },
+    {
+      "label": "closeLightboxDirect()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L85",
+      "community": 2,
+      "norm_label": "closelightboxdirect()",
+      "id": "stephanie_perez_portfolio_app_closelightboxdirect"
+    },
+    {
+      "label": "closeLightbox()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L90",
+      "community": 2,
+      "norm_label": "closelightbox()",
+      "id": "stephanie_perez_portfolio_app_closelightbox"
+    },
+    {
+      "label": "navigateLightbox()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L96",
+      "community": 2,
+      "norm_label": "navigatelightbox()",
+      "id": "stephanie_perez_portfolio_app_navigatelightbox"
+    },
+    {
+      "label": "rishwat",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L118",
+      "community": 0,
+      "norm_label": "rishwat",
+      "id": "stephanie_perez_portfolio_app_rishwat"
+    },
+    {
+      "label": "handleLightboxSwipe()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L143",
+      "community": 2,
+      "norm_label": "handlelightboxswipe()",
+      "id": "stephanie_perez_portfolio_app_handlelightboxswipe"
+    },
+    {
+      "label": "filterCategory()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L165",
+      "community": 8,
+      "norm_label": "filtercategory()",
+      "id": "stephanie_perez_portfolio_app_filtercategory"
+    },
+    {
+      "label": "switchSimSlide()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L200",
+      "community": 5,
+      "norm_label": "switchsimslide()",
+      "id": "stephanie_perez_portfolio_app_switchsimslide"
+    },
+    {
+      "label": "runPlantScan()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L237",
+      "community": 0,
+      "norm_label": "runplantscan()",
+      "id": "stephanie_perez_portfolio_app_runplantscan"
+    },
+    {
+      "label": "drawer",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L268",
+      "community": 0,
+      "norm_label": "drawer",
+      "id": "stephanie_perez_portfolio_app_drawer"
+    },
+    {
+      "label": "overlay",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L269",
+      "community": 0,
+      "norm_label": "overlay",
+      "id": "stephanie_perez_portfolio_app_overlay"
+    },
+    {
+      "label": "openResume()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L271",
+      "community": 0,
+      "norm_label": "openresume()",
+      "id": "stephanie_perez_portfolio_app_openresume"
+    },
+    {
+      "label": "closeResume()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L279",
+      "community": 0,
+      "norm_label": "closeresume()",
+      "id": "stephanie_perez_portfolio_app_closeresume"
+    },
+    {
+      "label": "toast",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L288",
+      "community": 0,
+      "norm_label": "toast",
+      "id": "stephanie_perez_portfolio_app_toast"
+    },
+    {
+      "label": "showToast()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L291",
+      "community": 3,
+      "norm_label": "showtoast()",
+      "id": "stephanie_perez_portfolio_app_showtoast"
+    },
+    {
+      "label": "copyHex()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L302",
+      "community": 0,
+      "norm_label": "copyhex()",
+      "id": "stephanie_perez_portfolio_app_copyhex"
+    },
+    {
+      "label": "copyContactEmail()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L311",
+      "community": 0,
+      "norm_label": "copycontactemail()",
+      "id": "stephanie_perez_portfolio_app_copycontactemail"
+    },
+    {
+      "label": "playCuteChime()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L324",
+      "community": 3,
+      "norm_label": "playcutechime()",
+      "id": "stephanie_perez_portfolio_app_playcutechime"
+    },
+    {
+      "label": "rishwatOverlay",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L362",
+      "community": 0,
+      "norm_label": "rishwatoverlay",
+      "id": "stephanie_perez_portfolio_app_rishwatoverlay"
+    },
+    {
+      "label": "rishwatSuccessState",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L363",
+      "community": 0,
+      "norm_label": "rishwatsuccessstate",
+      "id": "stephanie_perez_portfolio_app_rishwatsuccessstate"
+    },
+    {
+      "label": "triggerRishwat()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L365",
+      "community": 3,
+      "norm_label": "triggerrishwat()",
+      "id": "stephanie_perez_portfolio_app_triggerrishwat"
+    },
+    {
+      "label": "closeRishwatPopupDirect()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L381",
+      "community": 6,
+      "norm_label": "closerishwatpopupdirect()",
+      "id": "stephanie_perez_portfolio_app_closerishwatpopupdirect"
+    },
+    {
+      "label": "closeRishwatPopup()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L388",
+      "community": 6,
+      "norm_label": "closerishwatpopup()",
+      "id": "stephanie_perez_portfolio_app_closerishwatpopup"
+    },
+    {
+      "label": "payRishwat()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L394",
+      "community": 3,
+      "norm_label": "payrishwat()",
+      "id": "stephanie_perez_portfolio_app_payrishwat"
+    },
+    {
+      "label": "targetLink",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L415",
+      "community": 0,
+      "norm_label": "targetlink",
+      "id": "stephanie_perez_portfolio_app_targetlink"
+    },
+    {
+      "label": "fontCycleList",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L427",
+      "community": 0,
+      "norm_label": "fontcyclelist",
+      "id": "stephanie_perez_portfolio_app_fontcyclelist"
+    },
+    {
+      "label": "portfolioTitle",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L436",
+      "community": 0,
+      "norm_label": "portfoliotitle",
+      "id": "stephanie_perez_portfolio_app_portfoliotitle"
+    },
+    {
+      "label": "cycleFontStep()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L443",
+      "community": 0,
+      "norm_label": "cyclefontstep()",
+      "id": "stephanie_perez_portfolio_app_cyclefontstep"
+    },
+    {
+      "label": "closeTepiPopup()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L485",
+      "community": 7,
+      "norm_label": "closetepipopup()",
+      "id": "stephanie_perez_portfolio_app_closetepipopup"
+    },
+    {
+      "label": "closeTepiPopupDirect()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L490",
+      "community": 7,
+      "norm_label": "closetepipopupdirect()",
+      "id": "stephanie_perez_portfolio_app_closetepipopupdirect"
+    },
+    {
+      "label": "showTepiPopup()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L497",
+      "community": 3,
+      "norm_label": "showtepipopup()",
+      "id": "stephanie_perez_portfolio_app_showtepipopup"
+    },
+    {
+      "label": "checkBrandingPosition()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L512",
+      "community": 3,
+      "norm_label": "checkbrandingposition()",
+      "id": "stephanie_perez_portfolio_app_checkbrandingposition"
+    },
+    {
+      "label": "brandingSection",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L524",
+      "community": 0,
+      "norm_label": "brandingsection",
+      "id": "stephanie_perez_portfolio_app_brandingsection"
+    },
+    {
+      "label": "tepiObserver",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L526",
+      "community": 0,
+      "norm_label": "tepiobserver",
+      "id": "stephanie_perez_portfolio_app_tepiobserver"
+    },
+    {
+      "label": "brandingHeader",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L535",
+      "community": 0,
+      "norm_label": "brandingheader",
+      "id": "stephanie_perez_portfolio_app_brandingheader"
+    },
+    {
+      "label": "canvas",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L543",
+      "community": 0,
+      "norm_label": "canvas",
+      "id": "stephanie_perez_portfolio_app_canvas"
+    },
+    {
+      "label": "ctx",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L545",
+      "community": 0,
+      "norm_label": "ctx",
+      "id": "stephanie_perez_portfolio_app_ctx"
+    },
+    {
+      "label": "particles",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L554",
+      "community": 0,
+      "norm_label": "particles",
+      "id": "stephanie_perez_portfolio_app_particles"
+    },
+    {
+      "label": "animateTrail()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L573",
+      "community": 0,
+      "norm_label": "animatetrail()",
+      "id": "stephanie_perez_portfolio_app_animatetrail"
+    },
+    {
+      "label": "revealEls",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L602",
+      "community": 0,
+      "norm_label": "revealels",
+      "id": "stephanie_perez_portfolio_app_revealels"
+    },
+    {
+      "label": "revealObserver",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L609",
+      "community": 0,
+      "norm_label": "revealobserver",
+      "id": "stephanie_perez_portfolio_app_revealobserver"
+    },
+    {
+      "label": "logoCards",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L627",
+      "community": 0,
+      "norm_label": "logocards",
+      "id": "stephanie_perez_portfolio_app_logocards"
+    },
+    {
+      "label": "logoObserver",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L630",
+      "community": 0,
+      "norm_label": "logoobserver",
+      "id": "stephanie_perez_portfolio_app_logoobserver"
+    },
+    {
+      "label": "hsiDropTimers",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L651",
+      "community": 0,
+      "norm_label": "hsidroptimers",
+      "id": "stephanie_perez_portfolio_app_hsidroptimers"
+    },
+    {
+      "label": "runHsiCycle()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L653",
+      "community": 9,
+      "norm_label": "runhsicycle()",
+      "id": "stephanie_perez_portfolio_app_runhsicycle"
+    },
+    {
+      "label": "startHsiContinuousMotion()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L733",
+      "community": 9,
+      "norm_label": "starthsicontinuousmotion()",
+      "id": "stephanie_perez_portfolio_app_starthsicontinuousmotion"
+    },
+    {
+      "label": "stopHsiContinuousMotion()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L739",
+      "community": 0,
+      "norm_label": "stophsicontinuousmotion()",
+      "id": "stephanie_perez_portfolio_app_stophsicontinuousmotion"
+    },
+    {
+      "label": "stage",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L751",
+      "community": 0,
+      "norm_label": "stage",
+      "id": "stephanie_perez_portfolio_app_stage"
+    },
+    {
+      "label": "observer",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L754",
+      "community": 0,
+      "norm_label": "observer",
+      "id": "stephanie_perez_portfolio_app_observer"
+    },
+    {
+      "label": "footerHeading",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L771",
+      "community": 0,
+      "norm_label": "footerheading",
+      "id": "stephanie_perez_portfolio_app_footerheading"
+    },
+    {
+      "label": "typoText",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L772",
+      "community": 0,
+      "norm_label": "typotext",
+      "id": "stephanie_perez_portfolio_app_typotext"
+    },
+    {
+      "label": "startTyping()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L779",
+      "community": 0,
+      "norm_label": "starttyping()",
+      "id": "stephanie_perez_portfolio_app_starttyping"
+    },
+    {
+      "label": "updateCacheMeta()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L817",
+      "community": 0,
+      "norm_label": "updatecachemeta()",
+      "id": "stephanie_perez_portfolio_app_updatecachemeta"
+    },
+    {
+      "label": "setupImageResilience()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L830",
+      "community": 0,
+      "norm_label": "setupimageresilience()",
+      "id": "stephanie_perez_portfolio_app_setupimageresilience"
+    },
+    {
+      "label": "startBackgroundSlidePreloader()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L862",
+      "community": 0,
+      "norm_label": "startbackgroundslidepreloader()",
+      "id": "stephanie_perez_portfolio_app_startbackgroundslidepreloader"
+    },
+    {
+      "label": "src",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L917",
+      "community": 0,
+      "norm_label": "src",
+      "id": "stephanie_perez_portfolio_app_src"
+    },
+    {
+      "label": "download_assets.py",
+      "file_type": "code",
+      "source_file": "download_assets.py",
+      "source_location": "L1",
+      "community": 10,
+      "norm_label": "download_assets.py",
+      "id": "download_assets_py"
+    },
+    {
+      "label": "sw.js",
+      "file_type": "code",
+      "source_file": "sw.js",
+      "source_location": "L1",
+      "community": 4,
+      "norm_label": "sw.js",
+      "id": "sw_js"
+    },
+    {
+      "label": "PRECACHE_ASSETS",
+      "file_type": "code",
+      "source_file": "sw.js",
+      "source_location": "L7",
+      "community": 4,
+      "norm_label": "precache_assets",
+      "id": "stephanie_perez_portfolio_sw_precache_assets"
+    },
+    {
+      "label": "url",
+      "file_type": "code",
+      "source_file": "sw.js",
+      "source_location": "L57",
+      "community": 4,
+      "norm_label": "url",
+      "id": "stephanie_perez_portfolio_sw_url"
+    },
+    {
+      "label": "clone",
+      "file_type": "code",
+      "source_file": "sw.js",
+      "source_location": "L91",
+      "community": 4,
+      "norm_label": "clone",
+      "id": "stephanie_perez_portfolio_sw_clone"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "readme.md",
+      "id": "readme_md"
+    },
+    {
+      "label": "Himanshi Parihar \u2014 UI/UX & Graphic Designer Portfolio (Interactive Clone)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "himanshi parihar \u2014 ui/ux & graphic designer portfolio (interactive clone)",
+      "id": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio_interactive_clone"
+    },
+    {
+      "label": "\ud83c\udf1f Features",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L5",
+      "community": 1,
+      "norm_label": "\ud83c\udf1f features",
+      "id": "stephanie_perez_portfolio_readme_features"
+    },
+    {
+      "label": "\ud83d\ude80 How to Run",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L17",
+      "community": 1,
+      "norm_label": "\ud83d\ude80 how to run",
+      "id": "stephanie_perez_portfolio_readme_how_to_run"
+    },
+    {
+      "label": "Method 1: Local HTTP Server (Active on Port 8080)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L19",
+      "community": 1,
+      "norm_label": "method 1: local http server (active on port 8080)",
+      "id": "stephanie_perez_portfolio_readme_method_1_local_http_server_active_on_port_8080"
+    },
+    {
+      "label": "code:block1 (http://localhost:8080)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L21",
+      "community": 1,
+      "norm_label": "code:block1 (http://localhost:8080)",
+      "id": "stephanie_perez_portfolio_readme_codeblock_1"
+    },
+    {
+      "label": "code:powershell (cd C:\\Users\\sgarm\\stephanie-perez-portfolio)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L26",
+      "community": 1,
+      "norm_label": "code:powershell (cd c:\\users\\sgarm\\stephanie-perez-portfolio)",
+      "id": "stephanie_perez_portfolio_readme_codeblock_2"
+    },
+    {
+      "label": "Method 2: Direct File Open",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L31",
+      "community": 1,
+      "norm_label": "method 2: direct file open",
+      "id": "stephanie_perez_portfolio_readme_method_2_direct_file_open"
+    },
+    {
+      "label": "code:powershell (Start-Process \"C:\\Users\\sgarm\\stephanie-perez-portfolio\\inde)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L33",
+      "community": 1,
+      "norm_label": "code:powershell (start-process \"c:\\users\\sgarm\\stephanie-perez-portfolio\\inde)",
+      "id": "stephanie_perez_portfolio_readme_codeblock_3"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_allslides"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_scrolltosection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_cacheimage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_preloadneighborslides"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_lightboxmodal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_lightboximg"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L73",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_openlightbox"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L85",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_closelightboxdirect"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L90",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_closelightbox"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L96",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_navigatelightbox"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L118",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_rishwat"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L143",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_handlelightboxswipe"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L165",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_filtercategory"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L200",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_switchsimslide"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L237",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_runplantscan"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L268",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_drawer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L269",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_overlay"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L271",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_openresume"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L279",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_closeresume"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L288",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_toast"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L291",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_showtoast"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L302",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_copyhex"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L311",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_copycontactemail"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L324",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_playcutechime"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L362",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_rishwatoverlay"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L363",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_rishwatsuccessstate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L365",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_triggerrishwat"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L381",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_closerishwatpopupdirect"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L388",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_closerishwatpopup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L394",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_payrishwat"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L415",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_targetlink"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L427",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_fontcyclelist"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L436",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_portfoliotitle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L443",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_cyclefontstep"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L485",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_closetepipopup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L490",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_closetepipopupdirect"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L497",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_showtepipopup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L512",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_checkbrandingposition"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L524",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_brandingsection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L526",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_tepiobserver"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L535",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_brandingheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L543",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_canvas"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L545",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_ctx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L554",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_particles"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L573",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_animatetrail"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L602",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_revealels"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L609",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_revealobserver"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L627",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_logocards"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L630",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_logoobserver"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L651",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_hsidroptimers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L653",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_runhsicycle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L733",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_starthsicontinuousmotion"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L739",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_stophsicontinuousmotion"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L751",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_stage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L797",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_observer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L771",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_footerheading"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L772",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_typotext"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L779",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_starttyping"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L817",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_updatecachemeta"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L830",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_setupimageresilience"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L862",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_startbackgroundslidepreloader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L917",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_js",
+      "target": "stephanie_perez_portfolio_app_src"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_app_scrolltosection",
+      "target": "stephanie_perez_portfolio_app_filtercategory"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L205",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_app_switchsimslide",
+      "target": "stephanie_perez_portfolio_app_cacheimage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_app_openlightbox",
+      "target": "stephanie_perez_portfolio_app_preloadneighborslides"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L105",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_app_navigatelightbox",
+      "target": "stephanie_perez_portfolio_app_preloadneighborslides"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L92",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_app_closelightbox",
+      "target": "stephanie_perez_portfolio_app_closelightboxdirect"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L160",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_app_handlelightboxswipe",
+      "target": "stephanie_perez_portfolio_app_closelightboxdirect"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L153",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_app_handlelightboxswipe",
+      "target": "stephanie_perez_portfolio_app_navigatelightbox"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L400",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_app_payrishwat",
+      "target": "stephanie_perez_portfolio_app_showtoast"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L378",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_app_triggerrishwat",
+      "target": "stephanie_perez_portfolio_app_playcutechime"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L395",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_app_payrishwat",
+      "target": "stephanie_perez_portfolio_app_playcutechime"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L500",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_app_showtepipopup",
+      "target": "stephanie_perez_portfolio_app_playcutechime"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L390",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_app_closerishwatpopup",
+      "target": "stephanie_perez_portfolio_app_closerishwatpopupdirect"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L487",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_app_closetepipopup",
+      "target": "stephanie_perez_portfolio_app_closetepipopupdirect"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L519",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_app_checkbrandingposition",
+      "target": "stephanie_perez_portfolio_app_showtepipopup"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L735",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_app_starthsicontinuousmotion",
+      "target": "stephanie_perez_portfolio_app_runhsicycle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "sw.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sw_js",
+      "target": "stephanie_perez_portfolio_sw_precache_assets"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "sw.js",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sw_js",
+      "target": "stephanie_perez_portfolio_sw_url"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "sw.js",
+      "source_location": "L91",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sw_js",
+      "target": "stephanie_perez_portfolio_sw_clone"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_md",
+      "target": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio_interactive_clone"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio_interactive_clone",
+      "target": "stephanie_perez_portfolio_readme_features"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_readme_himanshi_parihar_ui_ux_graphic_designer_portfolio_interactive_clone",
+      "target": "stephanie_perez_portfolio_readme_how_to_run"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_readme_how_to_run",
+      "target": "stephanie_perez_portfolio_readme_method_1_local_http_server_active_on_port_8080"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_readme_how_to_run",
+      "target": "stephanie_perez_portfolio_readme_method_2_direct_file_open"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_readme_method_1_local_http_server_active_on_port_8080",
+      "target": "stephanie_perez_portfolio_readme_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_readme_method_1_local_http_server_active_on_port_8080",
+      "target": "stephanie_perez_portfolio_readme_codeblock_2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stephanie_perez_portfolio_readme_method_2_direct_file_open",
+      "target": "stephanie_perez_portfolio_readme_codeblock_3"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "a539a21c40b4e8448e0c1891a577e8583dc6f129"
+}
