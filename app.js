@@ -652,15 +652,18 @@ let hsiDropTimers = [];
 
 function runHsiCycle() {
   const blue = document.getElementById('drop-blue');
-  const soft = document.getElementById('drop-soft');
   const white = document.getElementById('drop-white');
+  const soft = document.getElementById('drop-soft');
+  const pale = document.getElementById('drop-pale');
+  const black = document.getElementById('drop-black');
   const targetImg = document.getElementById('hsi-target-img');
-  if (!blue || !soft || !white) return;
+  if (!blue || !white || !soft || !pale || !black) return;
 
   hsiDropTimers.forEach(t => clearTimeout(t));
   hsiDropTimers = [];
 
-  [blue, soft, white].forEach(drop => {
+  const allDrops = [blue, white, soft, pale, black];
+  allDrops.forEach(drop => {
     drop.classList.remove('popped', 'plunging');
   });
 
@@ -674,42 +677,63 @@ function runHsiCycle() {
     }
   }
 
-  // Sequence: Blue pops -> Plunges into image & Soft pops -> Plunges & White pops -> Plunges
+  // Sequence across all 5 colors matching slide_41.jpg
+  // 1. Blue pops
   hsiDropTimers.push(setTimeout(() => {
     blue.classList.add('popped');
   }, 100));
 
+  // 2. Blue plunges -> White pops
   hsiDropTimers.push(setTimeout(() => {
     blue.classList.remove('popped');
     blue.classList.add('plunging');
     pulseImage();
-    soft.classList.add('popped');
-  }, 850));
-
-  hsiDropTimers.push(setTimeout(() => {
-    soft.classList.remove('popped');
-    soft.classList.add('plunging');
-    pulseImage();
     white.classList.add('popped');
-  }, 1600));
+  }, 800));
 
+  // 3. White plunges -> Soft pops
   hsiDropTimers.push(setTimeout(() => {
     white.classList.remove('popped');
     white.classList.add('plunging');
     pulseImage();
-  }, 2350));
+    soft.classList.add('popped');
+  }, 1500));
 
+  // 4. Soft plunges -> Pale pops
   hsiDropTimers.push(setTimeout(() => {
-    [blue, soft, white].forEach(drop => {
+    soft.classList.remove('popped');
+    soft.classList.add('plunging');
+    pulseImage();
+    pale.classList.add('popped');
+  }, 2200));
+
+  // 5. Pale plunges -> Black pops
+  hsiDropTimers.push(setTimeout(() => {
+    pale.classList.remove('popped');
+    pale.classList.add('plunging');
+    pulseImage();
+    black.classList.add('popped');
+  }, 2900));
+
+  // 6. Black plunges
+  hsiDropTimers.push(setTimeout(() => {
+    black.classList.remove('popped');
+    black.classList.add('plunging');
+    pulseImage();
+  }, 3600));
+
+  // 7. Reset all plunging classes before next cycle
+  hsiDropTimers.push(setTimeout(() => {
+    allDrops.forEach(drop => {
       drop.classList.remove('plunging');
     });
-  }, 3050));
+  }, 4150));
 }
 
 function startHsiContinuousMotion() {
   if (hsiContinuousInterval) return;
   runHsiCycle();
-  hsiContinuousInterval = setInterval(runHsiCycle, 3500);
+  hsiContinuousInterval = setInterval(runHsiCycle, 4300);
 }
 
 function stopHsiContinuousMotion() {
